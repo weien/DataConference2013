@@ -8,22 +8,24 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
-
+@interface ViewController () <UIWebViewDelegate>
 @end
 
 @implementation ViewController
+@synthesize mainWebView = _mainWebView;
+
+
+//http://stationinthemetro.com/2012/02/23/calling-methods-from-links-in-a-uiwebview
+- (void) setUpPage {
+    NSString *htmlString = @"<!DOCTYPE HTML><html><body><p><a href=\"selector://linkIntercept\">Log me!</a></p><p><a href=\"selector://linkInterceptWithArgument#arg\">Log me with argument!</a></p></body></html>";
+    [self.mainWebView loadHTMLString:htmlString baseURL:nil];
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    self.mainWebView.delegate = self;
+    [self setUpPage];
 }
 
 @end
