@@ -10,4 +10,6 @@
 
 @interface DTCViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UIWebView* DTCWebView;
+@property (strong, nonatomic) NSURL* urlToDisplay;
+
 @end

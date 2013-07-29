@@ -9,7 +9,7 @@
             <objects>
                 <viewController id="2" customClass="DTCViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Rf-7C-Wgx">
@@ -32,7 +32,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1473" y="112"/>
+            <point key="canvasLocation" x="1483" y="112"/>
         </scene>
         <!--Navigation Controller - Sessions-->
         <scene sceneID="1U0-as-u2D">
@@ -76,7 +76,7 @@
             <objects>
                 <viewController id="psc-Wv-RMm" customClass="DTCViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AmF-TS-VY0">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G9b-DQ-Sz0">
@@ -94,11 +94,12 @@
                     <navigationItem key="navigationItem" id="03Q-QB-dQ8"/>
                     <connections>
                         <outlet property="DTCWebView" destination="G9b-DQ-Sz0" id="Dgf-vh-y9z"/>
+                        <segue destination="2" kind="push" identifier="pushNextWebView" id="uBQ-rR-sa7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MjV-9Y-sHg" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1889" y="112"/>
+            <point key="canvasLocation" x="1953" y="112"/>
         </scene>
     </scenes>
     <classes>
@@ -117,4 +118,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="uBQ-rR-sa7"/>
+    </inferredMetricsTieBreakers>
 </document>
