@@ -211,7 +211,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "export PATH=\"/usr/local/bin:/usr/local/sbin:$PATH\"\neval \"$(rbenv init -)\"\ncd $PROJECT_DIR/jekyll\njekyll build\ncp -R _site $CODESIGNING_FOLDER_PATH/_site";
+			shellScript = "export PATH=\"/usr/local/bin:/usr/local/sbin:$PATH\"\neval \"$(rbenv init -)\"\n\ncd $PROJECT_DIR/jekyll\nexport LANG=\"en_US.UTF-8\"\nexport LC_ALL=\"en_US.UTF-8\"\njekyll build\ncp -R _site $CODESIGNING_FOLDER_PATH/_site";
 		};
 /* End PBXShellScriptBuildPhase section */
 
