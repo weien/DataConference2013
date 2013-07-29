@@ -33,6 +33,11 @@
         self.syncBar = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 10.0f)];
         [self.syncBar setBackgroundColor:[UIColor blackColor]];
         
+        [self.syncBar setText:@"Syncing..."];
+        [self.syncBar setTextAlignment:NSTextAlignmentCenter];
+        [self.syncBar setTextColor:[UIColor whiteColor]];
+        [self.syncBar setFont:[UIFont systemFontOfSize:8]];
+        
         self.syncBar.alpha = 0.0;
         [self.view addSubview:self.syncBar];
     }
@@ -46,8 +51,6 @@
         [UIView animateWithDuration:1.0 animations:^{
             self.syncBar.alpha = 0.0;
         }];
-//        [self.syncBar removeFromSuperview];
-//        self.syncBar = nil;
     }
 }
 
