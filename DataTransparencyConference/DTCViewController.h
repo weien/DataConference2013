@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-@property (strong, nonatomic) IBOutlet UIWebView* mainWebView;
+@interface DTCViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UIWebView* DTCWebView;
 @end
