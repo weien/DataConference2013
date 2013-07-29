@@ -33,6 +33,7 @@
 		64F1661917A6DEF00098A02B /* SpeakersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakersViewController.m; sourceTree = "<group>"; };
 		64F1661B17A6DEF90098A02B /* TweetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetsViewController.h; sourceTree = "<group>"; };
 		64F1661C17A6DEF90098A02B /* TweetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetsViewController.m; sourceTree = "<group>"; };
+		64F1661E17A6FFF10098A02B /* TODO.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = TODO.txt; sourceTree = "<group>"; };
 		64F27FE317A366E800C3272A /* DataTransparencyConference.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataTransparencyConference.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64F27FE617A366E800C3272A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		64F27FE817A366E800C3272A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -83,6 +84,7 @@
 		64F27FDA17A366E700C3272A = {
 			isa = PBXGroup;
 			children = (
+				64F1661E17A6FFF10098A02B /* TODO.txt */,
 				64F27FEC17A366E800C3272A /* DataTransparencyConference */,
 				64F27FE517A366E800C3272A /* Frameworks */,
 				64F27FE417A366E800C3272A /* Products */,
