@@ -166,7 +166,7 @@
             <objects>
                 <viewController id="2wH-iM-Uhq" customClass="NewsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ow8-V1-a3h">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bUA-jo-zaF">
@@ -181,7 +181,13 @@
                             <constraint firstItem="bUA-jo-zaF" firstAttribute="bottom" secondItem="Ow8-V1-a3h" secondAttribute="bottom" type="default" id="kYS-9i-5cA"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ssT-qa-v2L"/>
+                    <navigationItem key="navigationItem" id="ssT-qa-v2L">
+                        <barButtonItem key="rightBarButtonItem" title="Test Animation" id="TTk-nv-VP0">
+                            <connections>
+                                <action selector="addCustomSyncBar" destination="2wH-iM-Uhq" id="g8j-Ly-04C"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="DTCWebView" destination="bUA-jo-zaF" id="Bds-9i-gMN"/>
                         <segue destination="8tO-4v-UYG" kind="push" identifier="pushNextWebView" id="RqW-Zz-hdc"/>
@@ -196,7 +202,7 @@
             <objects>
                 <viewController id="8tO-4v-UYG" customClass="NewsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yue-Nd-LOp">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="roR-dJ-Jep">
@@ -342,14 +348,38 @@
             <point key="canvasLocation" x="2705" y="-224"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="DTCViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DTCViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addCustomSyncBar"/>
+                <relationship kind="outlet" name="DTCWebView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="NewsViewController" superclassName="DTCViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewsViewController.h"/>
+        </class>
+        <class className="SessionsViewController" superclassName="DTCViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SessionsViewController.h"/>
+        </class>
+        <class className="SpeakersViewController" superclassName="DTCViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SpeakersViewController.h"/>
+        </class>
+        <class className="TweetsViewController" superclassName="DTCViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TweetsViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="sQX-af-1H9"/>
         <segue reference="8i3-Gb-0O6"/>
-        <segue reference="CiK-lh-xTj"/>
         <segue reference="hM7-XZ-Ehs"/>
         <segue reference="uBQ-rR-sa7"/>
     </inferredMetricsTieBreakers>

@@ -9,16 +9,46 @@
 #import "DTCViewController.h"
 
 @interface DTCViewController () <UIWebViewDelegate>
+@property (strong, nonatomic) UILabel* syncBar;
 @end
 
 @implementation DTCViewController
 @synthesize DTCWebView = _DTCWebView;
 @synthesize urlToDisplay = _urlToDisplay;
+@synthesize syncBar = _syncBar;
 
 
 //http://stationinthemetro.com/2012/02/23/calling-methods-from-links-in-a-uiwebview
 - (void) setUpPage {
+    //next two lines just for test purposes
+    [self.DTCWebView setOpaque:NO];
+    [self.DTCWebView setBackgroundColor:[UIColor grayColor]];
+
     [self.DTCWebView loadHTMLString:[self initialHTMLString] baseURL:nil];
+    
+}
+
+- (IBAction) addCustomSyncBar {
+    if (!self.syncBar) {
+        self.syncBar = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 10.0f)];
+        [self.syncBar setBackgroundColor:[UIColor blackColor]];
+        
+        self.syncBar.alpha = 0.0;
+        [self.view addSubview:self.syncBar];
+    }
+    
+    if (self.syncBar.alpha == 0.0) {
+        [UIView animateWithDuration:1.0 animations:^{
+            self.syncBar.alpha = 1.0;
+        }];
+    }
+    else {
+        [UIView animateWithDuration:1.0 animations:^{
+            self.syncBar.alpha = 0.0;
+        }];
+//        [self.syncBar removeFromSuperview];
+//        self.syncBar = nil;
+    }
 }
 
 - (NSString*) initialHTMLString {

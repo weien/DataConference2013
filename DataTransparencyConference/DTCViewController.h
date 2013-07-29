@@ -12,4 +12,6 @@
 @property (strong, nonatomic) IBOutlet UIWebView* DTCWebView;
 @property (strong, nonatomic) NSURL* urlToDisplay;
 
+- (IBAction) addCustomSyncBar;
+
 @end
