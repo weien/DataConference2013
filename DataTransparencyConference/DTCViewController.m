@@ -18,8 +18,12 @@
 
 //http://stationinthemetro.com/2012/02/23/calling-methods-from-links-in-a-uiwebview
 - (void) setUpPage {
-    NSString *htmlString = @"<!DOCTYPE HTML><html><body><p><a href=\"DTCScheme://linkIntercept\">Hey there!</a></p><p><a href=\"DTCScheme://linkInterceptWithArgument#arg\">Here, have an argument!</a></p></body></html>";
-    [self.DTCWebView loadHTMLString:htmlString baseURL:nil];
+    [self.DTCWebView loadHTMLString:[self initialHTMLString] baseURL:nil];
+}
+
+- (NSString*) initialHTMLString {
+    NSString *htmlString = @"<!DOCTYPE HTML><html><body><p><a href=\"DTCScheme://linkIntercept\">Generic!</a></p><p><a href=\"DTCScheme://linkInterceptWithArgument#arg\">Here, have an argument!</a></p></body></html>";
+    return htmlString;
 }
 
 //http://stackoverflow.com/a/10198138/2284713 and http://stackoverflow.com/a/4442594/2284713
@@ -48,8 +52,8 @@
     self.DTCWebView.delegate = self;
     [self setUpPage];
 
-    NSURLRequest *request = [NSURLRequest requestWithURL:self.urlToDisplay];
-    [self.DTCWebView loadRequest:request];
+//    NSURLRequest *request = [NSURLRequest requestWithURL:self.urlToDisplay];
+//    [self.DTCWebView loadRequest:request];
 }
 
 @end

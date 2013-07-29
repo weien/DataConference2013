@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		64F1661417A6DED20098A02B /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F1661317A6DED20098A02B /* NewsViewController.m */; };
+		64F1661717A6DEE60098A02B /* SessionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F1661617A6DEE60098A02B /* SessionsViewController.m */; };
+		64F1661A17A6DEF00098A02B /* SpeakersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F1661917A6DEF00098A02B /* SpeakersViewController.m */; };
+		64F1661D17A6DEF90098A02B /* TweetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F1661C17A6DEF90098A02B /* TweetsViewController.m */; };
 		64F27FE717A366E800C3272A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64F27FE617A366E800C3272A /* UIKit.framework */; };
 		64F27FE917A366E800C3272A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64F27FE817A366E800C3272A /* Foundation.framework */; };
 		64F27FEB17A366E800C3272A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64F27FEA17A366E800C3272A /* CoreGraphics.framework */; };
@@ -21,6 +25,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		64F1661217A6DED20098A02B /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
+		64F1661317A6DED20098A02B /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
+		64F1661517A6DEE60098A02B /* SessionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionsViewController.h; sourceTree = "<group>"; };
+		64F1661617A6DEE60098A02B /* SessionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionsViewController.m; sourceTree = "<group>"; };
+		64F1661817A6DEF00098A02B /* SpeakersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakersViewController.h; sourceTree = "<group>"; };
+		64F1661917A6DEF00098A02B /* SpeakersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakersViewController.m; sourceTree = "<group>"; };
+		64F1661B17A6DEF90098A02B /* TweetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetsViewController.h; sourceTree = "<group>"; };
+		64F1661C17A6DEF90098A02B /* TweetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetsViewController.m; sourceTree = "<group>"; };
 		64F27FE317A366E800C3272A /* DataTransparencyConference.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataTransparencyConference.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64F27FE617A366E800C3272A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		64F27FE817A366E800C3272A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -53,6 +65,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		64F1661117A6DE590098A02B /* Low Level */ = {
+			isa = PBXGroup;
+			children = (
+				64F1661217A6DED20098A02B /* NewsViewController.h */,
+				64F1661317A6DED20098A02B /* NewsViewController.m */,
+				64F1661517A6DEE60098A02B /* SessionsViewController.h */,
+				64F1661617A6DEE60098A02B /* SessionsViewController.m */,
+				64F1661817A6DEF00098A02B /* SpeakersViewController.h */,
+				64F1661917A6DEF00098A02B /* SpeakersViewController.m */,
+				64F1661B17A6DEF90098A02B /* TweetsViewController.h */,
+				64F1661C17A6DEF90098A02B /* TweetsViewController.m */,
+			);
+			name = "Low Level";
+			sourceTree = "<group>";
+		};
 		64F27FDA17A366E700C3272A = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +110,7 @@
 		64F27FEC17A366E800C3272A /* DataTransparencyConference */ = {
 			isa = PBXGroup;
 			children = (
+				64F1661117A6DE590098A02B /* Low Level */,
 				64F27FF517A366E800C3272A /* AppDelegate.h */,
 				64F27FF617A366E800C3272A /* AppDelegate.m */,
 				64F27FFE17A366E800C3272A /* MainStoryboard.storyboard */,
@@ -176,6 +204,10 @@
 				64F27FF317A366E800C3272A /* main.m in Sources */,
 				64F27FF717A366E800C3272A /* AppDelegate.m in Sources */,
 				64F2800317A366E800C3272A /* DTCViewController.m in Sources */,
+				64F1661417A6DED20098A02B /* NewsViewController.m in Sources */,
+				64F1661717A6DEE60098A02B /* SessionsViewController.m in Sources */,
+				64F1661A17A6DEF00098A02B /* SpeakersViewController.m in Sources */,
+				64F1661D17A6DEF90098A02B /* TweetsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Speakers View Controller-->
         <scene sceneID="5">
             <objects>
-                <viewController id="2" customClass="DTCViewController" sceneMemberID="viewController">
+                <viewController id="2" customClass="SpeakersViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -32,7 +32,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2127" y="92"/>
+            <point key="canvasLocation" x="2191" y="596"/>
         </scene>
         <!--Navigation Controller - News-->
         <scene sceneID="1U0-as-u2D">
@@ -46,12 +46,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="2" kind="relationship" relationship="rootViewController" id="4J9-pf-GyP"/>
+                        <segue destination="2wH-iM-Uhq" kind="relationship" relationship="rootViewController" id="sQX-af-1H9"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zyh-Bk-zxI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1132" y="-248"/>
+            <point key="canvasLocation" x="1508" y="-1053"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="tkK-WA-cqv">
@@ -74,10 +74,10 @@
             </objects>
             <point key="canvasLocation" x="605" y="112"/>
         </scene>
-        <!--View Controller-->
+        <!--Speakers View Controller-->
         <scene sceneID="3My-iD-T1u">
             <objects>
-                <viewController id="psc-Wv-RMm" customClass="DTCViewController" sceneMemberID="viewController">
+                <viewController id="psc-Wv-RMm" customClass="SpeakersViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AmF-TS-VY0">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -102,7 +102,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MjV-9Y-sHg" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2597" y="92"/>
+            <point key="canvasLocation" x="2661" y="596"/>
         </scene>
         <!--Navigation Controller - Sessions-->
         <scene sceneID="MoB-iY-DQn">
@@ -116,12 +116,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="2" kind="relationship" relationship="rootViewController" id="QHG-dr-ZSo"/>
+                        <segue destination="zqG-Za-XJe" kind="relationship" relationship="rootViewController" id="Bgm-v7-YOb"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8jn-xY-dNm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1562" y="-430"/>
+            <point key="canvasLocation" x="1496" y="-302"/>
         </scene>
         <!--Navigation Controller - Speakers-->
         <scene sceneID="Xfe-mC-TNI">
@@ -135,12 +135,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="2" kind="relationship" relationship="rootViewController" id="OGb-Ad-p90"/>
+                        <segue destination="2" kind="relationship" relationship="rootViewController" id="6ip-WE-ubf"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zz7-Nt-6Cf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1122" y="422"/>
+            <point key="canvasLocation" x="1450" y="386"/>
         </scene>
         <!--Navigation Controller - Tweets-->
         <scene sceneID="2Pg-si-dzg">
@@ -154,31 +154,203 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="2" kind="relationship" relationship="rootViewController" id="SEp-rJ-C8E"/>
+                        <segue destination="BK2-4S-ecx" kind="relationship" relationship="rootViewController" id="bIu-8O-9eA"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ecA-HF-P6I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1595" y="562"/>
+            <point key="canvasLocation" x="1551" y="1130"/>
+        </scene>
+        <!--News View Controller-->
+        <scene sceneID="eA3-r4-S2a">
+            <objects>
+                <viewController id="2wH-iM-Uhq" customClass="NewsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ow8-V1-a3h">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bUA-jo-zaF">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bUA-jo-zaF" firstAttribute="top" secondItem="Ow8-V1-a3h" secondAttribute="top" type="default" id="TrD-nN-c0b"/>
+                            <constraint firstItem="bUA-jo-zaF" firstAttribute="trailing" secondItem="Ow8-V1-a3h" secondAttribute="trailing" type="default" id="VyX-Vi-Exl"/>
+                            <constraint firstItem="bUA-jo-zaF" firstAttribute="leading" secondItem="Ow8-V1-a3h" secondAttribute="leading" type="default" id="YBm-jO-op1"/>
+                            <constraint firstItem="bUA-jo-zaF" firstAttribute="bottom" secondItem="Ow8-V1-a3h" secondAttribute="bottom" type="default" id="kYS-9i-5cA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ssT-qa-v2L"/>
+                    <connections>
+                        <outlet property="DTCWebView" destination="bUA-jo-zaF" id="Bds-9i-gMN"/>
+                        <segue destination="8tO-4v-UYG" kind="push" identifier="pushNextWebView" id="RqW-Zz-hdc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OaI-9s-AGI" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2243" y="-1037"/>
+        </scene>
+        <!--News View Controller-->
+        <scene sceneID="1tT-Oj-qpZ">
+            <objects>
+                <viewController id="8tO-4v-UYG" customClass="NewsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yue-Nd-LOp">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="roR-dJ-Jep">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="roR-dJ-Jep" firstAttribute="leading" secondItem="Yue-Nd-LOp" secondAttribute="leading" type="default" id="1ah-aw-v2f"/>
+                            <constraint firstItem="roR-dJ-Jep" firstAttribute="top" secondItem="Yue-Nd-LOp" secondAttribute="top" type="default" id="bGD-cR-QsO"/>
+                            <constraint firstItem="roR-dJ-Jep" firstAttribute="bottom" secondItem="Yue-Nd-LOp" secondAttribute="bottom" type="default" id="g5l-Nm-rYr"/>
+                            <constraint firstItem="roR-dJ-Jep" firstAttribute="trailing" secondItem="Yue-Nd-LOp" secondAttribute="trailing" type="default" id="nwX-YT-KD7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="uoH-cb-nx4"/>
+                    <connections>
+                        <outlet property="DTCWebView" destination="roR-dJ-Jep" id="lJX-wS-2sY"/>
+                        <segue destination="2wH-iM-Uhq" kind="push" identifier="pushNextWebView" id="CiK-lh-xTj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qZN-r2-YsH" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2737" y="-1025"/>
+        </scene>
+        <!--Tweets View Controller-->
+        <scene sceneID="cWB-jI-uFw">
+            <objects>
+                <viewController id="BK2-4S-ecx" customClass="TweetsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vcl-U7-tvR">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dau-1S-MYh">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dau-1S-MYh" firstAttribute="bottom" secondItem="Vcl-U7-tvR" secondAttribute="bottom" type="default" id="8ir-pt-8qp"/>
+                            <constraint firstItem="dau-1S-MYh" firstAttribute="top" secondItem="Vcl-U7-tvR" secondAttribute="top" type="default" id="aMx-gl-MqC"/>
+                            <constraint firstItem="dau-1S-MYh" firstAttribute="trailing" secondItem="Vcl-U7-tvR" secondAttribute="trailing" type="default" id="lkh-JP-G2z"/>
+                            <constraint firstItem="dau-1S-MYh" firstAttribute="leading" secondItem="Vcl-U7-tvR" secondAttribute="leading" type="default" id="uLk-aC-ymR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="4TC-gh-xxQ"/>
+                    <connections>
+                        <outlet property="DTCWebView" destination="dau-1S-MYh" id="BBa-wk-rXh"/>
+                        <segue destination="3dR-4L-qYU" kind="push" identifier="pushNextWebView" id="DMU-RN-kn1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CLj-bL-eGi" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2199" y="1316"/>
+        </scene>
+        <!--Tweets View Controller-->
+        <scene sceneID="ugd-0p-WOZ">
+            <objects>
+                <viewController id="3dR-4L-qYU" customClass="TweetsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3cm-ui-vrM">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cYJ-AG-a4P">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cYJ-AG-a4P" firstAttribute="top" secondItem="3cm-ui-vrM" secondAttribute="top" type="default" id="2tw-vH-p7y"/>
+                            <constraint firstItem="cYJ-AG-a4P" firstAttribute="trailing" secondItem="3cm-ui-vrM" secondAttribute="trailing" type="default" id="fyO-AW-pv0"/>
+                            <constraint firstItem="cYJ-AG-a4P" firstAttribute="leading" secondItem="3cm-ui-vrM" secondAttribute="leading" type="default" id="nLg-QX-T1L"/>
+                            <constraint firstItem="cYJ-AG-a4P" firstAttribute="bottom" secondItem="3cm-ui-vrM" secondAttribute="bottom" type="default" id="u9U-rG-EME"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="qpb-JU-2NP"/>
+                    <connections>
+                        <outlet property="DTCWebView" destination="cYJ-AG-a4P" id="LBD-oL-Z8K"/>
+                        <segue destination="BK2-4S-ecx" kind="push" identifier="pushNextWebView" id="hM7-XZ-Ehs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pgV-a2-O0K" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2685" y="1324"/>
+        </scene>
+        <!--Sessions View Controller-->
+        <scene sceneID="Znq-H1-uR4">
+            <objects>
+                <viewController id="zqG-Za-XJe" customClass="SessionsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ggo-fJ-uwG">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wa0-6f-7Sz">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wa0-6f-7Sz" firstAttribute="trailing" secondItem="Ggo-fJ-uwG" secondAttribute="trailing" type="default" id="AcR-pn-0K7"/>
+                            <constraint firstItem="wa0-6f-7Sz" firstAttribute="leading" secondItem="Ggo-fJ-uwG" secondAttribute="leading" type="default" id="R1a-FM-4Z2"/>
+                            <constraint firstItem="wa0-6f-7Sz" firstAttribute="top" secondItem="Ggo-fJ-uwG" secondAttribute="top" type="default" id="bGG-Lj-n8W"/>
+                            <constraint firstItem="wa0-6f-7Sz" firstAttribute="bottom" secondItem="Ggo-fJ-uwG" secondAttribute="bottom" type="default" id="u62-s8-4vp"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="YcX-x1-1SW"/>
+                    <connections>
+                        <outlet property="DTCWebView" destination="wa0-6f-7Sz" id="CSa-7R-lSE"/>
+                        <segue destination="Njo-X4-RWb" kind="push" identifier="pushNextWebView" id="FG1-Cz-qgi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ns6-mP-75Q" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2235" y="-224"/>
+        </scene>
+        <!--Sessions View Controller-->
+        <scene sceneID="G4E-pf-SXY">
+            <objects>
+                <viewController id="Njo-X4-RWb" customClass="SessionsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NtS-Pn-1Us">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iy9-xS-Nka">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iy9-xS-Nka" firstAttribute="trailing" secondItem="NtS-Pn-1Us" secondAttribute="trailing" type="default" id="DE0-EO-pr7"/>
+                            <constraint firstItem="iy9-xS-Nka" firstAttribute="top" secondItem="NtS-Pn-1Us" secondAttribute="top" type="default" id="Jsj-zH-0Zy"/>
+                            <constraint firstItem="iy9-xS-Nka" firstAttribute="leading" secondItem="NtS-Pn-1Us" secondAttribute="leading" type="default" id="crs-TN-Me9"/>
+                            <constraint firstItem="iy9-xS-Nka" firstAttribute="bottom" secondItem="NtS-Pn-1Us" secondAttribute="bottom" type="default" id="sAr-cY-kBh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="t5U-nW-laP"/>
+                    <connections>
+                        <outlet property="DTCWebView" destination="iy9-xS-Nka" id="hth-Wj-71E"/>
+                        <segue destination="zqG-Za-XJe" kind="push" identifier="pushNextWebView" id="8i3-Gb-0O6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2o3-Es-HP3" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2705" y="-224"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="DTCViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DTCViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="DTCWebView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="8i3-Gb-0O6"/>
+        <segue reference="CiK-lh-xTj"/>
+        <segue reference="hM7-XZ-Ehs"/>
         <segue reference="uBQ-rR-sa7"/>
     </inferredMetricsTieBreakers>
 </document>
