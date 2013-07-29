@@ -24,13 +24,19 @@
     [self.DTCWebView setOpaque:NO];
     [self.DTCWebView setBackgroundColor:[UIColor grayColor]];
 
-    [self.DTCWebView loadHTMLString:[self initialHTMLString] baseURL:nil];
+    
+    NSURL* siteURL = [[[NSBundle mainBundle] bundleURL] URLByAppendingPathComponent:@"_site" isDirectory:YES];
+    NSURL* indexHTMLURL = [siteURL URLByAppendingPathComponent:@"index.html" isDirectory:NO];
+//    NSString* indexHTML = [NSString stringWithContentsOfURL:indexHTMLURL encoding:NSUTF8StringEncoding error:nil];
+    
+    [self.DTCWebView loadRequest:[NSURLRequest requestWithURL:indexHTMLURL]];
+//    [self.DTCWebView loadHTMLString:[self initialHTMLString] baseURL:nil];
     
 }
 
 - (IBAction) addCustomSyncBar {
     if (!self.syncBar) {
-        self.syncBar = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 10.0f)];
+        self.syncBar = [[UILabel alloc] initWithFrame:CGRectMake(0, -10.0f, self.view.frame.size.width, 10.0f)];
         [self.syncBar setBackgroundColor:[UIColor blackColor]];
         
         [self.syncBar setText:@"Syncing..."];
@@ -38,20 +44,29 @@
         [self.syncBar setTextColor:[UIColor whiteColor]];
         [self.syncBar setFont:[UIFont systemFontOfSize:8]];
         
-        self.syncBar.alpha = 0.0;
+//        self.syncBar.alpha = 0.0;
         [self.view addSubview:self.syncBar];
     }
     
-    if (self.syncBar.alpha == 0.0) {
-        [UIView animateWithDuration:1.0 animations:^{
-            self.syncBar.alpha = 1.0;
-        }];
-    }
-    else {
-        [UIView animateWithDuration:1.0 animations:^{
-            self.syncBar.alpha = 0.0;
-        }];
-    }
+    
+    
+    [UIView beginAnimations:@"showSyncBar" context:nil];
+    [UIView setAnimationDuration:1.0];
+    [self.syncBar setFrame:CGRectMake(0, 0, self.view.frame.size.width, 10.0f)];
+    [UIView commitAnimations];
+    
+    
+    
+//    if (self.syncBar.alpha == 0.0) {
+//        [UIView animateWithDuration:1.0 animations:^{
+//            self.syncBar.alpha = 1.0;
+//        }];
+//    }
+//    else {
+//        [UIView animateWithDuration:1.0 animations:^{
+//            self.syncBar.alpha = 0.0;
+//        }];
+//    }
 }
 
 - (NSString*) initialHTMLString {
