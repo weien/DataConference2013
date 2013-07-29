@@ -147,6 +147,7 @@
 				64F27FDF17A366E800C3272A /* Sources */,
 				64F27FE017A366E800C3272A /* Frameworks */,
 				64F27FE117A366E800C3272A /* Resources */,
+				64F1661F17A711E10098A02B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -197,6 +198,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		64F1661F17A711E10098A02B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "export PATH=\"/usr/local/bin:/usr/local/sbin:$PATH\"\neval \"$(rbenv init -)\"\ncd $PROJECT_DIR/jekyll\njekyll build";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		64F27FDF17A366E800C3272A /* Sources */ = {
