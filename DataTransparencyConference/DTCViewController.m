@@ -21,17 +21,24 @@
 //http://stationinthemetro.com/2012/02/23/calling-methods-from-links-in-a-uiwebview
 - (void) setUpPage {
     //next two lines just for test purposes
-    [self.DTCWebView setOpaque:NO];
-    [self.DTCWebView setBackgroundColor:[UIColor grayColor]];
-
+//    [self.DTCWebView setOpaque:NO];
+//    [self.DTCWebView setBackgroundColor:[UIColor grayColor]];
     
+
+//    NSString* indexHTML = [NSString stringWithContentsOfURL:indexHTMLURL encoding:NSUTF8StringEncoding error:nil]; //the actual HTML
+    
+    [self.DTCWebView loadRequest:[NSURLRequest requestWithURL:[self initialSiteLocation]]];
+}
+
+//- (NSString*) initialHTMLString {
+//    NSString *htmlString = @"<!DOCTYPE HTML><html><body><p><a href=\"DTCScheme://linkIntercept\">Generic!</a></p><p><a href=\"DTCScheme://linkInterceptWithArgument#arg\">Here, have an argument!</a></p></body></html>";
+//    return htmlString;
+//}
+
+- (NSURL*) initialSiteLocation {
     NSURL* siteURL = [[[NSBundle mainBundle] bundleURL] URLByAppendingPathComponent:@"_site" isDirectory:YES];
     NSURL* indexHTMLURL = [siteURL URLByAppendingPathComponent:@"index.html" isDirectory:NO];
-//    NSString* indexHTML = [NSString stringWithContentsOfURL:indexHTMLURL encoding:NSUTF8StringEncoding error:nil];
-    
-    [self.DTCWebView loadRequest:[NSURLRequest requestWithURL:indexHTMLURL]];
-//    [self.DTCWebView loadHTMLString:[self initialHTMLString] baseURL:nil];
-    
+    return indexHTMLURL;
 }
 
 - (IBAction) addCustomSyncBar {
@@ -49,13 +56,10 @@
     }
     
     
-    
     [UIView beginAnimations:@"showSyncBar" context:nil];
-    [UIView setAnimationDuration:1.0];
+    [UIView setAnimationDuration:0.3];
     [self.syncBar setFrame:CGRectMake(0, 0, self.view.frame.size.width, 10.0f)];
     [UIView commitAnimations];
-    
-    
     
 //    if (self.syncBar.alpha == 0.0) {
 //        [UIView animateWithDuration:1.0 animations:^{
@@ -69,11 +73,6 @@
 //    }
 }
 
-- (NSString*) initialHTMLString {
-    NSString *htmlString = @"<!DOCTYPE HTML><html><body><p><a href=\"DTCScheme://linkIntercept\">Generic!</a></p><p><a href=\"DTCScheme://linkInterceptWithArgument#arg\">Here, have an argument!</a></p></body></html>";
-    return htmlString;
-}
-
 //http://stackoverflow.com/a/10198138/2284713 and http://stackoverflow.com/a/4442594/2284713
 - (BOOL) webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
 
@@ -81,9 +80,9 @@
     
     if ([request.URL.scheme isEqualToString:@"about"])
         return YES;
-    else if ([request.URL.scheme isEqualToString: @"dtcscheme"]) {
+    else if ([request.URL.scheme isEqualToString: @"file"]) {
         //handle segue
-        [self performSegueWithIdentifier:@"pushNextWebView" sender:self];
+        //[self performSegueWithIdentifier:@"pushNextWebView" sender:self];
     }
     return YES;
 }
