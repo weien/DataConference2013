@@ -228,8 +228,8 @@
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "#./Crashlytics.framework/run f8325a280442dcfe187c30777d83465e38bea645";
+			shellPath = /usr/bin/ruby;
+			shellScript = "if File.exist?('/Applications/Crashlytics.app')\n  system './Crashlytics.framework/run f8325a280442dcfe187c30777d83465e38bea645'\nelse\n  puts 'WARNING Crashlytics not installed, so skipping Crashlytics run script'\nend";
 		};
 /* End PBXShellScriptBuildPhase section */
 
