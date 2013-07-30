@@ -47,6 +47,7 @@
     [UIView beginAnimations:@"showSyncBar" context:nil];
     [UIView setAnimationDuration:0.3];
     [self.syncBar setFrame:CGRectMake(0, 0, self.view.frame.size.width, 10.0f)];
+    //move the UIWebView as well? see how it looks
     [UIView commitAnimations];
 }
 

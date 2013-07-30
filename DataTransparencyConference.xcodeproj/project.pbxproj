@@ -11,6 +11,7 @@
 		64F1661717A6DEE60098A02B /* SessionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F1661617A6DEE60098A02B /* SessionsViewController.m */; };
 		64F1661A17A6DEF00098A02B /* SpeakersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F1661917A6DEF00098A02B /* SpeakersViewController.m */; };
 		64F1661D17A6DEF90098A02B /* TweetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F1661C17A6DEF90098A02B /* TweetsViewController.m */; };
+		64F1662217A806C30098A02B /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64F1662117A806C30098A02B /* Crashlytics.framework */; };
 		64F27FE717A366E800C3272A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64F27FE617A366E800C3272A /* UIKit.framework */; };
 		64F27FE917A366E800C3272A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64F27FE817A366E800C3272A /* Foundation.framework */; };
 		64F27FEB17A366E800C3272A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64F27FEA17A366E800C3272A /* CoreGraphics.framework */; };
@@ -34,6 +35,7 @@
 		64F1661B17A6DEF90098A02B /* TweetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetsViewController.h; sourceTree = "<group>"; };
 		64F1661C17A6DEF90098A02B /* TweetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetsViewController.m; sourceTree = "<group>"; };
 		64F1661E17A6FFF10098A02B /* TODO.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = TODO.txt; sourceTree = "<group>"; };
+		64F1662117A806C30098A02B /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		64F27FE317A366E800C3272A /* DataTransparencyConference.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataTransparencyConference.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64F27FE617A366E800C3272A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		64F27FE817A366E800C3272A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -60,6 +62,7 @@
 				64F27FE717A366E800C3272A /* UIKit.framework in Frameworks */,
 				64F27FE917A366E800C3272A /* Foundation.framework in Frameworks */,
 				64F27FEB17A366E800C3272A /* CoreGraphics.framework in Frameworks */,
+				64F1662217A806C30098A02B /* Crashlytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +105,7 @@
 		64F27FE517A366E800C3272A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				64F1662117A806C30098A02B /* Crashlytics.framework */,
 				64F27FE617A366E800C3272A /* UIKit.framework */,
 				64F27FE817A366E800C3272A /* Foundation.framework */,
 				64F27FEA17A366E800C3272A /* CoreGraphics.framework */,
@@ -148,6 +152,7 @@
 				64F27FE017A366E800C3272A /* Frameworks */,
 				64F27FE117A366E800C3272A /* Resources */,
 				64F1661F17A711E10098A02B /* ShellScript */,
+				64F1662017A8069B0098A02B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -212,6 +217,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
 			shellScript = "export PATH=\"/usr/local/bin:/usr/local/sbin:$PATH\"\neval \"$(rbenv init -)\"\n\ncd $PROJECT_DIR/jekyll\nexport LANG=\"en_US.UTF-8\"\nexport LC_ALL=\"en_US.UTF-8\"\njekyll build\nrm -rf $CODESIGNING_FOLDER_PATH/_site\ncp -R _site $CODESIGNING_FOLDER_PATH/_site";
+		};
+		64F1662017A8069B0098A02B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run f8325a280442dcfe187c30777d83465e38bea645";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -311,6 +329,10 @@
 		64F2800717A366E800C3272A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DataTransparencyConference/DataTransparencyConference-Prefix.pch";
 				INFOPLIST_FILE = "DataTransparencyConference/DataTransparencyConference-Info.plist";
@@ -323,6 +345,10 @@
 		64F2800817A366E800C3272A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DataTransparencyConference/DataTransparencyConference-Prefix.pch";
 				INFOPLIST_FILE = "DataTransparencyConference/DataTransparencyConference-Info.plist";
