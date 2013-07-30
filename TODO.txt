@@ -4,6 +4,7 @@ crashlytics, then testflight
 add crasher
 syncing
 add sync bar
+handle URLs out to safari (e.g. bill franks URL)
 
 =================NICE=================
 Tweeting capabilities
