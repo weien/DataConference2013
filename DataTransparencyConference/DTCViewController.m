@@ -61,9 +61,10 @@
         //[self performSegueWithIdentifier:@"pushNextWebView" sender:self];
         //maybe return something?
     }
-    else if ([request.URL.scheme isEqualToString:@"http"] || [request.URL.scheme isEqualToString:@"https"]) {
-        [[UIApplication sharedApplication] openURL:request.URL];
-    }
+//    else if ([request.URL.scheme isEqualToString:@"http"] || [request.URL.scheme isEqualToString:@"https"]) {
+//        [[UIApplication sharedApplication] openURL:request.URL];
+//        return NO;
+//    }
     return YES;
 }
 
