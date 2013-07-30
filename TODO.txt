@@ -4,7 +4,7 @@ crashlytics, then testflight //installed, shared with V/Wolf
 add crasher //used crashlytics recommendations for testing. perfect.
 syncing
 add sync bar
-handle URLs out to safari (e.g. bill franks URL)
+handle URLs out to safari (e.g. bill franks URL) //got simple version, can still improve by opening in webview
 
 =================NICE=================
 Tweeting capabilities

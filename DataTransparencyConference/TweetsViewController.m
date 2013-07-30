@@ -14,4 +14,21 @@
 
 @implementation TweetsViewController
 
+- (NSURL*) initialSiteLocation {
+    NSURL* siteURL = [[[NSBundle mainBundle] bundleURL] URLByAppendingPathComponent:@"_site/tweets" isDirectory:YES];
+    NSURL* indexHTMLURL = [siteURL URLByAppendingPathComponent:@"index.html" isDirectory:NO];
+    
+    //    NSError* error = nil;
+    //    NSString* indexHTML = [NSString stringWithContentsOfURL:indexHTMLURL encoding:NSUTF8StringEncoding error:&error];
+    //
+    //    NSLog(@"Actual HTML is %@, error is %@", indexHTML, error);
+    
+    return indexHTMLURL;
+}
+
+- (void) viewDidLoad {
+    self.DTCWebView.scrollView.scrollEnabled = NO;
+    self.DTCWebView.scrollView.bounces = NO;
+}
+
 @end
