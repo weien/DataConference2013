@@ -20,11 +20,6 @@
 
 //http://stationinthemetro.com/2012/02/23/calling-methods-from-links-in-a-uiwebview
 - (void) setUpPage {
-    //next two lines just for test purposes
-//    [self.DTCWebView setOpaque:NO];
-//    [self.DTCWebView setBackgroundColor:[UIColor grayColor]];
-    
-
 //    NSString* indexHTML = [NSString stringWithContentsOfURL:indexHTMLURL encoding:NSUTF8StringEncoding error:nil]; //the actual HTML
     
     [self.DTCWebView loadRequest:[NSURLRequest requestWithURL:[self initialSiteLocation]]];
@@ -46,26 +41,13 @@
         [self.syncBar setTextColor:[UIColor whiteColor]];
         [self.syncBar setFont:[UIFont systemFontOfSize:8]];
         
-//        self.syncBar.alpha = 0.0;
         [self.view addSubview:self.syncBar];
     }
-    
     
     [UIView beginAnimations:@"showSyncBar" context:nil];
     [UIView setAnimationDuration:0.3];
     [self.syncBar setFrame:CGRectMake(0, 0, self.view.frame.size.width, 10.0f)];
     [UIView commitAnimations];
-    
-//    if (self.syncBar.alpha == 0.0) {
-//        [UIView animateWithDuration:1.0 animations:^{
-//            self.syncBar.alpha = 1.0;
-//        }];
-//    }
-//    else {
-//        [UIView animateWithDuration:1.0 animations:^{
-//            self.syncBar.alpha = 0.0;
-//        }];
-//    }
 }
 
 //http://stackoverflow.com/a/10198138/2284713 and http://stackoverflow.com/a/4442594/2284713
