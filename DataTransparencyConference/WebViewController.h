@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface WebViewController : UIViewController
-@property (strong, nonatomic) IBOutlet UIWebView *externalWebView;
+@property (strong, nonatomic) IBOutlet UIWebView *externalLinkViewer;
 @property (strong, nonatomic) NSURL* urlToDisplay;
 - (IBAction)openPageInBrowser:(id)sender;
 
