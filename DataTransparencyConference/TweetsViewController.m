@@ -14,9 +14,4 @@
 
 @implementation TweetsViewController
 
-- (NSString*) initialHTMLString {
-    NSString *htmlString = @"<!DOCTYPE HTML><html><body><p><a href=\"DTCScheme://linkIntercept\">Tweets!</a></p><p><a href=\"DTCScheme://linkInterceptWithArgument#arg\">Here, have an argument!</a></p></body></html>";
-    return htmlString;
-}
-
 @end

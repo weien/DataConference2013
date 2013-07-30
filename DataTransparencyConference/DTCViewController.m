@@ -30,11 +30,6 @@
     [self.DTCWebView loadRequest:[NSURLRequest requestWithURL:[self initialSiteLocation]]];
 }
 
-//- (NSString*) initialHTMLString {
-//    NSString *htmlString = @"<!DOCTYPE HTML><html><body><p><a href=\"DTCScheme://linkIntercept\">Generic!</a></p><p><a href=\"DTCScheme://linkInterceptWithArgument#arg\">Here, have an argument!</a></p></body></html>";
-//    return htmlString;
-//}
-
 - (NSURL*) initialSiteLocation {
     NSURL* siteURL = [[[NSBundle mainBundle] bundleURL] URLByAppendingPathComponent:@"_site" isDirectory:YES];
     NSURL* indexHTMLURL = [siteURL URLByAppendingPathComponent:@"index.html" isDirectory:NO];
