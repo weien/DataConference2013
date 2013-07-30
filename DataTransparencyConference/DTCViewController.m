@@ -29,10 +29,7 @@
     return indexHTMLURL;
 }
 
-- (IBAction) addCustomSyncBar {
-//    int *x = NULL;
-//    *x = 42; //to test crashes
-    
+- (IBAction) addCustomSyncBar {   
     if (!self.syncBar) {
         self.syncBar = [[UILabel alloc] initWithFrame:CGRectMake(0, -10.0f, self.view.frame.size.width, 10.0f)];
         [self.syncBar setBackgroundColor:[UIColor blackColor]];
@@ -44,7 +41,7 @@
         
         [self.view addSubview:self.syncBar];
     }
-    
+
     if (!CGRectIntersectsRect(self.syncBar.frame, self.view.frame)) {
         [UIView beginAnimations:@"showSyncBar" context:nil];
         [UIView setAnimationDuration:0.3];
