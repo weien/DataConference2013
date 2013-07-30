@@ -32,6 +32,9 @@
 }
 
 - (IBAction) addCustomSyncBar {
+//    int *x = NULL;
+//    *x = 42; //to test crashes
+    
     if (!self.syncBar) {
         self.syncBar = [[UILabel alloc] initWithFrame:CGRectMake(0, -10.0f, self.view.frame.size.width, 10.0f)];
         [self.syncBar setBackgroundColor:[UIColor blackColor]];

@@ -1,7 +1,7 @@
 =================NEED=================
 twitter: get from twitter dev site, the actual iframe or whatever (eventually right into Jekyll)
-crashlytics, then testflight
-add crasher
+crashlytics, then testflight //installed, shared with V/Wolf
+add crasher //used crashlytics recommendations for testing. perfect.
 syncing
 add sync bar
 handle URLs out to safari (e.g. bill franks URL)
