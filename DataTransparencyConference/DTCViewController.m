@@ -7,6 +7,7 @@
 //
 
 #import "DTCViewController.h"
+#import "WebViewController.h"
 
 @interface DTCViewController () <UIWebViewDelegate>
 @property (strong, nonatomic) UILabel* syncBar;
@@ -67,17 +68,27 @@
         //[self performSegueWithIdentifier:@"pushNextWebView" sender:self];
         //maybe return something?
     }
-//    else if ([request.URL.scheme isEqualToString:@"http"] || [request.URL.scheme isEqualToString:@"https"]) {
-//        [[UIApplication sharedApplication] openURL:request.URL];
-//        return NO;
-//    }
+    else if ([request.URL.scheme isEqualToString:@"http"] ||
+            [request.URL.scheme isEqualToString:@"https"]) {
+        if ([request.URL.absoluteString isEqualToString:@"https://twitter.com/i/jot"]) {
+            NSLog(@"Displaying Twitter widget. Bit of a gross hack.");
+            return NO;
+        }
+        self.urlToDisplay = request.URL;
+        [self performSegueWithIdentifier:@"handleExternalLink" sender:self];
+        return NO;
+    }
     return YES;
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"pushNextWebView"]) {
         DTCViewController* dtcvc = (DTCViewController*)segue.destinationViewController;
-        [dtcvc setUrlToDisplay:nil];
+        [dtcvc setUrlToDisplay:self.urlToDisplay];
+    }
+    if ([segue.identifier isEqualToString:@"handleExternalLink"]) {
+        WebViewController* wvc = (WebViewController*) segue.destinationViewController;
+        [wvc setUrlToDisplay:self.urlToDisplay];
     }
 }
 
