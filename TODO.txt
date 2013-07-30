@@ -6,6 +6,9 @@ syncing
 add sync bar
 handle URLs out to safari (e.g. bill franks URL) //got simple version, can still improve by opening in webview
 
+just opening http/https differently is tricky due to twitter -- could hack it (twitter widget does troublesome redirects)
+sizing for twitter widget. can do conditionally?
+
 =================NICE=================
 Tweeting capabilities
 Tweet: Prefill with current session
