@@ -1,13 +1,8 @@
 =================NEED=================
-twitter: get from twitter dev site, the actual iframe or whatever (eventually right into Jekyll)
-crashlytics, then testflight //installed, shared with V/Wolf
-add crasher //used crashlytics recommendations for testing. perfect.
+clean up twitter widget
 syncing
-add sync bar
-handle URLs out to safari (e.g. bill franks URL) //got simple version, can still improve by opening in webview
-
-just opening http/https differently is tricky due to twitter -- could hack it (twitter widget does troublesome redirects)
-sizing for twitter widget. can do conditionally?
+fix autorotation (see code for WebViewController) -- allow horizontal only for WebViewController
+give WebViewController a better name?
 
 =================NICE=================
 Tweeting capabilities
@@ -15,7 +10,13 @@ Tweet: Prefill with current session
 Attendee networking
 
 =================DONE=================
-
+add sync bar
+twitter: get from twitter dev site, the actual iframe or whatever (eventually right into Jekyll folder)
+crashlytics, then testflight //installed, shared with V/Wolf
+add crasher //used crashlytics recommendations for testing. perfect.
+handle URLs out to safari (e.g. bill franks URL) //got simple version, can still improve by opening in webview
+just opening http/https differently is tricky due to twitter -- could hack it (twitter widget does troublesome redirects)
+sizing for twitter widget. can do conditionally?
 
 
 
