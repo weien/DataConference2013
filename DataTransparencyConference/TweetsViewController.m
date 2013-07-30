@@ -28,7 +28,7 @@
 - (void) viewDidLoad {
     [super viewDidLoad];
     //self.DTCWebView.scrollView.scrollEnabled = NO;
-    //self.DTCWebView.scrollView.bounces = NO;
+    self.DTCWebView.scrollView.bounces = NO;
 }
 
 @end
