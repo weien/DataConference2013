@@ -45,11 +45,20 @@
         [self.view addSubview:self.syncBar];
     }
     
-    [UIView beginAnimations:@"showSyncBar" context:nil];
-    [UIView setAnimationDuration:0.3];
-    [self.syncBar setFrame:CGRectMake(0, 0, self.view.frame.size.width, 10.0f)];
-    //move the UIWebView as well? see how it looks
-    [UIView commitAnimations];
+    if (!CGRectIntersectsRect(self.syncBar.frame, self.view.frame)) {
+        [UIView beginAnimations:@"showSyncBar" context:nil];
+        [UIView setAnimationDuration:0.3];
+        [self.syncBar setFrame:CGRectMake(0, 0, self.view.frame.size.width, 10.0f)];
+        [self.DTCWebView setFrame:CGRectMake(0, 10.0f, self.view.frame.size.width, self.view.frame.size.height-10)];
+        [UIView commitAnimations];
+    }
+    else {
+        [UIView beginAnimations:@"hideSyncBar" context:nil];
+        [UIView setAnimationDuration:0.3];
+        [self.syncBar setFrame:CGRectMake(0, -10.0f, self.view.frame.size.width, 10.0f)];
+        [self.DTCWebView setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+        [UIView commitAnimations];
+    }
 }
 
 - (BOOL) webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
