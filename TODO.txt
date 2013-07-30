@@ -1,1 +1,22 @@
-Q: Are we loading URLs with internal scheme? what are we passing from uiwebview to uiwebview?
+=================NEED=================
+twitter: get from twitter dev site, the actual iframe or whatever (eventually right into Jekyll)
+crashlytics, then testflight
+add crasher
+syncing
+add sync bar
+
+=================NICE=================
+Tweeting capabilities
+Tweet: Prefill with current session
+Attendee networking
+
+=================DONE=================
+
+
+
+
+
+
+
+
+
