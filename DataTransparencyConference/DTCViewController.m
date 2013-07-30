@@ -17,8 +17,6 @@
 @synthesize urlToDisplay = _urlToDisplay;
 @synthesize syncBar = _syncBar;
 
-
-//http://stationinthemetro.com/2012/02/23/calling-methods-from-links-in-a-uiwebview
 - (void) setUpPage {
 //    NSString* indexHTML = [NSString stringWithContentsOfURL:indexHTMLURL encoding:NSUTF8StringEncoding error:nil]; //the actual HTML
     
@@ -54,7 +52,6 @@
     [UIView commitAnimations];
 }
 
-//http://stackoverflow.com/a/10198138/2284713 and http://stackoverflow.com/a/4442594/2284713
 - (BOOL) webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
 
     NSLog(@"Request URL is %@, scheme is %@, last path component is %@", request.URL, request.URL.scheme, request.URL.lastPathComponent);
@@ -63,6 +60,9 @@
         NSLog(@"Here's where we segue to next webview");
         //[self performSegueWithIdentifier:@"pushNextWebView" sender:self];
         //maybe return something?
+    }
+    else if ([request.URL.scheme isEqualToString:@"http"] || [request.URL.scheme isEqualToString:@"https"]) {
+        [[UIApplication sharedApplication] openURL:request.URL];
     }
     return YES;
 }
