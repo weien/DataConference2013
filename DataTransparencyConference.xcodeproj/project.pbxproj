@@ -123,10 +123,10 @@
 				64F27FF517A366E800C3272A /* AppDelegate.h */,
 				64F27FF617A366E800C3272A /* AppDelegate.m */,
 				64F27FFE17A366E800C3272A /* MainStoryboard.storyboard */,
-				64F1662317A8560E0098A02B /* WebViewController.h */,
-				64F1662417A8560E0098A02B /* WebViewController.m */,
 				64F2800117A366E800C3272A /* DTCViewController.h */,
 				64F2800217A366E800C3272A /* DTCViewController.m */,
+				64F1662317A8560E0098A02B /* WebViewController.h */,
+				64F1662417A8560E0098A02B /* WebViewController.m */,
 				64F27FED17A366E800C3272A /* Supporting Files */,
 			);
 			path = DataTransparencyConference;

@@ -10,7 +10,8 @@
 
 @interface DTCViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UIWebView* DTCWebView;
-@property (strong, nonatomic) NSURL* urlToDisplay;
+@property (strong, nonatomic) NSURL* urlToPassForward;
+@property (strong, nonatomic) NSURL* urlToDisplayHere;
 
 - (IBAction) addCustomSyncBar;
 

@@ -15,13 +15,18 @@
 
 @implementation DTCViewController
 @synthesize DTCWebView = _DTCWebView;
-@synthesize urlToDisplay = _urlToDisplay;
+@synthesize urlToPassForward = _urlToPassForward;
+@synthesize urlToDisplayHere = _urlToDisplayHere;
 @synthesize syncBar = _syncBar;
 
 - (void) setUpPage {
 //    NSString* indexHTML = [NSString stringWithContentsOfURL:indexHTMLURL encoding:NSUTF8StringEncoding error:nil]; //the actual HTML
-    
-    [self.DTCWebView loadRequest:[NSURLRequest requestWithURL:[self initialSiteLocation]]];
+    if (self.urlToDisplayHere) {
+        [self.DTCWebView loadRequest:[NSURLRequest requestWithURL:self.urlToDisplayHere]];
+    }
+    else {
+        [self.DTCWebView loadRequest:[NSURLRequest requestWithURL:[self initialSiteLocation]]];
+    }
 }
 
 - (NSURL*) initialSiteLocation {
@@ -33,7 +38,7 @@
 - (IBAction) addCustomSyncBar {   
     if (!self.syncBar) {
         self.syncBar = [[UILabel alloc] initWithFrame:CGRectMake(0, -10.0f, self.view.frame.size.width, 10.0f)];
-        [self.syncBar setBackgroundColor:[UIColor blackColor]];
+        [self.syncBar setBackgroundColor:[UIColor grayColor]];
         
         [self.syncBar setText:@"Syncing..."];
         [self.syncBar setTextAlignment:NSTextAlignmentCenter];
@@ -60,21 +65,22 @@
 }
 
 - (BOOL) webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
-
+    
     NSLog(@"Request URL is %@, scheme is %@, last path component is %@", request.URL, request.URL.scheme, request.URL.lastPathComponent);
     
     if ([request.URL.scheme isEqualToString: @"file"] && ![request.URL.lastPathComponent isEqualToString:@"index.html"]) {
         NSLog(@"Here's where we segue to next webview");
-        //[self performSegueWithIdentifier:@"pushNextWebView" sender:self];
-        //maybe return something?
+        self.urlToPassForward = request.URL;
+        [self performSegueWithIdentifier:@"pushNextWebView" sender:self];
+        //maybe return NO?
     }
     else if ([request.URL.scheme isEqualToString:@"http"] ||
-            [request.URL.scheme isEqualToString:@"https"]) {
+             [request.URL.scheme isEqualToString:@"https"]) {
         if ([request.URL.absoluteString isEqualToString:@"https://twitter.com/i/jot"]) {
             NSLog(@"Displaying Twitter widget. Bit of a gross hack.");
             return NO;
         }
-        self.urlToDisplay = request.URL;
+        self.urlToPassForward = request.URL;
         [self performSegueWithIdentifier:@"handleExternalLink" sender:self];
         return NO;
     }
@@ -84,11 +90,11 @@
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"pushNextWebView"]) {
         DTCViewController* dtcvc = (DTCViewController*)segue.destinationViewController;
-        [dtcvc setUrlToDisplay:self.urlToDisplay];
+        [dtcvc setUrlToDisplayHere:self.urlToPassForward];
     }
     if ([segue.identifier isEqualToString:@"handleExternalLink"]) {
         WebViewController* wvc = (WebViewController*) segue.destinationViewController;
-        [wvc setUrlToDisplay:self.urlToDisplay];
+        [wvc setUrlToDisplay:self.urlToPassForward];
     }
 }
 
