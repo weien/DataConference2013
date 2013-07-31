@@ -1,10 +1,12 @@
 =================NEED=================
-clean up twitter widget
-syncing
+clean up twitter widget (V's recommendations?)
+syncing (add method/class)
 fix autorotation (see code for WebViewController) -- allow horizontal only for WebViewController
 give WebViewController a better name?
 add forward/backward buttons on WebViewController?
 improve load of Tweets tab? so it doesn't display "Tweets about #opendata" link first?
+
+get Apple Dev account so can set up/manage testflights properly
 
 =================NICE=================
 Tweeting capabilities
@@ -15,7 +17,7 @@ Attendee networking
 add sync bar
 twitter: get from twitter dev site, the actual iframe or whatever (eventually right into Jekyll folder)
 crashlytics, then testflight //installed, shared with V/Wolf
-add crasher //used crashlytics recommendations for testing. perfect.
+add crasher //used crashlytics recommendations for simulating crashes. perfect.
 handle URLs out to safari (e.g. bill franks URL) //got simple version, can still improve by opening in webview
 just opening http/https differently is tricky due to twitter -- could hack it (twitter widget does troublesome redirects)
 sizing for twitter widget. can do conditionally?
