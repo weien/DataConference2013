@@ -1,12 +1,14 @@
 =================NEED=================
 clean up twitter widget (V's recommendations?)
 syncing (add method/class)
-fix autorotation (see code for WebViewController) -- allow horizontal only for WebViewController
+
 give WebViewController a better name?
 add forward/backward buttons on WebViewController?
 improve load of Tweets tab? so it doesn't display "Tweets about #opendata" link first?
 
 get Apple Dev account so can set up/manage testflights properly
+
+minor bug: weird autorotation issue if switching tabs while in landscape (allowed in WebViewCntrler) -- no easy fix, maybe don't allow rotation at all
 
 =================NICE=================
 Tweeting capabilities
@@ -21,6 +23,7 @@ add crasher //used crashlytics recommendations for simulating crashes. perfect.
 handle URLs out to safari (e.g. bill franks URL) //got simple version, can still improve by opening in webview
 just opening http/https differently is tricky due to twitter -- could hack it (twitter widget does troublesome redirects)
 sizing for twitter widget. can do conditionally?
+fix autorotation (see code for WebViewController) -- allow horizontal only for WebViewController
 
 
 

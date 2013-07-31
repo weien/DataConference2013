@@ -46,6 +46,18 @@
     [[UIApplication sharedApplication] openURL:self.externalLinkViewer.request.URL];
 }
 
+- (IBAction)goBack:(id)sender {
+    if ([self.externalLinkViewer canGoBack]) {
+        [self.externalLinkViewer goBack];
+    }
+}
+
+- (IBAction)goForward:(id)sender {
+    if ([self.externalLinkViewer canGoForward]) {
+        [self.externalLinkViewer goForward];
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

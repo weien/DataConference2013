@@ -12,5 +12,7 @@
 @property (strong, nonatomic) IBOutlet UIWebView *externalLinkViewer;
 @property (strong, nonatomic) NSURL* urlToDisplay;
 - (IBAction)openPageInBrowser:(id)sender;
+- (IBAction)goBack:(id)sender;
+- (IBAction)goForward:(id)sender;
 
 @end
