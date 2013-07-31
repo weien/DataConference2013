@@ -1,5 +1,5 @@
 =================NEED=================
-clean up twitter widget (V's recommendations?)
+clean up twitter widget (V's recommendations?) https://dev.twitter.com/docs/embedded-timelines#customization
 syncing (add method/class)
 
 give WebViewController a better name?
