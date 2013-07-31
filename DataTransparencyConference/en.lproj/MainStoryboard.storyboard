@@ -308,20 +308,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" scalesPageToFit="YES" id="oK4-qq-RZ0">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="411"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Krw-yk-rg5">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackTranslucent" id="Krw-yk-rg5">
                                 <rect key="frame" x="0.0" y="411" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem style="plain" systemItem="reply" id="HiC-RL-onF">
+                                    <barButtonItem image="UIButtonBarArrowLeft.png" style="plain" id="HiC-RL-onF">
                                         <connections>
                                             <action selector="goBack:" destination="Pcp-ez-5Gz" id="FPQ-1y-7MN"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="play" id="g8x-3t-6MJ">
+                                    <barButtonItem image="UIButtonBarArrowRight.png" style="plain" id="g8x-3t-6MJ">
                                         <connections>
                                             <action selector="goForward:" destination="Pcp-ez-5Gz" id="ueU-aZ-3UV"/>
                                         </connections>
@@ -348,6 +348,10 @@
             <point key="canvasLocation" x="3802" y="104"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="UIButtonBarArrowLeft.png" width="16" height="19"/>
+        <image name="UIButtonBarArrowRight.png" width="16" height="19"/>
+    </resources>
     <classes>
         <class className="CustomNavigationViewController" superclassName="UINavigationController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomNavigationViewController.h"/>
