@@ -67,19 +67,23 @@
 - (BOOL) webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     
     NSLog(@"Request URL is %@, scheme is %@, last path component is %@", request.URL, request.URL.scheme, request.URL.lastPathComponent);
-    
-    if ([request.URL.scheme isEqualToString: @"file"] && ![request.URL.lastPathComponent isEqualToString:@"index.html"]) {
+    if ([request.URL.lastPathComponent isEqualToString:@"index.html"] ||
+        [request.URL.lastPathComponent isEqualToString:@"twitter_loading.html"]) {
+        return YES;
+    }
+    else if ([request.URL.scheme isEqualToString: @"file"]) {
         NSLog(@"Here's where we segue to next webview");
         self.urlToPassForward = request.URL;
         [self performSegueWithIdentifier:@"pushNextWebView" sender:self];
-        //maybe return NO?
+        return NO; //most likely
+    }
+    else if ([request.URL.absoluteString isEqualToString:@"https://twitter.com/i/jot"] ||
+        [request.URL.absoluteString isEqualToString:@"https://platform.twitter.com/jot.html"]) {
+        NSLog(@"Displaying Twitter jot page.");
+        return YES;
     }
     else if ([request.URL.scheme isEqualToString:@"http"] ||
              [request.URL.scheme isEqualToString:@"https"]) {
-        if ([request.URL.absoluteString isEqualToString:@"https://twitter.com/i/jot"]) {
-            NSLog(@"Displaying Twitter widget. Bit of a gross hack.");
-            return NO;
-        }
         self.urlToPassForward = request.URL;
         [self performSegueWithIdentifier:@"handleExternalLink" sender:self];
         return NO;
