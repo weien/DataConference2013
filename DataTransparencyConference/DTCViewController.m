@@ -106,9 +106,6 @@
     [super viewDidLoad];
     self.DTCWebView.delegate = self;
     [self setUpPage];
-
-//    NSURLRequest *request = [NSURLRequest requestWithURL:self.urlToDisplay];
-//    [self.DTCWebView loadRequest:request];
 }
 
 #pragma mark - autorotation
