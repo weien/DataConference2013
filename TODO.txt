@@ -3,6 +3,8 @@ clean up twitter widget
 syncing
 fix autorotation (see code for WebViewController) -- allow horizontal only for WebViewController
 give WebViewController a better name?
+add forward/backward buttons on WebViewController?
+improve load of Tweets tab? so it doesn't display "Tweets about #opendata" link first?
 
 =================NICE=================
 Tweeting capabilities
