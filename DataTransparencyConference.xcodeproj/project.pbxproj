@@ -19,6 +19,8 @@
 		64F1663517A985400098A02B /* UIButtonBarArrowLeft@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64F1663117A985400098A02B /* UIButtonBarArrowLeft@2x.png */; };
 		64F1663617A985400098A02B /* UIButtonBarArrowRight.png in Resources */ = {isa = PBXBuildFile; fileRef = 64F1663217A985400098A02B /* UIButtonBarArrowRight.png */; };
 		64F1663717A985400098A02B /* UIButtonBarArrowRight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64F1663317A985400098A02B /* UIButtonBarArrowRight@2x.png */; };
+		64F1664117A9C3790098A02B /* twitter-bird-light-bgs.png in Resources */ = {isa = PBXBuildFile; fileRef = 64F1663F17A9C3790098A02B /* twitter-bird-light-bgs.png */; };
+		64F1664217A9C3790098A02B /* twitter-bird-light-bgs@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64F1664017A9C3790098A02B /* twitter-bird-light-bgs@2x.png */; };
 		64F27FE717A366E800C3272A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64F27FE617A366E800C3272A /* UIKit.framework */; };
 		64F27FE917A366E800C3272A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64F27FE817A366E800C3272A /* Foundation.framework */; };
 		64F27FEB17A366E800C3272A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64F27FEA17A366E800C3272A /* CoreGraphics.framework */; };
@@ -53,6 +55,8 @@
 		64F1663117A985400098A02B /* UIButtonBarArrowLeft@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UIButtonBarArrowLeft@2x.png"; sourceTree = "<group>"; };
 		64F1663217A985400098A02B /* UIButtonBarArrowRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UIButtonBarArrowRight.png; sourceTree = "<group>"; };
 		64F1663317A985400098A02B /* UIButtonBarArrowRight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UIButtonBarArrowRight@2x.png"; sourceTree = "<group>"; };
+		64F1663F17A9C3790098A02B /* twitter-bird-light-bgs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter-bird-light-bgs.png"; sourceTree = "<group>"; };
+		64F1664017A9C3790098A02B /* twitter-bird-light-bgs@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter-bird-light-bgs@2x.png"; sourceTree = "<group>"; };
 		64F27FE317A366E800C3272A /* DataTransparencyConference.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataTransparencyConference.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64F27FE617A366E800C3272A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		64F27FE817A366E800C3272A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -121,6 +125,8 @@
 				64F1663117A985400098A02B /* UIButtonBarArrowLeft@2x.png */,
 				64F1663217A985400098A02B /* UIButtonBarArrowRight.png */,
 				64F1663317A985400098A02B /* UIButtonBarArrowRight@2x.png */,
+				64F1663F17A9C3790098A02B /* twitter-bird-light-bgs.png */,
+				64F1664017A9C3790098A02B /* twitter-bird-light-bgs@2x.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -246,6 +252,8 @@
 				64F1663517A985400098A02B /* UIButtonBarArrowLeft@2x.png in Resources */,
 				64F1663617A985400098A02B /* UIButtonBarArrowRight.png in Resources */,
 				64F1663717A985400098A02B /* UIButtonBarArrowRight@2x.png in Resources */,
+				64F1664117A9C3790098A02B /* twitter-bird-light-bgs.png in Resources */,
+				64F1664217A9C3790098A02B /* twitter-bird-light-bgs@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

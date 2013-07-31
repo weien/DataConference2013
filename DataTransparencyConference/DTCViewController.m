@@ -77,9 +77,11 @@
         [self performSegueWithIdentifier:@"pushNextWebView" sender:self];
         return NO; //most likely
     }
+//    else if ([request.URL.absoluteString isEqualToString:@"about:blank"]) {
+//        return NO;
+//    }
     else if ([request.URL.absoluteString isEqualToString:@"https://twitter.com/i/jot"] ||
         [request.URL.absoluteString isEqualToString:@"https://platform.twitter.com/jot.html"]) {
-        NSLog(@"Displaying Twitter jot page.");
         return YES;
     }
     else if ([request.URL.scheme isEqualToString:@"http"] ||

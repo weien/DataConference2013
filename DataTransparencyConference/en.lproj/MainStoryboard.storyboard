@@ -143,7 +143,7 @@
         <scene sceneID="2Pg-si-dzg">
             <objects>
                 <navigationController id="RH0-C3-qxX" customClass="CustomNavigationViewController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Tweets" id="4Jb-UF-CKr"/>
+                    <tabBarItem key="tabBarItem" title="Tweets" image="twitter-bird-light-bgs.png" id="4Jb-UF-CKr"/>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="6uN-bU-vQd">
@@ -176,7 +176,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="ssT-qa-v2L">
-                        <barButtonItem key="rightBarButtonItem" title="Test Animation" id="TTk-nv-VP0">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="refresh" id="TTk-nv-VP0">
                             <connections>
                                 <action selector="addCustomSyncBar" destination="2wH-iM-Uhq" id="g8j-Ly-04C"/>
                             </connections>
@@ -351,6 +351,7 @@
     <resources>
         <image name="UIButtonBarArrowLeft.png" width="16" height="19"/>
         <image name="UIButtonBarArrowRight.png" width="16" height="19"/>
+        <image name="twitter-bird-light-bgs.png" width="30" height="24"/>
     </resources>
     <classes>
         <class className="CustomNavigationViewController" superclassName="UINavigationController">
@@ -394,9 +395,9 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="sQX-af-1H9"/>
         <segue reference="6ip-WE-ubf"/>
-        <segue reference="Ts4-cl-7Ct"/>
+        <segue reference="sQX-af-1H9"/>
+        <segue reference="ei3-2A-QwE"/>
         <segue reference="Bgm-v7-YOb"/>
     </inferredMetricsTieBreakers>
 </document>
