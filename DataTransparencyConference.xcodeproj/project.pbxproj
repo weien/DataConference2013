@@ -13,6 +13,12 @@
 		64F1661D17A6DEF90098A02B /* TweetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F1661C17A6DEF90098A02B /* TweetsViewController.m */; };
 		64F1662217A806C30098A02B /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64F1662117A806C30098A02B /* Crashlytics.framework */; };
 		64F1662517A8560E0098A02B /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F1662417A8560E0098A02B /* WebViewController.m */; };
+		64F1662D17A95C750098A02B /* CustomTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F1662A17A95C750098A02B /* CustomTabBarController.m */; };
+		64F1662E17A95C750098A02B /* CustomNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F1662C17A95C750098A02B /* CustomNavigationViewController.m */; };
+		64F1663417A985400098A02B /* UIButtonBarArrowLeft.png in Resources */ = {isa = PBXBuildFile; fileRef = 64F1663017A985400098A02B /* UIButtonBarArrowLeft.png */; };
+		64F1663517A985400098A02B /* UIButtonBarArrowLeft@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64F1663117A985400098A02B /* UIButtonBarArrowLeft@2x.png */; };
+		64F1663617A985400098A02B /* UIButtonBarArrowRight.png in Resources */ = {isa = PBXBuildFile; fileRef = 64F1663217A985400098A02B /* UIButtonBarArrowRight.png */; };
+		64F1663717A985400098A02B /* UIButtonBarArrowRight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64F1663317A985400098A02B /* UIButtonBarArrowRight@2x.png */; };
 		64F27FE717A366E800C3272A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64F27FE617A366E800C3272A /* UIKit.framework */; };
 		64F27FE917A366E800C3272A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64F27FE817A366E800C3272A /* Foundation.framework */; };
 		64F27FEB17A366E800C3272A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64F27FEA17A366E800C3272A /* CoreGraphics.framework */; };
@@ -39,6 +45,14 @@
 		64F1662117A806C30098A02B /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		64F1662317A8560E0098A02B /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		64F1662417A8560E0098A02B /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		64F1662917A95C750098A02B /* CustomTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTabBarController.h; sourceTree = "<group>"; };
+		64F1662A17A95C750098A02B /* CustomTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTabBarController.m; sourceTree = "<group>"; };
+		64F1662B17A95C750098A02B /* CustomNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavigationViewController.h; sourceTree = "<group>"; };
+		64F1662C17A95C750098A02B /* CustomNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationViewController.m; sourceTree = "<group>"; };
+		64F1663017A985400098A02B /* UIButtonBarArrowLeft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UIButtonBarArrowLeft.png; sourceTree = "<group>"; };
+		64F1663117A985400098A02B /* UIButtonBarArrowLeft@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UIButtonBarArrowLeft@2x.png"; sourceTree = "<group>"; };
+		64F1663217A985400098A02B /* UIButtonBarArrowRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UIButtonBarArrowRight.png; sourceTree = "<group>"; };
+		64F1663317A985400098A02B /* UIButtonBarArrowRight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UIButtonBarArrowRight@2x.png"; sourceTree = "<group>"; };
 		64F27FE317A366E800C3272A /* DataTransparencyConference.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataTransparencyConference.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64F27FE617A366E800C3272A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		64F27FE817A366E800C3272A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -87,6 +101,30 @@
 			name = "Low Level";
 			sourceTree = "<group>";
 		};
+		64F1662817A95C560098A02B /* High Level */ = {
+			isa = PBXGroup;
+			children = (
+				64F27FF517A366E800C3272A /* AppDelegate.h */,
+				64F27FF617A366E800C3272A /* AppDelegate.m */,
+				64F1662917A95C750098A02B /* CustomTabBarController.h */,
+				64F1662A17A95C750098A02B /* CustomTabBarController.m */,
+				64F1662B17A95C750098A02B /* CustomNavigationViewController.h */,
+				64F1662C17A95C750098A02B /* CustomNavigationViewController.m */,
+			);
+			name = "High Level";
+			sourceTree = "<group>";
+		};
+		64F1662F17A9852C0098A02B /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				64F1663017A985400098A02B /* UIButtonBarArrowLeft.png */,
+				64F1663117A985400098A02B /* UIButtonBarArrowLeft@2x.png */,
+				64F1663217A985400098A02B /* UIButtonBarArrowRight.png */,
+				64F1663317A985400098A02B /* UIButtonBarArrowRight@2x.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		64F27FDA17A366E700C3272A = {
 			isa = PBXGroup;
 			children = (
@@ -119,9 +157,9 @@
 		64F27FEC17A366E800C3272A /* DataTransparencyConference */ = {
 			isa = PBXGroup;
 			children = (
+				64F1662F17A9852C0098A02B /* Images */,
+				64F1662817A95C560098A02B /* High Level */,
 				64F1661117A6DE590098A02B /* Low Level */,
-				64F27FF517A366E800C3272A /* AppDelegate.h */,
-				64F27FF617A366E800C3272A /* AppDelegate.m */,
 				64F27FFE17A366E800C3272A /* MainStoryboard.storyboard */,
 				64F2800117A366E800C3272A /* DTCViewController.h */,
 				64F2800217A366E800C3272A /* DTCViewController.m */,
@@ -204,6 +242,10 @@
 				64F27FFB17A366E800C3272A /* Default@2x.png in Resources */,
 				64F27FFD17A366E800C3272A /* Default-568h@2x.png in Resources */,
 				64F2800017A366E800C3272A /* MainStoryboard.storyboard in Resources */,
+				64F1663417A985400098A02B /* UIButtonBarArrowLeft.png in Resources */,
+				64F1663517A985400098A02B /* UIButtonBarArrowLeft@2x.png in Resources */,
+				64F1663617A985400098A02B /* UIButtonBarArrowRight.png in Resources */,
+				64F1663717A985400098A02B /* UIButtonBarArrowRight@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +293,8 @@
 				64F1661A17A6DEF00098A02B /* SpeakersViewController.m in Sources */,
 				64F1661D17A6DEF90098A02B /* TweetsViewController.m in Sources */,
 				64F1662517A8560E0098A02B /* WebViewController.m in Sources */,
+				64F1662D17A95C750098A02B /* CustomTabBarController.m in Sources */,
+				64F1662E17A95C750098A02B /* CustomNavigationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

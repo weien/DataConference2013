@@ -17,6 +17,10 @@
 - (NSURL*) initialSiteLocation {
     NSURL* siteURL = [[[NSBundle mainBundle] bundleURL] URLByAppendingPathComponent:@"_site/tweets" isDirectory:YES];
     NSURL* indexHTMLURL = [siteURL URLByAppendingPathComponent:@"index.html" isDirectory:NO];
+
+    NSURL* twitterLoadingURL = [siteURL URLByAppendingPathComponent:@"twitter_loading.html" isDirectory:NO];
+    [self.DTCWebView loadRequest:[NSURLRequest requestWithURL:twitterLoadingURL]];
+    //HOW do I display this until the https://platform.twitter.com/jot.html is ready?
     
 //        NSError* error = nil;
 //        NSString* indexHTML = [NSString stringWithContentsOfURL:indexHTMLURL encoding:NSUTF8StringEncoding error:&error];

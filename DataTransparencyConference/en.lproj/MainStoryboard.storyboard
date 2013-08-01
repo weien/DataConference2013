@@ -31,10 +31,10 @@
             </objects>
             <point key="canvasLocation" x="2191" y="596"/>
         </scene>
-        <!--Navigation Controller - News-->
+        <!--Custom Navigation View Controller - News-->
         <scene sceneID="1U0-as-u2D">
             <objects>
-                <navigationController id="Usk-Es-lhK" sceneMemberID="viewController">
+                <navigationController id="Usk-Es-lhK" customClass="CustomNavigationViewController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="News" id="wLb-iJ-WKg"/>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
@@ -51,10 +51,10 @@
             </objects>
             <point key="canvasLocation" x="1508" y="-1053"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Custom Tab Bar Controller-->
         <scene sceneID="tkK-WA-cqv">
             <objects>
-                <tabBarController id="zvV-jb-jsp" sceneMemberID="viewController">
+                <tabBarController id="zvV-jb-jsp" customClass="CustomTabBarController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="uUy-tW-uQO">
@@ -99,10 +99,10 @@
             </objects>
             <point key="canvasLocation" x="2661" y="596"/>
         </scene>
-        <!--Navigation Controller - Sessions-->
+        <!--Custom Navigation View Controller - Sessions-->
         <scene sceneID="MoB-iY-DQn">
             <objects>
-                <navigationController id="dHG-rR-kt3" sceneMemberID="viewController">
+                <navigationController id="dHG-rR-kt3" customClass="CustomNavigationViewController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Sessions" id="FQf-z3-5sT"/>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
@@ -119,10 +119,10 @@
             </objects>
             <point key="canvasLocation" x="1496" y="-302"/>
         </scene>
-        <!--Navigation Controller - Speakers-->
+        <!--Custom Navigation View Controller - Speakers-->
         <scene sceneID="Xfe-mC-TNI">
             <objects>
-                <navigationController id="Afv-db-0bp" sceneMemberID="viewController">
+                <navigationController id="Afv-db-0bp" customClass="CustomNavigationViewController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Speakers" id="AJs-LH-loP"/>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
@@ -139,10 +139,10 @@
             </objects>
             <point key="canvasLocation" x="1450" y="386"/>
         </scene>
-        <!--Navigation Controller - Tweets-->
+        <!--Custom Navigation View Controller - Tweets-->
         <scene sceneID="2Pg-si-dzg">
             <objects>
-                <navigationController id="RH0-C3-qxX" sceneMemberID="viewController">
+                <navigationController id="RH0-C3-qxX" customClass="CustomNavigationViewController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Tweets" id="4Jb-UF-CKr"/>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
@@ -303,11 +303,34 @@
         <scene sceneID="zuj-04-1xe">
             <objects>
                 <viewController id="Pcp-ez-5Gz" customClass="WebViewController" sceneMemberID="viewController">
-                    <webView key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" scalesPageToFit="YES" id="Grr-2r-wcv">
+                    <view key="view" contentMode="scaleToFill" id="DC4-Dt-wDf">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" address="YES"/>
-                    </webView>
+                        <subviews>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" id="oK4-qq-RZ0">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackTranslucent" id="Krw-yk-rg5">
+                                <rect key="frame" x="0.0" y="411" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem image="UIButtonBarArrowLeft.png" style="plain" id="HiC-RL-onF">
+                                        <connections>
+                                            <action selector="goBack:" destination="Pcp-ez-5Gz" id="FPQ-1y-7MN"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem image="UIButtonBarArrowRight.png" style="plain" id="g8x-3t-6MJ">
+                                        <connections>
+                                            <action selector="goForward:" destination="Pcp-ez-5Gz" id="ueU-aZ-3UV"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
                     <navigationItem key="navigationItem" id="aSP-xC-cEh">
                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="qni-C7-vrg">
                             <connections>
@@ -317,7 +340,7 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="externalLinkViewer" destination="Grr-2r-wcv" id="Bib-Q8-KH1"/>
+                        <outlet property="externalLinkViewer" destination="oK4-qq-RZ0" id="aQH-iO-VSb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bRW-4k-Eo9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -325,7 +348,17 @@
             <point key="canvasLocation" x="3802" y="104"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="UIButtonBarArrowLeft.png" width="16" height="19"/>
+        <image name="UIButtonBarArrowRight.png" width="16" height="19"/>
+    </resources>
     <classes>
+        <class className="CustomNavigationViewController" superclassName="UINavigationController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomNavigationViewController.h"/>
+        </class>
+        <class className="CustomTabBarController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomTabBarController.h"/>
+        </class>
         <class className="DTCViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DTCViewController.h"/>
             <relationships>
@@ -348,6 +381,8 @@
         <class className="WebViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WebViewController.h"/>
             <relationships>
+                <relationship kind="action" name="goBack:"/>
+                <relationship kind="action" name="goForward:"/>
                 <relationship kind="action" name="openPageInBrowser:"/>
                 <relationship kind="outlet" name="externalLinkViewer" candidateClass="UIWebView"/>
             </relationships>
