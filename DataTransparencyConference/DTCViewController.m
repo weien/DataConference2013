@@ -20,6 +20,10 @@
 @synthesize syncBar = _syncBar;
 
 - (void) setUpPage {
+    //to prevent the dreaded "white flash" http://stackoverflow.com/a/2722801/2284713
+    self.DTCWebView.backgroundColor = [UIColor clearColor];
+    self.DTCWebView.opaque = NO;
+    
 //    NSString* indexHTML = [NSString stringWithContentsOfURL:indexHTMLURL encoding:NSUTF8StringEncoding error:nil]; //the actual HTML
     if (self.urlToDisplayHere) {
         [self.DTCWebView loadRequest:[NSURLRequest requestWithURL:self.urlToDisplayHere]];
@@ -95,6 +99,12 @@
     return YES;
 }
 
+- (void) webViewDidFinishLoad:(UIWebView *)webView {
+    //reset background color to something more compositing-friendly
+    self.DTCWebView.backgroundColor = [UIColor blackColor];
+    self.DTCWebView.opaque = YES;
+}
+
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"pushNextWebView"]) {
         DTCViewController* dtcvc = (DTCViewController*)segue.destinationViewController;
@@ -109,6 +119,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.DTCWebView.delegate = self;
+    
     [self setUpPage];
 }
 

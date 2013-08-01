@@ -1,8 +1,7 @@
 =================NEED=================
-fix white flash (uiwebviews)
 final tab bar icons
-syncing (add method/class)
-color behind UIViews (instead of white)? (ask V)
+asynchronous syncing (add method/class)
+color behind UIViews (currently black)? (ask V)
 twitter view's fit (see tweet box and title in one view)
 possibly make storyboard more efficient, without messing up nav bar titles (only after we have more file:// URLs)
 
@@ -18,7 +17,7 @@ stupid crash bug (when clicking on links in uiwebview that is displaying a pdf, 
 =================NICE=================
 Tweeting capabilities //kind of included with widget
 Tweet: Prefill with current session
-Attendee networking
+Attendee networking (attendee list, detail, add to contacts, mail)
 
 =================DONE=================
 add sync bar
@@ -34,6 +33,7 @@ clean up twitter widget (V's recommendations?) https://dev.twitter.com/docs/embe
 give WebViewController a better name?
 tab bar titles
 basic app icon
+fix white flash (uiwebviews)
 =================WATCH=================
 improve load of Tweets tab? so it doesn't display "Tweets about #opendata" link first? //doesn't seem to be displaying anymore
 

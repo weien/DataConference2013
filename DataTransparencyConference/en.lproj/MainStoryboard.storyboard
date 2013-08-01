@@ -15,10 +15,10 @@
                             <webView contentMode="scaleToFill" id="7Rf-7C-Wgx">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Speakers" id="OJZ-vs-TOH"/>
                     <connections>
@@ -83,10 +83,10 @@
                             <webView contentMode="scaleToFill" id="G9b-DQ-Sz0">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Speakers" id="03Q-QB-dQ8"/>
                     <connections>
@@ -170,10 +170,10 @@
                             <webView contentMode="scaleToFill" id="bUA-jo-zaF">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="#datapolicy2013" id="ssT-qa-v2L">
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="TTk-nv-VP0">
@@ -203,10 +203,10 @@
                             <webView contentMode="scaleToFill" id="roR-dJ-Jep">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="#datapolicy2013" id="uoH-cb-nx4"/>
                     <connections>
@@ -230,10 +230,10 @@
                             <webView contentMode="scaleToFill" id="dau-1S-MYh">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Tweets" id="4TC-gh-xxQ"/>
                     <connections>
@@ -256,10 +256,10 @@
                             <webView contentMode="scaleToFill" id="wa0-6f-7Sz">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Program" id="YcX-x1-1SW"/>
                     <connections>
@@ -283,10 +283,10 @@
                             <webView contentMode="scaleToFill" id="iy9-xS-Nka">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Program" id="t5U-nW-laP"/>
                     <connections>
@@ -310,7 +310,7 @@
                             <webView contentMode="scaleToFill" scalesPageToFit="YES" id="oK4-qq-RZ0">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackTranslucent" id="Krw-yk-rg5">
                                 <rect key="frame" x="0.0" y="460" width="320" height="44"/>
@@ -329,7 +329,7 @@
                                 </items>
                             </toolbar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="aSP-xC-cEh">
                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="qni-C7-vrg">
