@@ -10,7 +10,7 @@ get Apple Dev account so can set up/manage testflights properly
 minor bug: weird autorotation issue if switching tabs while in landscape (allowed in WebViewCntrler) -- no easy fix, maybe don't allow rotation at all
 
 =================NICE=================
-Tweeting capabilities
+Tweeting capabilities //kind of included with widget
 Tweet: Prefill with current session
 Attendee networking
 
