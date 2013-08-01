@@ -1,5 +1,5 @@
 =================NEED=================
-app icon
+fix white flash (uiwebviews)
 final tab bar icons
 syncing (add method/class)
 color behind UIViews (instead of white)? (ask V)
@@ -33,7 +33,7 @@ add forward/backward buttons on WebViewController?
 clean up twitter widget (V's recommendations?) https://dev.twitter.com/docs/embedded-timelines#customization //done by V
 give WebViewController a better name?
 tab bar titles
-
+basic app icon
 =================WATCH=================
 improve load of Tweets tab? so it doesn't display "Tweets about #opendata" link first? //doesn't seem to be displaying anymore
 
