@@ -32,6 +32,8 @@
 - (NSURL*) initialSiteLocation {
     NSURL* siteURL = [[[NSBundle mainBundle] bundleURL] URLByAppendingPathComponent:@"_site/news" isDirectory:YES];
     NSURL* indexHTMLURL = [siteURL URLByAppendingPathComponent:@"index.html" isDirectory:NO];
+    NSLog(@"Something's wrong -- getting superclass index.html");
+    
     return indexHTMLURL;
 }
 
@@ -42,7 +44,7 @@
         
         [self.syncBar setText:@"Syncing..."];
         [self.syncBar setTextAlignment:NSTextAlignmentCenter];
-        [self.syncBar setTextColor:[UIColor whiteColor]];
+        [self.syncBar setTextColor:[UIColor blackColor]];
         [self.syncBar setFont:[UIFont systemFontOfSize:8]];
         
         [self.view addSubview:self.syncBar];
