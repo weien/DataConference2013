@@ -2,6 +2,8 @@
 syncing (add method/class)
 color behind UIViews (instead of white)? (ask V)
 fix twitter view's fit
+tab bar titles
+make storyboard more efficient
 
 get Apple Dev account so can set up/manage testflights properly
 
