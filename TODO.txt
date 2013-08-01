@@ -1,9 +1,10 @@
 =================NEED=================
+app icon
+final tab bar icons
 syncing (add method/class)
 color behind UIViews (instead of white)? (ask V)
-fix twitter view's fit
-tab bar titles
-make storyboard more efficient (only after we have more file:// URLs)
+twitter view's fit (see tweet box and title in one view)
+possibly make storyboard more efficient, without messing up nav bar titles (only after we have more file:// URLs)
 
 get Apple Dev account so can set up/manage testflights properly
 
@@ -31,7 +32,7 @@ fix autorotation (see code for WebViewController) -- allow horizontal only for W
 add forward/backward buttons on WebViewController?
 clean up twitter widget (V's recommendations?) https://dev.twitter.com/docs/embedded-timelines#customization //done by V
 give WebViewController a better name?
-
+tab bar titles
 
 =================WATCH=================
 improve load of Tweets tab? so it doesn't display "Tweets about #opendata" link first? //doesn't seem to be displaying anymore

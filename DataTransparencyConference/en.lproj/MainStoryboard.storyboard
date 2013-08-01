@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--Speakers View Controller-->
+        <!--Speakers View Controller - Speakers-->
         <scene sceneID="5">
             <objects>
                 <viewController id="2" customClass="SpeakersViewController" sceneMemberID="viewController">
@@ -20,7 +20,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="OJZ-vs-TOH"/>
+                    <navigationItem key="navigationItem" title="Speakers" id="OJZ-vs-TOH"/>
                     <connections>
                         <outlet property="DTCWebView" destination="7Rf-7C-Wgx" id="A8a-df-7s0"/>
                         <segue destination="psc-Wv-RMm" kind="push" identifier="pushNextWebView" id="1F0-ks-ld0"/>
@@ -31,10 +31,10 @@
             </objects>
             <point key="canvasLocation" x="2191" y="596"/>
         </scene>
-        <!--Custom Navigation View Controller - News-->
+        <!--Custom Navigation View Controller - #datapolicy2013-->
         <scene sceneID="1U0-as-u2D">
             <objects>
-                <navigationController id="Usk-Es-lhK" customClass="CustomNavigationViewController" sceneMemberID="viewController">
+                <navigationController title="#datapolicy2013" id="Usk-Es-lhK" customClass="CustomNavigationViewController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="News" id="wLb-iJ-WKg"/>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
@@ -72,7 +72,7 @@
             </objects>
             <point key="canvasLocation" x="605" y="112"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller - Speakers-->
         <scene sceneID="3My-iD-T1u">
             <objects>
                 <viewController id="psc-Wv-RMm" customClass="DTCViewController" sceneMemberID="viewController">
@@ -88,7 +88,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="03Q-QB-dQ8"/>
+                    <navigationItem key="navigationItem" title="Speakers" id="03Q-QB-dQ8"/>
                     <connections>
                         <outlet property="DTCWebView" destination="G9b-DQ-Sz0" id="Dgf-vh-y9z"/>
                         <segue destination="2" kind="push" identifier="pushNextWebView" id="uBQ-rR-sa7"/>
@@ -99,11 +99,11 @@
             </objects>
             <point key="canvasLocation" x="2661" y="596"/>
         </scene>
-        <!--Custom Navigation View Controller - Sessions-->
+        <!--Custom Navigation View Controller - Program-->
         <scene sceneID="MoB-iY-DQn">
             <objects>
                 <navigationController id="dHG-rR-kt3" customClass="CustomNavigationViewController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Sessions" id="FQf-z3-5sT"/>
+                    <tabBarItem key="tabBarItem" title="Program" id="FQf-z3-5sT"/>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="dOx-HT-LqJ">
@@ -159,7 +159,7 @@
             </objects>
             <point key="canvasLocation" x="1551" y="1130"/>
         </scene>
-        <!--News View Controller-->
+        <!--News View Controller - #datapolicy2013-->
         <scene sceneID="eA3-r4-S2a">
             <objects>
                 <viewController id="2wH-iM-Uhq" customClass="NewsViewController" sceneMemberID="viewController">
@@ -175,7 +175,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ssT-qa-v2L">
+                    <navigationItem key="navigationItem" title="#datapolicy2013" id="ssT-qa-v2L">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="refresh" id="TTk-nv-VP0">
                             <connections>
                                 <action selector="addCustomSyncBar" destination="2wH-iM-Uhq" id="g8j-Ly-04C"/>
@@ -192,7 +192,7 @@
             </objects>
             <point key="canvasLocation" x="2243" y="-1037"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller - #datapolicy2013-->
         <scene sceneID="1tT-Oj-qpZ">
             <objects>
                 <viewController id="8tO-4v-UYG" customClass="DTCViewController" sceneMemberID="viewController">
@@ -208,7 +208,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="uoH-cb-nx4"/>
+                    <navigationItem key="navigationItem" title="#datapolicy2013" id="uoH-cb-nx4"/>
                     <connections>
                         <outlet property="DTCWebView" destination="roR-dJ-Jep" id="lJX-wS-2sY"/>
                         <segue destination="2wH-iM-Uhq" kind="push" identifier="pushNextWebView" id="CiK-lh-xTj"/>
@@ -219,7 +219,7 @@
             </objects>
             <point key="canvasLocation" x="2737" y="-1025"/>
         </scene>
-        <!--Tweets View Controller-->
+        <!--Tweets View Controller - Tweets-->
         <scene sceneID="cWB-jI-uFw">
             <objects>
                 <viewController id="BK2-4S-ecx" customClass="TweetsViewController" sceneMemberID="viewController">
@@ -235,7 +235,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="4TC-gh-xxQ"/>
+                    <navigationItem key="navigationItem" title="Tweets" id="4TC-gh-xxQ"/>
                     <connections>
                         <outlet property="DTCWebView" destination="dau-1S-MYh" id="BBa-wk-rXh"/>
                         <segue destination="Pcp-ez-5Gz" kind="push" identifier="handleExternalLink" id="W2k-u6-0zz"/>
@@ -245,7 +245,7 @@
             </objects>
             <point key="canvasLocation" x="2199" y="1316"/>
         </scene>
-        <!--Sessions View Controller-->
+        <!--Sessions View Controller - Program-->
         <scene sceneID="Znq-H1-uR4">
             <objects>
                 <viewController id="zqG-Za-XJe" customClass="SessionsViewController" sceneMemberID="viewController">
@@ -261,7 +261,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="YcX-x1-1SW"/>
+                    <navigationItem key="navigationItem" title="Program" id="YcX-x1-1SW"/>
                     <connections>
                         <outlet property="DTCWebView" destination="wa0-6f-7Sz" id="CSa-7R-lSE"/>
                         <segue destination="Njo-X4-RWb" kind="push" identifier="pushNextWebView" id="FG1-Cz-qgi"/>
@@ -272,7 +272,7 @@
             </objects>
             <point key="canvasLocation" x="2235" y="-224"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller - Program-->
         <scene sceneID="G4E-pf-SXY">
             <objects>
                 <viewController id="Njo-X4-RWb" customClass="DTCViewController" sceneMemberID="viewController">
@@ -288,7 +288,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="t5U-nW-laP"/>
+                    <navigationItem key="navigationItem" title="Program" id="t5U-nW-laP"/>
                     <connections>
                         <outlet property="DTCWebView" destination="iy9-xS-Nka" id="hth-Wj-71E"/>
                         <segue destination="zqG-Za-XJe" kind="push" identifier="pushNextWebView" id="8i3-Gb-0O6"/>
@@ -304,16 +304,16 @@
             <objects>
                 <viewController id="Pcp-ez-5Gz" customClass="ExternalWebViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DC4-Dt-wDf">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" scalesPageToFit="YES" id="oK4-qq-RZ0">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackTranslucent" id="Krw-yk-rg5">
-                                <rect key="frame" x="0.0" y="460" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="411" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem image="UIButtonBarArrowLeft.png" style="plain" id="HiC-RL-onF">
@@ -396,9 +396,9 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="uBQ-rR-sa7"/>
-        <segue reference="Ts4-cl-7Ct"/>
-        <segue reference="CiK-lh-xTj"/>
         <segue reference="8i3-Gb-0O6"/>
+        <segue reference="CiK-lh-xTj"/>
+        <segue reference="W2k-u6-0zz"/>
+        <segue reference="uBQ-rR-sa7"/>
     </inferredMetricsTieBreakers>
 </document>
