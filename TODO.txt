@@ -1,10 +1,7 @@
-=================NEED=================
+=================R1 NEED=================
 final tab bar icons
-asynchronous syncing (add method/class)
 color behind UIViews (currently black)? (ask V)
 twitter view's fit (see tweet box and title in one view)
-possibly make storyboard more efficient, without messing up nav bar titles (only after we have more file:// URLs)
-
 get Apple Dev account so can set up/manage testflights properly
 
 minor bug: weird autorotation issue if switching tabs while in landscape (allowed in WebViewCntrler) -- no easy fix, maybe don't allow rotation at all
@@ -13,6 +10,11 @@ stupid crash bug (when clicking on links in uiwebview that is displaying a pdf, 
     update: supposedly will be fixed soon (radar filed)
     lame solution: http://stackoverflow.com/questions/2808267/uiwebview-how-to-disable-action-sheets-uiactionsheet
     or: http://sugartin.info/2012/10/25/avoiddisable-default-actionsheet-for-opencopy-from-a-uiwebview/
+    
+=================R2 NEED=================
+asynchronous syncing (add method/class)
+header/detail relationships for speakers, sessions, etc.
+possibly make storyboard more efficient, without messing up nav bar titles (only after we have more file:// URLs)
 
 =================NICE=================
 Tweeting capabilities //kind of included with widget
