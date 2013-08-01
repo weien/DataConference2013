@@ -123,7 +123,7 @@
         <scene sceneID="Xfe-mC-TNI">
             <objects>
                 <navigationController id="Afv-db-0bp" customClass="CustomNavigationViewController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Speakers" id="AJs-LH-loP"/>
+                    <tabBarItem key="tabBarItem" title="Speakers" image="UITabBarContactsTemplate.png" id="AJs-LH-loP"/>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="dfY-oS-dcH">
@@ -351,6 +351,7 @@
     <resources>
         <image name="UIButtonBarArrowLeft.png" width="16" height="19"/>
         <image name="UIButtonBarArrowRight.png" width="16" height="19"/>
+        <image name="UITabBarContactsTemplate.png" width="16" height="16"/>
         <image name="twitter-bird-light-bgs.png" width="30" height="24"/>
     </resources>
     <classes>
