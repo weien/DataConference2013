@@ -7,7 +7,7 @@
 //
 
 #import "DTCViewController.h"
-#import "WebViewController.h"
+#import "ExternalWebViewController.h"
 
 @interface DTCViewController () <UIWebViewDelegate>
 @property (strong, nonatomic) UILabel* syncBar;
@@ -101,7 +101,7 @@
         [dtcvc setUrlToDisplayHere:self.urlToPassForward];
     }
     if ([segue.identifier isEqualToString:@"handleExternalLink"]) {
-        WebViewController* wvc = (WebViewController*) segue.destinationViewController;
+        ExternalWebViewController* wvc = (ExternalWebViewController*) segue.destinationViewController;
         [wvc setUrlToDisplay:self.urlToPassForward];
     }
 }

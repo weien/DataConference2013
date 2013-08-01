@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 Weien. All rights reserved.
 //
 
-#import "WebViewController.h"
+#import "ExternalWebViewController.h"
 
-@interface WebViewController () <UIWebViewDelegate>
+@interface ExternalWebViewController () <UIWebViewDelegate>
 @property (strong, nonatomic) UIActivityIndicatorView* spinner;
 @end
 
-@implementation WebViewController
+@implementation ExternalWebViewController
 @synthesize externalLinkViewer = _externalLinkViewer;
 @synthesize urlToDisplay = _urlToDisplay;
 @synthesize spinner = _spinner;

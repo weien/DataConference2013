@@ -1,9 +1,7 @@
 =================NEED=================
-clean up twitter widget (V's recommendations?) https://dev.twitter.com/docs/embedded-timelines#customization
 syncing (add method/class)
-
-give WebViewController a better name?
-improve load of Tweets tab? so it doesn't display "Tweets about #opendata" link first?
+color behind UIViews (instead of white)? (ask V)
+fix twitter view's fit
 
 get Apple Dev account so can set up/manage testflights properly
 
@@ -29,8 +27,12 @@ just opening http/https differently is tricky due to twitter -- could hack it (t
 sizing for twitter widget. can do conditionally?
 fix autorotation (see code for WebViewController) -- allow horizontal only for WebViewController
 add forward/backward buttons on WebViewController?
+clean up twitter widget (V's recommendations?) https://dev.twitter.com/docs/embedded-timelines#customization //done by V
+give WebViewController a better name?
 
 
+=================WATCH=================
+improve load of Tweets tab? so it doesn't display "Tweets about #opendata" link first? //doesn't seem to be displaying anymore
 
 
 
