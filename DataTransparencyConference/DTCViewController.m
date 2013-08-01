@@ -30,7 +30,7 @@
 }
 
 - (NSURL*) initialSiteLocation {
-    NSURL* siteURL = [[[NSBundle mainBundle] bundleURL] URLByAppendingPathComponent:@"_site" isDirectory:YES];
+    NSURL* siteURL = [[[NSBundle mainBundle] bundleURL] URLByAppendingPathComponent:@"_site/news" isDirectory:YES];
     NSURL* indexHTMLURL = [siteURL URLByAppendingPathComponent:@"index.html" isDirectory:NO];
     return indexHTMLURL;
 }
