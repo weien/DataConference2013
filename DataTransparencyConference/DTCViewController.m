@@ -73,19 +73,17 @@
 - (BOOL) webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     
     //NSLog(@"Request URL is %@, scheme is %@, last path component is %@", request.URL, request.URL.scheme, request.URL.lastPathComponent);
-    if ([request.URL.lastPathComponent isEqualToString:@"index.html"] /*||
-        [request.URL.lastPathComponent isEqualToString:@"twitter_loading.html"]*/) {
-        return YES;
+    if ([request.URL.scheme isEqualToString: @"file"]) {
+        if ([request.URL.lastPathComponent isEqualToString:@"index.html"]) {
+            return YES;
+        }
+        else {
+            NSLog(@"Segue to next internal webview");
+            self.urlToPassForward = request.URL;
+            [self performSegueWithIdentifier:@"pushNextWebView" sender:self];
+            return NO; //most likely; needs testing
+        }
     }
-    else if ([request.URL.scheme isEqualToString: @"file"]) {
-        NSLog(@"Here's where we segue to next webview");
-        self.urlToPassForward = request.URL;
-        [self performSegueWithIdentifier:@"pushNextWebView" sender:self];
-        return NO; //most likely
-    }
-//    else if ([request.URL.absoluteString isEqualToString:@"about:blank"]) {
-//        return NO;
-//    }
     else if ([request.URL.absoluteString isEqualToString:@"https://twitter.com/i/jot"] ||
         [request.URL.absoluteString isEqualToString:@"https://platform.twitter.com/jot.html"]) {
         return YES;
