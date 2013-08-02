@@ -103,7 +103,7 @@
         <scene sceneID="MoB-iY-DQn">
             <objects>
                 <navigationController id="dHG-rR-kt3" customClass="CustomNavigationViewController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Program" image="presentation.png" id="FQf-z3-5sT"/>
+                    <tabBarItem key="tabBarItem" title="Program" image="program-tabbaricon.png" id="FQf-z3-5sT"/>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="dOx-HT-LqJ">
@@ -353,7 +353,7 @@
         <image name="UIButtonBarArrowRight.png" width="16" height="19"/>
         <image name="news-tabbaricon.png" width="30" height="27"/>
         <image name="noun_project_1331.png" width="30" height="30"/>
-        <image name="presentation.png" width="30" height="30"/>
+        <image name="program-tabbaricon.png" width="29" height="30"/>
         <image name="twitter-bird-light-bgs.png" width="30" height="24"/>
     </resources>
     <classes>
