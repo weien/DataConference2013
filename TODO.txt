@@ -1,8 +1,4 @@
 =================R1 NEED=================
-add tweeting / iOS 6
-add outlets=nil to viewdidunload?
-
-twitter view's fit (see tweet box and title in one view)
 get Apple Dev account so can set up/manage testflights properly
 
 minor bug: weird autorotation issue if switching tabs while in landscape (allowed in WebViewCntrler) -- no easy fix, maybe don't allow rotation at all
@@ -11,13 +7,10 @@ minor bug: weird autorotation issue if switching tabs while in landscape (allowe
 asynchronous syncing (add method/class)
 header/detail relationships for speakers, sessions, etc.
 possibly make storyboard more efficient, without messing up nav bar titles (only after we have more file:// URLs)
-
-=================NICE=================
-Tweeting capabilities //kind of included with widget
+=================NICE================
 Tweet: Prefill with current session
 Attendee networking (attendee list, detail, add to contacts, mail)
-Add more information for user if uiwebview fails load
-
+Add more information for user if uiwebview fails 
 =================DONE=================
 add sync bar
 twitter: get from twitter dev site, the actual iframe or whatever (eventually right into Jekyll folder)
@@ -35,14 +28,16 @@ basic app icon
 fix white flash (uiwebviews)
 final tab bar icons
 color behind UIViews (currently black)? (ask V)
+add tweeting / iOS 6 / Tweeting capabilities //kind of included with widget
+add outlets=nil to viewdidunload?
+improve load of Tweets tab? so it doesn't display "Tweets about #opendata" link first? //doesn't seem to be displaying anymore //fixed along with V's aesthetic update and whiteflash fix
 =================WATCH=================
-improve load of Tweets tab? so it doesn't display "Tweets about #opendata" link first? //doesn't seem to be displaying anymore
-
 stupid crash bug (when clicking on links in uiwebview that is displaying a pdf, as on our news page):  http://stackoverflow.com/questions/16080374/uiwebview-pdf-hyperlinks-crash
     update: supposedly will be fixed soon (radar filed) https://twitter.com/aSx_edoc/status/362940341965426689
     lame solution: http://stackoverflow.com/questions/2808267/uiwebview-how-to-disable-action-sheets-uiactionsheet
     or: http://sugartin.info/2012/10/25/avoiddisable-default-actionsheet-for-opencopy-from-a-uiwebview/
 
+twitter view's fit (see tweet box and title in one view) //setting "nofooter" will do for now
 
 
 
