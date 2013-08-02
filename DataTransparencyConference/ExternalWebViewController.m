@@ -41,8 +41,6 @@
         self.spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
         [self.view addSubview:self.spinner];
         self.spinner.center = CGPointMake(self.externalLinkViewer.frame.size.width / 2, self.externalLinkViewer.frame.size.height / 2);
-        //self.spinner.center = self.view.center;
-        //self.spinner.backgroundColor = [UIColor blackColor];
         self.spinner.hidesWhenStopped = YES;
     }
 }
