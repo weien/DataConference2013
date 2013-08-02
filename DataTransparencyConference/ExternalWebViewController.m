@@ -31,6 +31,11 @@
     [self.spinner stopAnimating];
 }
 
+- (void) webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+    NSLog(@"This webpage is not available.");
+    [self.spinner stopAnimating];
+}
+
 - (void) initSpinner {
     if (!self.spinner) {
         self.spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
@@ -69,6 +74,12 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:self.urlToDisplay];
     [self.externalLinkViewer loadRequest:request];
     
+}
+
+- (void)viewDidUnload {
+    [super viewDidUnload];
+    
+    self.externalLinkViewer = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

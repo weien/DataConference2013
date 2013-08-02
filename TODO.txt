@@ -1,5 +1,6 @@
 =================R1 NEED=================
 add tweeting / iOS 6
+add outlets=nil to viewdidunload?
 
 twitter view's fit (see tweet box and title in one view)
 get Apple Dev account so can set up/manage testflights properly
