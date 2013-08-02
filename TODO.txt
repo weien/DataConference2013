@@ -1,5 +1,6 @@
 =================R1 NEED=================
-color behind UIViews (currently black)? (ask V)
+add tweeting / iOS 6
+
 twitter view's fit (see tweet box and title in one view)
 get Apple Dev account so can set up/manage testflights properly
 
@@ -31,6 +32,7 @@ tab bar titles
 basic app icon
 fix white flash (uiwebviews)
 final tab bar icons
+color behind UIViews (currently black)? (ask V)
 =================WATCH=================
 improve load of Tweets tab? so it doesn't display "Tweets about #opendata" link first? //doesn't seem to be displaying anymore
 
