@@ -159,7 +159,7 @@
             </objects>
             <point key="canvasLocation" x="1551" y="1130"/>
         </scene>
-        <!--News View Controller - #datapolicy2013-->
+        <!--News View Controller - #opendata2013-->
         <scene sceneID="eA3-r4-S2a">
             <objects>
                 <viewController id="2wH-iM-Uhq" customClass="NewsViewController" sceneMemberID="viewController">
@@ -175,7 +175,7 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="#datapolicy2013" id="ssT-qa-v2L"/>
+                    <navigationItem key="navigationItem" title="#opendata2013" id="ssT-qa-v2L"/>
                     <connections>
                         <outlet property="DTCWebView" destination="bUA-jo-zaF" id="Bds-9i-gMN"/>
                         <segue destination="8tO-4v-UYG" kind="push" identifier="pushNextWebView" id="RqW-Zz-hdc"/>
@@ -356,6 +356,45 @@
         <image name="presentation.png" width="30" height="30"/>
         <image name="twitter-bird-light-bgs.png" width="30" height="24"/>
     </resources>
+    <classes>
+        <class className="CustomNavigationViewController" superclassName="UINavigationController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomNavigationViewController.h"/>
+        </class>
+        <class className="CustomTabBarController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomTabBarController.h"/>
+        </class>
+        <class className="DTCViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DTCViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addCustomSyncBar"/>
+                <relationship kind="outlet" name="DTCWebView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="ExternalWebViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ExternalWebViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="goBack:"/>
+                <relationship kind="action" name="goForward:"/>
+                <relationship kind="action" name="openPageInBrowser:"/>
+                <relationship kind="outlet" name="externalLinkViewer" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="NewsViewController" superclassName="DTCViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewsViewController.h"/>
+        </class>
+        <class className="SessionsViewController" superclassName="DTCViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SessionsViewController.h"/>
+        </class>
+        <class className="SpeakersViewController" superclassName="DTCViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SpeakersViewController.h"/>
+        </class>
+        <class className="TweetsViewController" superclassName="DTCViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TweetsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="presentTweetSheet:"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
@@ -363,8 +402,8 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="Bgm-v7-YOb"/>
-        <segue reference="W2k-u6-0zz"/>
         <segue reference="sQX-af-1H9"/>
+        <segue reference="ei3-2A-QwE"/>
         <segue reference="uBQ-rR-sa7"/>
     </inferredMetricsTieBreakers>
 </document>
