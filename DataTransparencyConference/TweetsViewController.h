@@ -9,5 +9,5 @@
 #import "DTCViewController.h"
 
 @interface TweetsViewController : DTCViewController
-
+- (IBAction)presentTweetSheet:(id)sender;
 @end

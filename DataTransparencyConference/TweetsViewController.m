@@ -7,12 +7,30 @@
 //
 
 #import "TweetsViewController.h"
+#import <Social/Social.h>
 
 @interface TweetsViewController ()
 
 @end
 
 @implementation TweetsViewController
+
+- (IBAction)presentTweetSheet:(id)sender {
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
+        SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+        [tweetSheet setInitialText:@"#datapolicy2013"];
+        [self presentViewController:tweetSheet animated:YES completion:nil];
+    }
+    else {
+        UIAlertView *alertView = [[UIAlertView alloc]
+                                  initWithTitle:@"Error"
+                                  message:@"Check that your device has an internet connection and you have at least one Twitter account set up"
+                                  delegate:self
+                                  cancelButtonTitle:@"OK"
+                                  otherButtonTitles:nil];
+        [alertView show];
+    }
+}
 
 - (NSURL*) initialSiteLocation {
     NSURL* siteURL = [[[NSBundle mainBundle] bundleURL] URLByAppendingPathComponent:@"_site/tweets" isDirectory:YES];
