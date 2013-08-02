@@ -123,6 +123,13 @@
     [self setUpPage];
 }
 
+- (void)viewDidUnload {
+    [super viewDidUnload];
+    
+    self.DTCWebView = nil;
+}
+
+
 #pragma mark - autorotation
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
