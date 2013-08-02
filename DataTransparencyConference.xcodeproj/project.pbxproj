@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		64F0BDF117AB34720021DA00 /* presentation.png in Resources */ = {isa = PBXBuildFile; fileRef = 64F0BDEF17AB34720021DA00 /* presentation.png */; };
+		64F0BDF217AB34720021DA00 /* presentation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64F0BDF017AB34720021DA00 /* presentation@2x.png */; };
+		64F0BDFD17AB37C70021DA00 /* news-tabbaricon.png in Resources */ = {isa = PBXBuildFile; fileRef = 64F0BDFB17AB37C60021DA00 /* news-tabbaricon.png */; };
+		64F0BDFE17AB37C70021DA00 /* news-tabbaricon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64F0BDFC17AB37C70021DA00 /* news-tabbaricon@2x.png */; };
 		64F1661417A6DED20098A02B /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F1661317A6DED20098A02B /* NewsViewController.m */; };
 		64F1661717A6DEE60098A02B /* SessionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F1661617A6DEE60098A02B /* SessionsViewController.m */; };
 		64F1661A17A6DEF00098A02B /* SpeakersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F1661917A6DEF00098A02B /* SpeakersViewController.m */; };
@@ -39,6 +43,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		64F0BDEF17AB34720021DA00 /* presentation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = presentation.png; sourceTree = "<group>"; };
+		64F0BDF017AB34720021DA00 /* presentation@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "presentation@2x.png"; sourceTree = "<group>"; };
+		64F0BDFB17AB37C60021DA00 /* news-tabbaricon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "news-tabbaricon.png"; sourceTree = "<group>"; };
+		64F0BDFC17AB37C70021DA00 /* news-tabbaricon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "news-tabbaricon@2x.png"; sourceTree = "<group>"; };
 		64F1661217A6DED20098A02B /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
 		64F1661317A6DED20098A02B /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 		64F1661517A6DEE60098A02B /* SessionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionsViewController.h; sourceTree = "<group>"; };
@@ -139,6 +147,10 @@
 				64F1664017A9C3790098A02B /* twitter-bird-light-bgs@2x.png */,
 				64F1664317A9C89D0098A02B /* UITabBarContactsTemplate.png */,
 				64F1664517A9C9520098A02B /* UITabBarContactsTemplate@2x.png */,
+				64F0BDEF17AB34720021DA00 /* presentation.png */,
+				64F0BDF017AB34720021DA00 /* presentation@2x.png */,
+				64F0BDFB17AB37C60021DA00 /* news-tabbaricon.png */,
+				64F0BDFC17AB37C70021DA00 /* news-tabbaricon@2x.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -270,6 +282,10 @@
 				64F1664617A9C9520098A02B /* UITabBarContactsTemplate@2x.png in Resources */,
 				64F1664D17AAB8E50098A02B /* DTC-logo-square.png in Resources */,
 				64F1664E17AAB8E50098A02B /* DTC-logo-square@2x.png in Resources */,
+				64F0BDF117AB34720021DA00 /* presentation.png in Resources */,
+				64F0BDF217AB34720021DA00 /* presentation@2x.png in Resources */,
+				64F0BDFD17AB37C70021DA00 /* news-tabbaricon.png in Resources */,
+				64F0BDFE17AB37C70021DA00 /* news-tabbaricon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
