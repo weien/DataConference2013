@@ -316,12 +316,12 @@
                                 <rect key="frame" x="0.0" y="411" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem image="UIButtonBarArrowLeft.png" style="plain" id="HiC-RL-onF">
+                                    <barButtonItem image="UIButtonBarArrowLeft.png" width="34" style="plain" id="HiC-RL-onF">
                                         <connections>
                                             <action selector="goBack:" destination="Pcp-ez-5Gz" id="FPQ-1y-7MN"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem image="UIButtonBarArrowRight.png" style="plain" id="g8x-3t-6MJ">
+                                    <barButtonItem image="UIButtonBarArrowRight.png" width="81" style="plain" id="g8x-3t-6MJ">
                                         <connections>
                                             <action selector="goForward:" destination="Pcp-ez-5Gz" id="ueU-aZ-3UV"/>
                                         </connections>
