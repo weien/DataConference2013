@@ -11,6 +11,7 @@
 		64F0BDF217AB34720021DA00 /* presentation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64F0BDF017AB34720021DA00 /* presentation@2x.png */; };
 		64F0BDFD17AB37C70021DA00 /* news-tabbaricon.png in Resources */ = {isa = PBXBuildFile; fileRef = 64F0BDFB17AB37C60021DA00 /* news-tabbaricon.png */; };
 		64F0BDFE17AB37C70021DA00 /* news-tabbaricon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64F0BDFC17AB37C70021DA00 /* news-tabbaricon@2x.png */; };
+		64F0BE0017AC0EDC0021DA00 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64F0BDFF17AC0EDC0021DA00 /* Social.framework */; };
 		64F1661417A6DED20098A02B /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F1661317A6DED20098A02B /* NewsViewController.m */; };
 		64F1661717A6DEE60098A02B /* SessionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F1661617A6DEE60098A02B /* SessionsViewController.m */; };
 		64F1661A17A6DEF00098A02B /* SpeakersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F1661917A6DEF00098A02B /* SpeakersViewController.m */; };
@@ -47,6 +48,7 @@
 		64F0BDF017AB34720021DA00 /* presentation@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "presentation@2x.png"; sourceTree = "<group>"; };
 		64F0BDFB17AB37C60021DA00 /* news-tabbaricon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "news-tabbaricon.png"; sourceTree = "<group>"; };
 		64F0BDFC17AB37C70021DA00 /* news-tabbaricon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "news-tabbaricon@2x.png"; sourceTree = "<group>"; };
+		64F0BDFF17AC0EDC0021DA00 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		64F1661217A6DED20098A02B /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
 		64F1661317A6DED20098A02B /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 		64F1661517A6DEE60098A02B /* SessionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionsViewController.h; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64F0BE0017AC0EDC0021DA00 /* Social.framework in Frameworks */,
 				64F27FE717A366E800C3272A /* UIKit.framework in Frameworks */,
 				64F27FE917A366E800C3272A /* Foundation.framework in Frameworks */,
 				64F27FEB17A366E800C3272A /* CoreGraphics.framework in Frameworks */,
@@ -176,6 +179,7 @@
 		64F27FE517A366E800C3272A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				64F0BDFF17AC0EDC0021DA00 /* Social.framework */,
 				64F1662117A806C30098A02B /* Crashlytics.framework */,
 				64F27FE617A366E800C3272A /* UIKit.framework */,
 				64F27FE817A366E800C3272A /* Foundation.framework */,
@@ -385,7 +389,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -409,7 +413,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -426,7 +430,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DataTransparencyConference/DataTransparencyConference-Prefix.pch";
 				INFOPLIST_FILE = "DataTransparencyConference/DataTransparencyConference-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -442,7 +446,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DataTransparencyConference/DataTransparencyConference-Prefix.pch";
 				INFOPLIST_FILE = "DataTransparencyConference/DataTransparencyConference-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
