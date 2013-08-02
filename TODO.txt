@@ -16,6 +16,7 @@ possibly make storyboard more efficient, without messing up nav bar titles (only
 Tweeting capabilities //kind of included with widget
 Tweet: Prefill with current session
 Attendee networking (attendee list, detail, add to contacts, mail)
+Add more information for user if uiwebview fails load
 
 =================DONE=================
 add sync bar
