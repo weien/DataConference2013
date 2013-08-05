@@ -12,6 +12,7 @@
 @interface DTCViewController () <UIWebViewDelegate>
 @property (strong, nonatomic) UILabel* syncBar;
 @property (strong, nonatomic) NSString* lastReceivedUpdate;
+@property (strong, nonatomic) NSURL* bundleToUse;
 
 @end
 
@@ -21,13 +22,26 @@
 @synthesize urlToDisplayHere = _urlToDisplayHere;
 @synthesize syncBar = _syncBar;
 @synthesize lastReceivedUpdate = _lastReceivedUpdate;
+@synthesize bundleToUse = _bundleToUse;
 
 - (void) setUpPage {
     //to prevent the dreaded "white flash" http://stackoverflow.com/a/2722801/2284713
     self.DTCWebView.backgroundColor = [UIColor clearColor];
     self.DTCWebView.opaque = NO;
     
-//    NSString* indexHTML = [NSString stringWithContentsOfURL:indexHTMLURL encoding:NSUTF8StringEncoding error:nil]; //the actual HTML
+    //gateway: if we have update bundle, then use it; else, use [NSBundle mainBundle]
+    NSString *appSupportDir = [NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES) lastObject];
+    NSString *updateFilesDir = [appSupportDir stringByAppendingPathComponent:@"_site"];
+    NSData *data = [NSData dataWithContentsOfFile:updateFilesDir];
+    if (data) {
+        NSLog(@"Using Application Support bundle");
+        self.bundleToUse = [NSURL URLWithString:appSupportDir];
+    }
+    else {
+        NSLog(@"Using mainBundle bundle");
+        self.bundleToUse = [[NSBundle mainBundle] bundleURL];
+    }
+    
     if (self.urlToDisplayHere) {
         [self.DTCWebView loadRequest:[NSURLRequest requestWithURL:self.urlToDisplayHere]];
     }
