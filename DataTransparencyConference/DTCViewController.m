@@ -24,6 +24,8 @@
 @synthesize lastReceivedUpdate = _lastReceivedUpdate;
 @synthesize bundleToUse = _bundleToUse;
 
+#pragma mark - data handling
+
 - (void) setUpPage {
     //to prevent the dreaded "white flash" http://stackoverflow.com/a/2722801/2284713
     self.DTCWebView.backgroundColor = [UIColor clearColor];
@@ -35,7 +37,7 @@
     
     if ([[NSFileManager defaultManager] fileExistsAtPath:updateFilesDir]) {
         NSLog(@"Using Application Support bundle");
-        self.bundleToUse = [NSURL URLWithString:appSupportDir];
+        self.bundleToUse = [NSURL fileURLWithPath:appSupportDir];
     }
     else {
         NSLog(@"Using mainBundle bundle");
@@ -87,6 +89,8 @@
     self.lastReceivedUpdate = latestVersion;
 }
 
+#pragma mark - syncBar methods
+
 - (void) showCustomSyncBar {
     if (!self.syncBar) {
         self.syncBar = [[UILabel alloc] initWithFrame:CGRectMake(0, -10.0f, self.view.frame.size.width, 10.0f)];
@@ -116,6 +120,8 @@
         [UIView commitAnimations];
 //    }
 }
+
+#pragma mark - webView handling
 
 - (BOOL) webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     
@@ -150,6 +156,8 @@
     self.DTCWebView.backgroundColor = [UIColor blackColor];
     self.DTCWebView.opaque = YES;
 }
+
+#pragma mark - segue and VC lifecycle
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"pushNextWebView"]) {

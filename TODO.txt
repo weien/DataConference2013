@@ -1,5 +1,5 @@
 =================R1 NEED=================
-add currentVersion to NSUserDefaults
+add currentVersion to NSUserDefaults //better yet, implement jwr's recommendations
 add UINetworkActivityIndicator?
 
 get Apple Dev account so can set up/manage testflights properly
