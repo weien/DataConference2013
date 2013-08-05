@@ -30,31 +30,27 @@
             if(![manager fileExistsAtPath:appSupportDir]) {
                 __autoreleasing NSError *error;
                 BOOL ret = [manager createDirectoryAtPath:appSupportDir withIntermediateDirectories:NO attributes:nil error:&error];
+                
                 if(!ret) {
                     NSLog(@"Failed to create appSupportDir: %@", error);
                     exit(0);
                 }
+
+                //we'll just addSkipBackupAttribute to the whole appSupportDir -- shouldn't have to do this more than at this point
+                if ([self addSkipBackupAttributeToItemAtURL:[NSURL fileURLWithPath:appSupportDir isDirectory:NO]])
+                    NSLog(@"Successfully added SkipBackupAttribute to %@", appSupportDir);
+                
+            }
+            
+            //write our data to the file!
+            NSString* completeFilePath = [appSupportDir stringByAppendingPathComponent:@"_site.zip"];
+            NSError* writeError = nil;
+            if (![data writeToFile:completeFilePath options:NSDataWritingAtomic error:&writeError]) {
+                NSLog(@"Failure to write to file: %@", writeError);
             }
             else {
-                //write our data to the file!
-                NSString* completeFilePath = [appSupportDir stringByAppendingPathComponent:@"_site.zip"];
-                NSError* writeError = nil;
-                if (![data writeToFile:completeFilePath options:NSDataWritingAtomic error:&writeError]) {
-                    NSLog(@"Failure to write to file: %@", writeError);
-                }
-                else {
-                    if ([self addSkipBackupAttributeToItemAtURL:[NSURL fileURLWithPath:completeFilePath isDirectory:NO]])
-                        NSLog(@"Successfully added SkipBackupAttribute to %@", completeFilePath);
-                    
-                    // Unzipping
-                    [SSZipArchive unzipFileAtPath:completeFilePath toDestination:appSupportDir];
-                    
-                    NSString *unZippedFolderPath = [appSupportDir stringByAppendingPathComponent:@"_site"];
-                    if ([self addSkipBackupAttributeToItemAtURL:[NSURL fileURLWithPath:unZippedFolderPath isDirectory:YES]])
-                        NSLog(@"Successfully added SkipBackupAttribute to %@", unZippedFolderPath);
-                    
-                    //could alternatively just addSkipBackupAttribute to the entire appSupportDir, I suppose
-                }
+                // Unzipping
+                [SSZipArchive unzipFileAtPath:completeFilePath toDestination:appSupportDir];
             }
         });
     });

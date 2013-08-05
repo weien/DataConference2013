@@ -10,4 +10,6 @@
 
 @interface ZipDownloader : NSObject
 
+- (void) downloadZip;
+
 @end
