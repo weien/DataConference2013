@@ -11,7 +11,7 @@
 
 @implementation ZipDownloader
 
-- (void) downloadZip {
++ (void) downloadZipWithCompletion:(void (^)(void))completion {
     NSURL* fileURL = [NSURL URLWithString:@"https://dl.dropboxusercontent.com/u/8902155/_site.zip"];
     
     dispatch_async(dispatch_queue_create("_site downloader", NULL), ^{
@@ -30,7 +30,6 @@
             if(![manager fileExistsAtPath:appSupportDir]) {
                 __autoreleasing NSError *error;
                 BOOL ret = [manager createDirectoryAtPath:appSupportDir withIntermediateDirectories:NO attributes:nil error:&error];
-                
                 if(!ret) {
                     NSLog(@"Failed to create appSupportDir: %@", error);
                     exit(0);
@@ -39,7 +38,6 @@
                 //we'll just addSkipBackupAttribute to the whole appSupportDir -- shouldn't have to do this more than at this point
                 if ([self addSkipBackupAttributeToItemAtURL:[NSURL fileURLWithPath:appSupportDir isDirectory:NO]])
                     NSLog(@"Successfully added SkipBackupAttribute to %@", appSupportDir);
-                
             }
             
             //write our data to the file!
@@ -52,14 +50,14 @@
                 // Unzipping
                 [SSZipArchive unzipFileAtPath:completeFilePath toDestination:appSupportDir];
             }
+            completion();
         });
     });
 }
 
 //from http://developer.apple.com/library/ios/#qa/qa1719/_index.html
-- (BOOL)addSkipBackupAttributeToItemAtURL:(NSURL *)URL {
++ (BOOL)addSkipBackupAttributeToItemAtURL:(NSURL *)URL {
     assert([[NSFileManager defaultManager] fileExistsAtPath: [URL path]]);
-    
     NSError *error = nil;
     BOOL success = [URL setResourceValue: [NSNumber numberWithBool: YES]
                                   forKey: NSURLIsExcludedFromBackupKey error: &error];
