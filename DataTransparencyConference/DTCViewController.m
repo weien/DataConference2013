@@ -28,6 +28,8 @@
     self.DTCWebView.backgroundColor = [UIColor clearColor];
     self.DTCWebView.opaque = NO;
     
+    [self fetchUpdate];
+    
     //gateway: if we have update bundle, then use it; else, use [NSBundle mainBundle]
     NSString *appSupportDir = [NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES) lastObject];
     NSString *updateFilesDir = [appSupportDir stringByAppendingPathComponent:@"_site"];
@@ -71,11 +73,15 @@
         //they're different -- download the latest
     }
     else {
-        
+        //? maybe just move hideCustomSyncBar call here
     }
     
     self.lastReceivedUpdate = latestVersion;
-    [self hideCustomSyncBar]; //back on main thread?
+    
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.5 * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [self hideCustomSyncBar]; //back on main thread?
+    });
 }
 
 - (void) showCustomSyncBar {
@@ -99,13 +105,13 @@
 }
 
 - (void) hideCustomSyncBar {
-    if (CGRectIntersectsRect(self.syncBar.frame, self.view.frame)) {
+//    if (CGRectIntersectsRect(self.syncBar.frame, self.view.frame)) {
         [UIView beginAnimations:@"hideSyncBar" context:nil];
-        [UIView setAnimationDuration:0.3];
+        [UIView setAnimationDuration:0.6];
         [self.syncBar setFrame:CGRectMake(0, -10.0f, self.view.frame.size.width, 10.0f)];
         [self.DTCWebView setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
         [UIView commitAnimations];
-    }
+//    }
 }
 
 - (BOOL) webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
