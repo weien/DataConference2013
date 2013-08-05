@@ -14,7 +14,6 @@
 @property (strong, nonatomic) NSURL* urlToDisplayHere;
 @property (strong, nonatomic) NSURL* bundleToUse;
 
-- (void) showCustomSyncBar;
-- (void) hideCustomSyncBar;
+- (void) fetchUpdate;
 
 @end

@@ -21,4 +21,10 @@
     return indexHTMLURL;
 }
 
+- (void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:NO];
+    
+    [self fetchUpdate];
+}
+
 @end

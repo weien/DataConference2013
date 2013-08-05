@@ -28,8 +28,6 @@
     self.DTCWebView.backgroundColor = [UIColor clearColor];
     self.DTCWebView.opaque = NO;
     
-    [self fetchUpdate];
-    
     //gateway: if we have update bundle, then use it; else, use [NSBundle mainBundle]
     NSString *appSupportDir = [NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES) lastObject];
     NSString *updateFilesDir = [appSupportDir stringByAppendingPathComponent:@"_site"];
@@ -78,7 +76,7 @@
     
     self.lastReceivedUpdate = latestVersion;
     
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.5 * NSEC_PER_SEC);
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 1.0 * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         [self hideCustomSyncBar]; //back on main thread?
     });
@@ -87,11 +85,11 @@
 - (void) showCustomSyncBar {
     if (!self.syncBar) {
         self.syncBar = [[UILabel alloc] initWithFrame:CGRectMake(0, -10.0f, self.view.frame.size.width, 10.0f)];
-        [self.syncBar setBackgroundColor:[UIColor grayColor]];
+        [self.syncBar setBackgroundColor:[UIColor colorWithRed:200/255.0f green:120/255.0f blue:30/255.0f alpha:1.0f]];
         
-        [self.syncBar setText:@"Syncing..."];
+        [self.syncBar setText:@"UPDATING..."];
         [self.syncBar setTextAlignment:NSTextAlignmentCenter];
-        [self.syncBar setTextColor:[UIColor blackColor]];
+        [self.syncBar setTextColor:[UIColor whiteColor]];
         [self.syncBar setFont:[UIFont systemFontOfSize:8]];
         
         [self.view addSubview:self.syncBar];
@@ -107,7 +105,7 @@
 - (void) hideCustomSyncBar {
 //    if (CGRectIntersectsRect(self.syncBar.frame, self.view.frame)) {
         [UIView beginAnimations:@"hideSyncBar" context:nil];
-        [UIView setAnimationDuration:0.6];
+        [UIView setAnimationDuration:0.3];
         [self.syncBar setFrame:CGRectMake(0, -10.0f, self.view.frame.size.width, 10.0f)];
         [self.DTCWebView setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
         [UIView commitAnimations];
