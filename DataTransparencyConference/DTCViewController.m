@@ -8,6 +8,7 @@
 
 #import "DTCViewController.h"
 #import "ExternalWebViewController.h"
+#import "ZipDownloader.h"
 
 @interface DTCViewController () <UIWebViewDelegate>
 @property (strong, nonatomic) UILabel* syncBar;
@@ -31,8 +32,8 @@
     //gateway: if we have update bundle, then use it; else, use [NSBundle mainBundle]
     NSString *appSupportDir = [NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES) lastObject];
     NSString *updateFilesDir = [appSupportDir stringByAppendingPathComponent:@"_site"];
-    NSData *data = [NSData dataWithContentsOfFile:updateFilesDir];
-    if (data) {
+    
+    if ([[NSFileManager defaultManager] fileExistsAtPath:updateFilesDir]) {
         NSLog(@"Using Application Support bundle");
         self.bundleToUse = [NSURL URLWithString:appSupportDir];
     }
@@ -68,18 +69,22 @@
     
     //compare latestVersion (from bottleNeck) to previousVersion
     if (![latestVersion isEqualToString:self.lastReceivedUpdate]) {
-        //they're different -- download the latest
+        NSLog(@"latestVersion and previousVersion are different, downloading update");
+
+        void (^completionBlock)(void) = ^() {
+            [self hideCustomSyncBar];
+        };
+        [ZipDownloader downloadZipWithCompletion:completionBlock];
+        
     }
     else {
-        //? maybe just move hideCustomSyncBar call here
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 1.0 * NSEC_PER_SEC);
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            [self hideCustomSyncBar]; //back on main thread?
+        });
     }
     
     self.lastReceivedUpdate = latestVersion;
-    
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 1.0 * NSEC_PER_SEC);
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        [self hideCustomSyncBar]; //back on main thread?
-    });
 }
 
 - (void) showCustomSyncBar {
