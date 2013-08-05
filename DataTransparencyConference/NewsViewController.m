@@ -15,7 +15,7 @@
 @implementation NewsViewController
 
 - (NSURL*) initialSiteLocation {
-    NSURL* siteURL = [self.bundleToUse URLByAppendingPathComponent:@"_site/news" isDirectory:YES];
+    NSURL* siteURL = [self.baseDirectoryToUse URLByAppendingPathComponent:@"_site/news" isDirectory:YES];
     NSURL* indexHTMLURL = [siteURL URLByAppendingPathComponent:@"index.html" isDirectory:NO];
     
     return indexHTMLURL;

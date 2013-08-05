@@ -15,7 +15,7 @@
 @implementation SpeakersViewController
 
 - (NSURL*) initialSiteLocation {
-    NSURL* siteURL = [self.bundleToUse URLByAppendingPathComponent:@"_site/speakers" isDirectory:YES];
+    NSURL* siteURL = [self.baseDirectoryToUse URLByAppendingPathComponent:@"_site/speakers" isDirectory:YES];
     NSURL* indexHTMLURL = [siteURL URLByAppendingPathComponent:@"index.html" isDirectory:NO];
     
 //    NSError* error = nil;

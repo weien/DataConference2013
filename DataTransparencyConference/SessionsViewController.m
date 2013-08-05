@@ -15,7 +15,7 @@
 @implementation SessionsViewController
 
 - (NSURL*) initialSiteLocation {
-    NSURL* siteURL = [self.bundleToUse URLByAppendingPathComponent:@"_site/program" isDirectory:YES];
+    NSURL* siteURL = [self.baseDirectoryToUse URLByAppendingPathComponent:@"_site/program" isDirectory:YES];
     NSURL* indexHTMLURL = [siteURL URLByAppendingPathComponent:@"index.html" isDirectory:NO];
     
 //    NSError* error = nil;

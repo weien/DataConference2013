@@ -22,7 +22,7 @@
 @synthesize urlToDisplayHere = _urlToDisplayHere;
 @synthesize syncBar = _syncBar;
 @synthesize lastReceivedUpdate = _lastReceivedUpdate;
-@synthesize bundleToUse = _bundleToUse;
+@synthesize baseDirectoryToUse = _baseDirectoryToUse;
 
 #pragma mark - data handling
 
@@ -37,11 +37,11 @@
     
     if ([[NSFileManager defaultManager] fileExistsAtPath:updateFilesDir]) {
         NSLog(@"Using Application Support bundle");
-        self.bundleToUse = [NSURL fileURLWithPath:appSupportDir];
+        self.baseDirectoryToUse = [NSURL fileURLWithPath:appSupportDir];
     }
     else {
         NSLog(@"Using mainBundle bundle");
-        self.bundleToUse = [[NSBundle mainBundle] bundleURL];
+        self.baseDirectoryToUse = [[NSBundle mainBundle] bundleURL];
     }
     
     if (self.urlToDisplayHere) {
@@ -53,7 +53,7 @@
 }
 
 - (NSURL*) initialSiteLocation {
-    NSURL* siteURL = [self.bundleToUse URLByAppendingPathComponent:@"_site/news" isDirectory:YES];
+    NSURL* siteURL = [self.baseDirectoryToUse URLByAppendingPathComponent:@"_site/news" isDirectory:YES];
     NSURL* indexHTMLURL = [siteURL URLByAppendingPathComponent:@"index.html" isDirectory:NO];
     NSLog(@"Something's wrong -- getting superclass index.html");
     

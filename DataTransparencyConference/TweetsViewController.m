@@ -33,7 +33,7 @@
 }
 
 - (NSURL*) initialSiteLocation {
-    NSURL* siteURL = [self.bundleToUse URLByAppendingPathComponent:@"_site/tweets" isDirectory:YES];
+    NSURL* siteURL = [self.baseDirectoryToUse URLByAppendingPathComponent:@"_site/tweets" isDirectory:YES];
     NSURL* indexHTMLURL = [siteURL URLByAppendingPathComponent:@"index.html" isDirectory:NO];
     
 //        NSError* error = nil;
