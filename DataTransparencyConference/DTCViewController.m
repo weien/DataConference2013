@@ -58,11 +58,24 @@
 }
 
 - (void) fetchUpdate {
-    //addCustomSyncBar?
+    [self showCustomSyncBar];
     
-    //check bottleneck compared to self.lastReceivedUpdate
+    NSError* error = nil;
+    NSURL* bottleNeck = [NSURL URLWithString:@"https://dl.dropboxusercontent.com/u/8902155/latestversion.txt"];
+    NSString* latestVersion = [NSString stringWithContentsOfURL:bottleNeck encoding:NSUTF8StringEncoding error:&error];
     
-    //if bottleneck is different, then do download
+    NSLog(@"latestVersion is %@", latestVersion);
+    
+    //compare latestVersion (from bottleNeck) to previousVersion
+    if (![latestVersion isEqualToString:self.lastReceivedUpdate]) {
+        //they're different -- download the latest
+    }
+    else {
+        
+    }
+    
+    self.lastReceivedUpdate = latestVersion;
+    [self hideCustomSyncBar]; //back on main thread?
 }
 
 - (void) showCustomSyncBar {
@@ -78,11 +91,11 @@
         [self.view addSubview:self.syncBar];
     }
     
-        [UIView beginAnimations:@"showSyncBar" context:nil];
-        [UIView setAnimationDuration:0.3];
-        [self.syncBar setFrame:CGRectMake(0, 0, self.view.frame.size.width, 10.0f)];
-        [self.DTCWebView setFrame:CGRectMake(0, 10.0f, self.view.frame.size.width, self.view.frame.size.height-10)];
-        [UIView commitAnimations];
+    [UIView beginAnimations:@"showSyncBar" context:nil];
+    [UIView setAnimationDuration:0.3];
+    [self.syncBar setFrame:CGRectMake(0, 0, self.view.frame.size.width, 10.0f)];
+    [self.DTCWebView setFrame:CGRectMake(0, 10.0f, self.view.frame.size.width, self.view.frame.size.height-10)];
+    [UIView commitAnimations];
 }
 
 - (void) hideCustomSyncBar {
@@ -107,6 +120,7 @@
             self.urlToPassForward = request.URL;
             [self performSegueWithIdentifier:@"pushNextWebView" sender:self];
             return NO; //most likely; needs testing
+                        // make sure that this works with the bundle switching
         }
     }
     else if ([request.URL.absoluteString isEqualToString:@"https://twitter.com/i/jot"] ||
