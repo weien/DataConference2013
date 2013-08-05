@@ -12,6 +12,7 @@
 @property (strong, nonatomic) IBOutlet UIWebView* DTCWebView;
 @property (strong, nonatomic) NSURL* urlToPassForward;
 @property (strong, nonatomic) NSURL* urlToDisplayHere;
+@property (strong, nonatomic) NSURL* bundleToUse;
 
 - (void) showCustomSyncBar;
 - (void) hideCustomSyncBar;

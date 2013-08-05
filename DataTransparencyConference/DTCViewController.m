@@ -12,7 +12,6 @@
 @interface DTCViewController () <UIWebViewDelegate>
 @property (strong, nonatomic) UILabel* syncBar;
 @property (strong, nonatomic) NSString* lastReceivedUpdate;
-@property (strong, nonatomic) NSURL* bundleToUse;
 
 @end
 
@@ -51,7 +50,7 @@
 }
 
 - (NSURL*) initialSiteLocation {
-    NSURL* siteURL = [[[NSBundle mainBundle] bundleURL] URLByAppendingPathComponent:@"_site/news" isDirectory:YES];
+    NSURL* siteURL = [self.bundleToUse URLByAppendingPathComponent:@"_site/news" isDirectory:YES];
     NSURL* indexHTMLURL = [siteURL URLByAppendingPathComponent:@"index.html" isDirectory:NO];
     NSLog(@"Something's wrong -- getting superclass index.html");
     
