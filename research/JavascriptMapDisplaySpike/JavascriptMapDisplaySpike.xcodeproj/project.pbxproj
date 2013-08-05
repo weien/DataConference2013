@@ -18,6 +18,7 @@
 		64F09C5717B00E3F007304A8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64F09C5617B00E3F007304A8 /* Default-568h@2x.png */; };
 		64F09C5A17B00E3F007304A8 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64F09C5817B00E3F007304A8 /* MainStoryboard.storyboard */; };
 		64F09C5D17B00E40007304A8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F09C5C17B00E40007304A8 /* ViewController.m */; };
+		64F09C6417B01320007304A8 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 64F09C6317B01320007304A8 /* index.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		64F09C5917B00E3F007304A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		64F09C5B17B00E3F007304A8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		64F09C5C17B00E40007304A8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		64F09C6317B01320007304A8 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				64F09C5817B00E3F007304A8 /* MainStoryboard.storyboard */,
 				64F09C5B17B00E3F007304A8 /* ViewController.h */,
 				64F09C5C17B00E40007304A8 /* ViewController.m */,
+				64F09C6317B01320007304A8 /* index.html */,
 				64F09C4717B00E3F007304A8 /* Supporting Files */,
 			);
 			path = JavascriptMapDisplaySpike;
@@ -163,6 +166,7 @@
 				64F09C5517B00E3F007304A8 /* Default@2x.png in Resources */,
 				64F09C5717B00E3F007304A8 /* Default-568h@2x.png in Resources */,
 				64F09C5A17B00E3F007304A8 /* MainStoryboard.storyboard in Resources */,
+				64F09C6417B01320007304A8 /* index.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
