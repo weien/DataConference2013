@@ -31,12 +31,12 @@
     self.DTCWebView.backgroundColor = [UIColor clearColor];
     self.DTCWebView.opaque = NO;
     
-    //gateway: if we have update bundle, then use it; else, use [NSBundle mainBundle]
+    //gateway: if we have app support directory, then use it; else, use [NSBundle mainBundle]
     NSString *appSupportDir = [NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES) lastObject];
     NSString *updateFilesDir = [appSupportDir stringByAppendingPathComponent:@"_site"];
     
     if ([[NSFileManager defaultManager] fileExistsAtPath:updateFilesDir]) {
-        NSLog(@"Using Application Support bundle");
+        NSLog(@"Using Application Support directory");
         self.baseDirectoryToUse = [NSURL fileURLWithPath:appSupportDir];
     }
     else {
@@ -61,7 +61,7 @@
 }
 
 - (void) fetchUpdate {
-    [self showCustomSyncBar];
+
     
     NSError* error = nil;
     NSURL* bottleNeck = [NSURL URLWithString:@"https://dl.dropboxusercontent.com/u/8902155/latestversion.txt"];
@@ -72,19 +72,20 @@
     //compare latestVersion (from bottleNeck) to previousVersion
     if (![latestVersion isEqualToString:self.lastReceivedUpdate]) {
         NSLog(@"latestVersion and previousVersion are different, downloading update");
-
+        [self showCustomSyncBar]; //just show this if we need to
+        
         void (^completionBlock)(void) = ^() {
             [self hideCustomSyncBar];
         };
         [ZipDownloader downloadZipWithCompletion:completionBlock];
         
     }
-    else {
-        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 1.0 * NSEC_PER_SEC);
-        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-            [self hideCustomSyncBar]; //back on main thread?
-        });
-    }
+//    else {
+//        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 1.0 * NSEC_PER_SEC);
+//        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+//            [self hideCustomSyncBar]; //back on main thread?
+//        });
+//    }
     
     self.lastReceivedUpdate = latestVersion;
 }

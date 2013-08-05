@@ -247,10 +247,10 @@
 				64F27FFE17A366E800C3272A /* MainStoryboard.storyboard */,
 				64F2800117A366E800C3272A /* DTCViewController.h */,
 				64F2800217A366E800C3272A /* DTCViewController.m */,
-				64F1662317A8560E0098A02B /* ExternalWebViewController.h */,
-				64F1662417A8560E0098A02B /* ExternalWebViewController.m */,
 				64F09C6517B0400C007304A8 /* ZipDownloader.h */,
 				64F09C6617B0400C007304A8 /* ZipDownloader.m */,
+				64F1662317A8560E0098A02B /* ExternalWebViewController.h */,
+				64F1662417A8560E0098A02B /* ExternalWebViewController.m */,
 				64F09C6817B04187007304A8 /* SSZipArchive */,
 				64F27FED17A366E800C3272A /* Supporting Files */,
 			);

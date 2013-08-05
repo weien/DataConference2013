@@ -1,5 +1,6 @@
 =================R1 NEED=================
 add currentVersion to NSUserDefaults //better yet, implement jwr's recommendations
+make sure we don't try to grab from a location while it's still downloading
 add UINetworkActivityIndicator?
 
 get Apple Dev account so can set up/manage testflights properly
