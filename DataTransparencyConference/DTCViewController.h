@@ -13,6 +13,7 @@
 @property (strong, nonatomic) NSURL* urlToPassForward;
 @property (strong, nonatomic) NSURL* urlToDisplayHere;
 
-- (IBAction) addCustomSyncBar;
+- (void) showCustomSyncBar;
+- (void) hideCustomSyncBar;
 
 @end

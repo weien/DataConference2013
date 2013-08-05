@@ -11,6 +11,8 @@
 
 @interface DTCViewController () <UIWebViewDelegate>
 @property (strong, nonatomic) UILabel* syncBar;
+@property (strong, nonatomic) NSString* lastReceivedUpdate;
+
 @end
 
 @implementation DTCViewController
@@ -18,6 +20,7 @@
 @synthesize urlToPassForward = _urlToPassForward;
 @synthesize urlToDisplayHere = _urlToDisplayHere;
 @synthesize syncBar = _syncBar;
+@synthesize lastReceivedUpdate = _lastReceivedUpdate;
 
 - (void) setUpPage {
     //to prevent the dreaded "white flash" http://stackoverflow.com/a/2722801/2284713
@@ -41,7 +44,15 @@
     return indexHTMLURL;
 }
 
-- (IBAction) addCustomSyncBar {   
+- (void) fetchUpdate {
+    //addCustomSyncBar?
+    
+    //check bottleneck compared to self.lastReceivedUpdate
+    
+    //if bottleneck is different, then do download
+}
+
+- (void) showCustomSyncBar {
     if (!self.syncBar) {
         self.syncBar = [[UILabel alloc] initWithFrame:CGRectMake(0, -10.0f, self.view.frame.size.width, 10.0f)];
         [self.syncBar setBackgroundColor:[UIColor grayColor]];
@@ -53,15 +64,16 @@
         
         [self.view addSubview:self.syncBar];
     }
-
-    if (!CGRectIntersectsRect(self.syncBar.frame, self.view.frame)) {
+    
         [UIView beginAnimations:@"showSyncBar" context:nil];
         [UIView setAnimationDuration:0.3];
         [self.syncBar setFrame:CGRectMake(0, 0, self.view.frame.size.width, 10.0f)];
         [self.DTCWebView setFrame:CGRectMake(0, 10.0f, self.view.frame.size.width, self.view.frame.size.height-10)];
         [UIView commitAnimations];
-    }
-    else {
+}
+
+- (void) hideCustomSyncBar {
+    if (CGRectIntersectsRect(self.syncBar.frame, self.view.frame)) {
         [UIView beginAnimations:@"hideSyncBar" context:nil];
         [UIView setAnimationDuration:0.3];
         [self.syncBar setFrame:CGRectMake(0, -10.0f, self.view.frame.size.width, 10.0f)];
