@@ -79,7 +79,6 @@
             int previousVersionNumber = [[NSString stringWithContentsOfURL:previousVersionFile encoding:NSUTF8StringEncoding error:&error] intValue];
             //NSLog(@"new version is %d, previous version is %d, error is %@", versionNumber, previousVersionNumber, intError);
             
-            //compare latestVersion (from bottleNeck) to previousVersion
             if (versionNumber > previousVersionNumber) {
                 NSLog(@"new is greater than previous version, downloading update");
                 [self showCustomSyncBar]; //just show this if we need to
@@ -93,14 +92,12 @@
         });
     });
     
-//    else {
+
 //        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 1.0 * NSEC_PER_SEC);
 //        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-//            [self hideCustomSyncBar]; //back on main thread?
+//            [self hideCustomSyncBar];
 //        });
-//    }
-    
-//    self.lastReceivedUpdate = latestVersionStringID;
+
 }
 
 #pragma mark - syncBar methods
