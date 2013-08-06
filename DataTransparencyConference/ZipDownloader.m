@@ -48,7 +48,15 @@
             }
             else {
                 // Unzipping
-                [SSZipArchive unzipFileAtPath:completeFilePath toDestination:appSupportDir];
+                NSError* unzipError = nil;
+                [SSZipArchive unzipFileAtPath:completeFilePath
+                                toDestination:appSupportDir
+                                    overwrite:YES
+                                     password:nil
+                                        error:&unzipError];
+                if (unzipError) {
+                    NSLog(@"Unzipping failed, error: %@", unzipError);
+                }
             }
             completion();
         });
