@@ -14,16 +14,22 @@
 
 @implementation SessionsViewController
 
-- (NSURL*) initialSiteLocation {
-    NSURL* siteURL = [self.baseDirectoryToUse URLByAppendingPathComponent:@"_site/program" isDirectory:YES];
-    NSURL* indexHTMLURL = [siteURL URLByAppendingPathComponent:@"index.html" isDirectory:NO];
-    
-//    NSError* error = nil;
-//    NSString* indexHTML = [NSString stringWithContentsOfURL:indexHTMLURL encoding:NSUTF8StringEncoding error:&error];
-//
-//    NSLog(@"Actual HTML is %@, error is %@", indexHTML, error);
-    
-    return indexHTMLURL;
+//- (NSURL*) initialSiteLocation {
+//    NSURL* siteURL = [self.baseDirectoryToUse URLByAppendingPathComponent:@"_site/program" isDirectory:YES];
+//    NSURL* indexHTMLURL = [siteURL URLByAppendingPathComponent:@"index.html" isDirectory:NO];
+//    
+////    NSError* error = nil;
+////    NSString* indexHTML = [NSString stringWithContentsOfURL:indexHTMLURL encoding:NSUTF8StringEncoding error:&error];
+////
+////    NSLog(@"Actual HTML is %@, error is %@", indexHTML, error);
+//    
+//    return indexHTMLURL;
+//}
+
+- (NSString*) uniqueTabPathComponent {
+    NSString* pathComponent = @"program";
+    return pathComponent;
 }
+
 
 @end

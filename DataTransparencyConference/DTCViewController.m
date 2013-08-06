@@ -33,7 +33,9 @@
     
     //gateway: if we have app support directory, then use it; else, use [NSBundle mainBundle]
     NSString *appSupportDir = [NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES) lastObject];
-    NSString *updateFilesDir = [appSupportDir stringByAppendingPathComponent:@"_site"];
+
+    NSString* tabPathComponent = [NSString stringWithFormat:@"_site/%@/index.html", [self uniqueTabPathComponent]];
+    NSString *updateFilesDir = [appSupportDir stringByAppendingPathComponent:tabPathComponent];
     
     if ([[NSFileManager defaultManager] fileExistsAtPath:updateFilesDir]) {
         NSLog(@"Using Application Support directory");
@@ -48,17 +50,32 @@
         [self.DTCWebView loadRequest:[NSURLRequest requestWithURL:self.urlToDisplayHere]];
     }
     else {
-        [self.DTCWebView loadRequest:[NSURLRequest requestWithURL:[self initialSiteLocation]]];
+        tabPathComponent = [@"_site/" stringByAppendingString:[self uniqueTabPathComponent]];
+        NSURL* siteURL = [self.baseDirectoryToUse URLByAppendingPathComponent:tabPathComponent isDirectory:YES];
+        NSURL* indexHTMLURL = [siteURL URLByAppendingPathComponent:@"index.html" isDirectory:NO];
+        
+        //    NSError* error = nil;
+        //    NSString* indexHTML = [NSString stringWithContentsOfURL:indexHTMLURL encoding:NSUTF8StringEncoding error:&error];
+        //    NSLog(@"Actual HTML is %@, error is %@", indexHTML, error);
+        
+        [self.DTCWebView loadRequest:[NSURLRequest requestWithURL:indexHTMLURL]];
     }
 }
 
-- (NSURL*) initialSiteLocation {
-    NSURL* siteURL = [self.baseDirectoryToUse URLByAppendingPathComponent:@"_site/news" isDirectory:YES];
-    NSURL* indexHTMLURL = [siteURL URLByAppendingPathComponent:@"index.html" isDirectory:NO];
-    NSLog(@"Something's wrong -- getting superclass index.html");
-    
-    return indexHTMLURL;
+//- (NSURL*) initialSiteLocation {
+//    NSURL* siteURL = [self.baseDirectoryToUse URLByAppendingPathComponent:@"_site/news" isDirectory:YES];
+//    NSURL* indexHTMLURL = [siteURL URLByAppendingPathComponent:@"index.html" isDirectory:NO];
+//    NSLog(@"Something's wrong -- getting superclass index.html");
+//    
+//    return indexHTMLURL;
+//}
+
+- (NSString*) uniqueTabPathComponent {
+    NSString* pathComponent = @"news";
+    NSLog(@"Something's wrong -- getting superclass uniqueTabPathComponent");
+    return pathComponent;
 }
+
 
 - (void) fetchUpdate {
     NSURL* versionDataLink = [NSURL URLWithString:@"https://dl.dropboxusercontent.com/u/8902155/data_transparency_version.json"];
