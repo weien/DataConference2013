@@ -14,6 +14,8 @@
 		64F09C7817B04194007304A8 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 64F09C7117B04194007304A8 /* zip.c */; };
 		64F09C7917B04194007304A8 /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F09C7417B04194007304A8 /* SSZipArchive.m */; };
 		64F09C7B17B041AF007304A8 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 64F09C7A17B041AF007304A8 /* libz.dylib */; };
+		64F09C8D17B1318C007304A8 /* DT2013-appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 64F09C8C17B1318C007304A8 /* DT2013-appicon.png */; };
+		64F09C8F17B13195007304A8 /* DT2013-appicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64F09C8E17B13195007304A8 /* DT2013-appicon@2x.png */; };
 		64F0BDFD17AB37C70021DA00 /* news-tabbaricon.png in Resources */ = {isa = PBXBuildFile; fileRef = 64F0BDFB17AB37C60021DA00 /* news-tabbaricon.png */; };
 		64F0BDFE17AB37C70021DA00 /* news-tabbaricon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64F0BDFC17AB37C70021DA00 /* news-tabbaricon@2x.png */; };
 		64F0BE0017AC0EDC0021DA00 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64F0BDFF17AC0EDC0021DA00 /* Social.framework */; };
@@ -35,8 +37,6 @@
 		64F1663717A985400098A02B /* UIButtonBarArrowRight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64F1663317A985400098A02B /* UIButtonBarArrowRight@2x.png */; };
 		64F1664117A9C3790098A02B /* twitter-bird-light-bgs.png in Resources */ = {isa = PBXBuildFile; fileRef = 64F1663F17A9C3790098A02B /* twitter-bird-light-bgs.png */; };
 		64F1664217A9C3790098A02B /* twitter-bird-light-bgs@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64F1664017A9C3790098A02B /* twitter-bird-light-bgs@2x.png */; };
-		64F1664D17AAB8E50098A02B /* DTC-logo-square.png in Resources */ = {isa = PBXBuildFile; fileRef = 64F1664B17AAB8E40098A02B /* DTC-logo-square.png */; };
-		64F1664E17AAB8E50098A02B /* DTC-logo-square@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64F1664C17AAB8E40098A02B /* DTC-logo-square@2x.png */; };
 		64F27FE717A366E800C3272A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64F27FE617A366E800C3272A /* UIKit.framework */; };
 		64F27FE917A366E800C3272A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64F27FE817A366E800C3272A /* Foundation.framework */; };
 		64F27FEB17A366E800C3272A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64F27FEA17A366E800C3272A /* CoreGraphics.framework */; };
@@ -65,6 +65,8 @@
 		64F09C7317B04194007304A8 /* SSZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSZipArchive.h; path = research/SSZipArchive/SSZipArchive.h; sourceTree = SOURCE_ROOT; };
 		64F09C7417B04194007304A8 /* SSZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSZipArchive.m; path = research/SSZipArchive/SSZipArchive.m; sourceTree = SOURCE_ROOT; };
 		64F09C7A17B041AF007304A8 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		64F09C8C17B1318C007304A8 /* DT2013-appicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "DT2013-appicon.png"; path = "../DT2013-appicon.png"; sourceTree = "<group>"; };
+		64F09C8E17B13195007304A8 /* DT2013-appicon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "DT2013-appicon@2x.png"; path = "../DT2013-appicon@2x.png"; sourceTree = "<group>"; };
 		64F0BDFB17AB37C60021DA00 /* news-tabbaricon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "news-tabbaricon.png"; sourceTree = "<group>"; };
 		64F0BDFC17AB37C70021DA00 /* news-tabbaricon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "news-tabbaricon@2x.png"; sourceTree = "<group>"; };
 		64F0BDFF17AC0EDC0021DA00 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -94,8 +96,6 @@
 		64F1663317A985400098A02B /* UIButtonBarArrowRight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UIButtonBarArrowRight@2x.png"; sourceTree = "<group>"; };
 		64F1663F17A9C3790098A02B /* twitter-bird-light-bgs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter-bird-light-bgs.png"; sourceTree = "<group>"; };
 		64F1664017A9C3790098A02B /* twitter-bird-light-bgs@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter-bird-light-bgs@2x.png"; sourceTree = "<group>"; };
-		64F1664B17AAB8E40098A02B /* DTC-logo-square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DTC-logo-square.png"; sourceTree = "<group>"; };
-		64F1664C17AAB8E40098A02B /* DTC-logo-square@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DTC-logo-square@2x.png"; sourceTree = "<group>"; };
 		64F27FE317A366E800C3272A /* DataTransparencyConference.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataTransparencyConference.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64F27FE617A366E800C3272A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		64F27FE817A366E800C3272A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -189,8 +189,8 @@
 		64F1662F17A9852C0098A02B /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				64F1664B17AAB8E40098A02B /* DTC-logo-square.png */,
-				64F1664C17AAB8E40098A02B /* DTC-logo-square@2x.png */,
+				64F09C8E17B13195007304A8 /* DT2013-appicon@2x.png */,
+				64F09C8C17B1318C007304A8 /* DT2013-appicon.png */,
 				64F1663017A985400098A02B /* UIButtonBarArrowLeft.png */,
 				64F1663117A985400098A02B /* UIButtonBarArrowLeft@2x.png */,
 				64F1663217A985400098A02B /* UIButtonBarArrowRight.png */,
@@ -335,14 +335,14 @@
 				64F1663717A985400098A02B /* UIButtonBarArrowRight@2x.png in Resources */,
 				64F1664117A9C3790098A02B /* twitter-bird-light-bgs.png in Resources */,
 				64F1664217A9C3790098A02B /* twitter-bird-light-bgs@2x.png in Resources */,
-				64F1664D17AAB8E50098A02B /* DTC-logo-square.png in Resources */,
-				64F1664E17AAB8E50098A02B /* DTC-logo-square@2x.png in Resources */,
 				64F0BDFD17AB37C70021DA00 /* news-tabbaricon.png in Resources */,
 				64F0BDFE17AB37C70021DA00 /* news-tabbaricon@2x.png in Resources */,
 				64F0BE0317AC46D50021DA00 /* noun_project_1331.png in Resources */,
 				64F0BE0417AC46D50021DA00 /* noun_project_1331@2x.png in Resources */,
 				64F0BE0717AC4FD90021DA00 /* program-tabbaricon.png in Resources */,
 				64F0BE0817AC4FD90021DA00 /* program-tabbaricon@2x.png in Resources */,
+				64F09C8D17B1318C007304A8 /* DT2013-appicon.png in Resources */,
+				64F09C8F17B13195007304A8 /* DT2013-appicon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
