@@ -61,35 +61,37 @@
 }
 
 - (void) fetchUpdate {
-
     NSURL* versionDataLink = [NSURL URLWithString:@"https://dl.dropboxusercontent.com/u/8902155/data_transparency_version.json"];
-    NSError* error = nil;
     
-    //maybe take this off main thread?
-    NSData* JSONData = [NSData dataWithContentsOfURL:versionDataLink options:NSDataReadingMappedIfSafe error:&error];
-    NSDictionary* latestVersion = [NSJSONSerialization JSONObjectWithData:JSONData options:0 error:&error];
-    NSLog(@"our Dict has %@, error is %@", latestVersion, error);
+    dispatch_async(dispatch_queue_create("checkForUpdate", NULL), ^{
+        NSError* error = nil;
+        NSData* JSONData = [NSData dataWithContentsOfURL:versionDataLink options:NSDataReadingMappedIfSafe error:&error];
+        if (error) {
+            NSLog(@"Data download error: %@", error);
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSError* error = nil;
+            NSDictionary* latestVersion = [NSJSONSerialization JSONObjectWithData:JSONData options:0 error:&error];
+            NSLog(@"our Dict has %@, error is %@", latestVersion, error);
+            
+            NSInteger versionNumber = [latestVersion[@"data transparency"][@"current version"] integerValue];
+            NSURL* previousVersionFile = [self.baseDirectoryToUse URLByAppendingPathComponent:@"_site/version.txt" isDirectory:NO];
+            int previousVersionNumber = [[NSString stringWithContentsOfURL:previousVersionFile encoding:NSUTF8StringEncoding error:&error] intValue];
+            //NSLog(@"new version is %d, previous version is %d, error is %@", versionNumber, previousVersionNumber, intError);
+            
+            //compare latestVersion (from bottleNeck) to previousVersion
+            if (versionNumber > previousVersionNumber) {
+                NSLog(@"new is greater than previous version, downloading update");
+                [self showCustomSyncBar]; //just show this if we need to
+                
+                void (^completionBlock)(void) = ^() {
+                    [self hideCustomSyncBar];
+                };
+                [ZipDownloader downloadZipWithCompletion:completionBlock];
+            }
+        });
+    });
     
-    NSInteger versionNumber = [latestVersion[@"data transparency"][@"current version"] integerValue];
-//    NSLog(@"versionNumber is %d", versionNumber);
-    
-    NSURL* previousVersionFile = [self.baseDirectoryToUse URLByAppendingPathComponent:@"_site/version.txt" isDirectory:NO];
-    NSError* intError = nil;
-    int previousVersionNumber = [[NSString stringWithContentsOfURL:previousVersionFile encoding:NSUTF8StringEncoding error:&intError] intValue];
-    
-    NSLog(@"new version is %d, previous version is %d, error is %@", versionNumber, previousVersionNumber, intError);
-    
-    //compare latestVersion (from bottleNeck) to previousVersion
-    if (versionNumber > previousVersionNumber) {
-        NSLog(@"new and previous versions are different, downloading update");
-        [self showCustomSyncBar]; //just show this if we need to
-        
-        void (^completionBlock)(void) = ^() {
-            [self hideCustomSyncBar];
-        };
-        [ZipDownloader downloadZipWithCompletion:completionBlock];
-        
-    }
 //    else {
 //        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 1.0 * NSEC_PER_SEC);
 //        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
