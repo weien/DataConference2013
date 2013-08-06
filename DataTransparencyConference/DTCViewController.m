@@ -12,7 +12,7 @@
 
 @interface DTCViewController () <UIWebViewDelegate>
 @property (strong, nonatomic) UILabel* syncBar;
-@property (strong, nonatomic) NSString* lastReceivedUpdate;
+//@property (strong, nonatomic) NSString* lastReceivedUpdate;
 
 @end
 
@@ -21,7 +21,7 @@
 @synthesize urlToPassForward = _urlToPassForward;
 @synthesize urlToDisplayHere = _urlToDisplayHere;
 @synthesize syncBar = _syncBar;
-@synthesize lastReceivedUpdate = _lastReceivedUpdate;
+//@synthesize lastReceivedUpdate = _lastReceivedUpdate;
 @synthesize baseDirectoryToUse = _baseDirectoryToUse;
 
 #pragma mark - data handling
@@ -62,16 +62,26 @@
 
 - (void) fetchUpdate {
 
-    
+    NSURL* versionDataLink = [NSURL URLWithString:@"https://dl.dropboxusercontent.com/u/8902155/data_transparency_version.json"];
     NSError* error = nil;
-    NSURL* bottleNeck = [NSURL URLWithString:@"https://dl.dropboxusercontent.com/u/8902155/latestversion.txt"];
-    NSString* latestVersion = [NSString stringWithContentsOfURL:bottleNeck encoding:NSUTF8StringEncoding error:&error];
     
-    NSLog(@"latestVersion is %@", latestVersion);
+    //maybe take this off main thread?
+    NSData* JSONData = [NSData dataWithContentsOfURL:versionDataLink options:NSDataReadingMappedIfSafe error:&error];
+    NSDictionary* latestVersion = [NSJSONSerialization JSONObjectWithData:JSONData options:0 error:&error];
+    NSLog(@"our Dict has %@, error is %@", latestVersion, error);
+    
+    NSInteger versionNumber = [latestVersion[@"data transparency"][@"current version"] integerValue];
+//    NSLog(@"versionNumber is %d", versionNumber);
+    
+    NSURL* previousVersionFile = [self.baseDirectoryToUse URLByAppendingPathComponent:@"_site/version.txt" isDirectory:NO];
+    NSError* intError = nil;
+    int previousVersionNumber = [[NSString stringWithContentsOfURL:previousVersionFile encoding:NSUTF8StringEncoding error:&intError] intValue];
+    
+    NSLog(@"new version is %d, previous version is %d, error is %@", versionNumber, previousVersionNumber, intError);
     
     //compare latestVersion (from bottleNeck) to previousVersion
-    if (![latestVersion isEqualToString:self.lastReceivedUpdate]) {
-        NSLog(@"latestVersion and previousVersion are different, downloading update");
+    if (versionNumber > previousVersionNumber) {
+        NSLog(@"new and previous versions are different, downloading update");
         [self showCustomSyncBar]; //just show this if we need to
         
         void (^completionBlock)(void) = ^() {
@@ -87,7 +97,7 @@
 //        });
 //    }
     
-    self.lastReceivedUpdate = latestVersion;
+//    self.lastReceivedUpdate = latestVersionStringID;
 }
 
 #pragma mark - syncBar methods
