@@ -356,45 +356,6 @@
         <image name="program-tabbaricon.png" width="29" height="30"/>
         <image name="twitter-bird-light-bgs.png" width="30" height="24"/>
     </resources>
-    <classes>
-        <class className="CustomNavigationViewController" superclassName="UINavigationController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomNavigationViewController.h"/>
-        </class>
-        <class className="CustomTabBarController" superclassName="UITabBarController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomTabBarController.h"/>
-        </class>
-        <class className="DTCViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DTCViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="addCustomSyncBar"/>
-                <relationship kind="outlet" name="DTCWebView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="ExternalWebViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ExternalWebViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="goBack:"/>
-                <relationship kind="action" name="goForward:"/>
-                <relationship kind="action" name="openPageInBrowser:"/>
-                <relationship kind="outlet" name="externalLinkViewer" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="NewsViewController" superclassName="DTCViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewsViewController.h"/>
-        </class>
-        <class className="SessionsViewController" superclassName="DTCViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SessionsViewController.h"/>
-        </class>
-        <class className="SpeakersViewController" superclassName="DTCViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SpeakersViewController.h"/>
-        </class>
-        <class className="TweetsViewController" superclassName="DTCViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TweetsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="presentTweetSheet:"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

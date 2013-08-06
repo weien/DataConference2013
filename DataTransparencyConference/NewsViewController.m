@@ -29,7 +29,7 @@
 - (void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:NO];
     
-    [self fetchUpdate];
+//    [self fetchUpdate]; //just for testing
 }
 
 @end

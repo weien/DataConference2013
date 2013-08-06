@@ -8,13 +8,19 @@
 
 #import "AppDelegate.h"
 #import <Crashlytics/Crashlytics.h>
+#import "DTCViewController.h"
 
 @implementation AppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{  
+- (void) fetchUpdateOnDTCViewController {
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    DTCViewController *rootViewController = (DTCViewController*) window.rootViewController; //is this correct/safe?
+    [rootViewController fetchUpdate];
+}
 
-    
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    [self fetchUpdateOnDTCViewController];
     [Crashlytics startWithAPIKey:@"f8325a280442dcfe187c30777d83465e38bea645"];    
     return YES;
 }
@@ -39,6 +45,7 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [self fetchUpdateOnDTCViewController];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
