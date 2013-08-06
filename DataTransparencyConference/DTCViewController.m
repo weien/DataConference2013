@@ -87,7 +87,8 @@
                 void (^completionBlock)(void) = ^() {
                     [self hideCustomSyncBar];
                 };
-                [ZipDownloader downloadZipWithCompletion:completionBlock];
+                NSURL* newVersionLocation = [NSURL URLWithString:latestVersion[@"data transparency"][@"current version download url"]];
+                [ZipDownloader downloadZipAtURL:newVersionLocation WithCompletion:completionBlock];
             }
         });
     });

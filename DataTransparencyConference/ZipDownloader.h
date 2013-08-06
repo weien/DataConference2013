@@ -10,6 +10,6 @@
 
 @interface ZipDownloader : NSObject
 
-+ (void) downloadZipWithCompletion:(void (^)(void))completion;
++ (void) downloadZipAtURL:(NSURL*)url WithCompletion:(void (^)(void))completion;
 
 @end

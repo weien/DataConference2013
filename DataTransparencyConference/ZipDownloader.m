@@ -11,12 +11,12 @@
 
 @implementation ZipDownloader
 
-+ (void) downloadZipWithCompletion:(void (^)(void))completion {
-    NSURL* fileURL = [NSURL URLWithString:@"https://dl.dropboxusercontent.com/u/8902155/_site.zip"];
++ (void) downloadZipAtURL:(NSURL*)url WithCompletion:(void (^)(void))completion {
+//    NSURL* fileURL = [NSURL URLWithString:@"https://dl.dropboxusercontent.com/u/8902155/_site.zip"];
     
     dispatch_async(dispatch_queue_create("_site downloader", NULL), ^{
         NSError* error = nil;
-        id data = [NSData dataWithContentsOfURL:fileURL options:NSDataReadingMappedIfSafe error:&error];
+        id data = [NSData dataWithContentsOfURL:url options:NSDataReadingMappedIfSafe error:&error];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             if (error)
