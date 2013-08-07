@@ -50,8 +50,8 @@
     NSString* updateFilesDir = [appSupportDir stringByAppendingPathComponent:pathComponent];
     NSURL* baseDirectory = nil;
     
-    if ([[NSFileManager defaultManager] fileExistsAtPath:updateFilesDir]) {
-//    if (1==0) { //force mainBundle
+//    if ([[NSFileManager defaultManager] fileExistsAtPath:updateFilesDir]) {
+    if (1==0) { //force mainBundle
         NSLog(@"Using Application Support directory");
         baseDirectory = [NSURL fileURLWithPath:appSupportDir];
     }
@@ -143,13 +143,13 @@
 #pragma mark - webView handling
 
 - (BOOL) webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
-    NSLog(@"Request URL is %@, scheme is %@, last path component is %@, host is %@", request.URL, request.URL.scheme, request.URL.lastPathComponent, request.URL.host);
+    //NSLog(@"Request URL is %@, scheme is %@, last path component is %@, host is %@", request.URL, request.URL.scheme, request.URL.lastPathComponent, request.URL.host);
     if ([request.URL.scheme isEqualToString: @"file"]) {
         if ([request.URL.lastPathComponent isEqualToString:@"index.html"]) { //initial load
             return YES;
         }
         else {
-            NSLog(@"NavigationType is %d (O is 'clicked', 5 is 'other')", navigationType);
+            //NSLog(@"NavigationType is %d (O is 'clicked', 5 is 'other')", navigationType);
             if (navigationType != UIWebViewNavigationTypeLinkClicked) { //from another VC, don't segue again
                 return YES;
             }
@@ -175,6 +175,8 @@
     //reset background color to something more compositing-friendly
     self.DTCWebView.backgroundColor = [UIColor blackColor];
     self.DTCWebView.opaque = YES;
+    
+    self.navigationController.navigationBar.topItem.title  = [self.DTCWebView stringByEvaluatingJavaScriptFromString:@"document.title"];
 }
 
 #pragma mark - segue and VC lifecycle
