@@ -14,8 +14,11 @@
 
 - (void) fetchUpdateOnDTCViewController {
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    DTCViewController *rootViewController = (DTCViewController*) window.rootViewController; //is this correct/safe?
-    [rootViewController fetchUpdate];
+    UITabBarController *rootViewController = (UITabBarController*) window.rootViewController;
+    UINavigationController* navViewController = (UINavigationController*) rootViewController.selectedViewController;
+    DTCViewController* currentDTCViewController = (DTCViewController*) navViewController.visibleViewController;
+
+    [currentDTCViewController fetchUpdate];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
