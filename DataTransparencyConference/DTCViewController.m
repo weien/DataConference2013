@@ -20,7 +20,6 @@
 @synthesize urlToPassForward = _urlToPassForward;
 @synthesize urlToDisplayHere = _urlToDisplayHere;
 @synthesize syncBar = _syncBar;
-@synthesize baseDirectoryToUse = _baseDirectoryToUse;
 
 #pragma mark - data handling
 
@@ -50,16 +49,17 @@
     
     NSString* appSupportDir = [NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES) lastObject];
     NSString* updateFilesDir = [appSupportDir stringByAppendingPathComponent:pathComponent];
+    NSURL* baseDirectory = nil;
     
     if ([[NSFileManager defaultManager] fileExistsAtPath:updateFilesDir]) {
         NSLog(@"Using Application Support directory");
-        self.baseDirectoryToUse = [NSURL fileURLWithPath:appSupportDir];
+        baseDirectory = [NSURL fileURLWithPath:appSupportDir];
     }
     else {
         NSLog(@"Using mainBundle bundle");
-        self.baseDirectoryToUse = [[NSBundle mainBundle] bundleURL];
+        baseDirectory = [[NSBundle mainBundle] bundleURL];
     }
-    return [self.baseDirectoryToUse URLByAppendingPathComponent:pathComponent isDirectory:NO];
+    return [baseDirectory URLByAppendingPathComponent:pathComponent isDirectory:NO];
 }
 
 - (NSString*) uniqueTabPathComponent {
