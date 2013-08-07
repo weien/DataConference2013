@@ -55,6 +55,7 @@
                                     overwrite:YES
                                      password:nil
                                         error:&unzipError];
+                NSLog(@"*****Just Unzipped to %@", appSupportDir);
                 if (unzipError) {
                     NSLog(@"Unzipping failed, error: %@", unzipError);
                 }

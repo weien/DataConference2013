@@ -52,6 +52,7 @@
     NSURL* baseDirectory = nil;
     
     if ([[NSFileManager defaultManager] fileExistsAtPath:updateFilesDir]) {
+//    if (1==0) {
         NSLog(@"Using Application Support directory");
         baseDirectory = [NSURL fileURLWithPath:appSupportDir];
     }

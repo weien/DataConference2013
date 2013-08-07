@@ -1,10 +1,10 @@
 =================R1 NEED=================
-why require clean and rebuild in order to see updated Application Support Directory files (or does this also apply to mainBundle as well)? test that live update actually works
-add test2, for another bread crumb test
+make title bar dynamic
 
 maybe add uiactivitynotification for updates/dropbox calls, too
 program enrollment
 test using both mainBundle and Application Support Directory
+keep an eye on making sure live update actually works
 
 ----QuestionsForWolfandVictoria----
 When to show sync/update bar? When checking, when downloading?
@@ -47,6 +47,8 @@ self.basedirectorytouse should probably be an NSUserDefault (so consistent acros
 add handling in case no data from dropbox public folder (at any time) -- to avoid crashes if error downloading
 add UINetworkActivityIndicator
 fancy go forward/back buttons
+why require clean and rebuild in order to see updated Application Support Directory files (or does this also apply to mainBundle as well)? test that live update actually works //seems to work...
+add test2, for another bread crumb test
 =================WATCH=================
 stupid crash bug (when clicking on links in uiwebview that is displaying a pdf, as on our news page):  http://stackoverflow.com/questions/16080374/uiwebview-pdf-hyperlinks-crash
     update: supposedly will be fixed soon (radar filed) https://twitter.com/aSx_edoc/status/362940341965426689
