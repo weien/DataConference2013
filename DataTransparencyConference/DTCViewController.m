@@ -29,8 +29,6 @@
     self.DTCWebView.backgroundColor = [UIColor clearColor];
     self.DTCWebView.opaque = NO;
     
-//    NSString* appSupportDir = [NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES) lastObject];
-    
     if (self.urlToDisplayHere) { //was forwarded from another DTCViewController
         //        NSError* error = nil;
         //        NSString* indexHTML = [NSString stringWithContentsOfURL:self.urlToDisplayHere encoding:NSUTF8StringEncoding error:&error];
@@ -38,46 +36,15 @@
         
         NSString* urlComponent = self.urlToDisplayHere.absoluteString;
         [self loadRequestInCorrectDirectoryUsingPathComponent:urlComponent];
-        
-        
-//        NSString* updateCheckDir = [appSupportDir stringByAppendingPathComponent:urlComponent];
-//                NSLog(@"urlToDisplayHere is %@", updateCheckDir);
-//        
-//        if ([[NSFileManager defaultManager] fileExistsAtPath:updateCheckDir]) {
-//            NSLog(@"Using Application Support directory");
-//            self.baseDirectoryToUse = [NSURL fileURLWithPath:appSupportDir];
-//        }
-//        else {
-//            NSLog(@"Using mainBundle bundle");
-//            self.baseDirectoryToUse = [[NSBundle mainBundle] bundleURL];
-//        }
-//        
-//        NSURL* siteURL = [self.baseDirectoryToUse URLByAppendingPathComponent:urlComponent isDirectory:NO];
-//        [self.DTCWebView loadRequest:[NSURLRequest requestWithURL:siteURL]];
     }
     else {
-        //if the specific file not available in AppSuppDir, then use mainBundle
         NSString* tabPathComponent = [NSString stringWithFormat:@"_site/%@/index.html", [self uniqueTabPathComponent]];
-        
         [self loadRequestInCorrectDirectoryUsingPathComponent:tabPathComponent];
-        
-//        NSString* updateFilesDir = [appSupportDir stringByAppendingPathComponent:tabPathComponent];
-//        
-//        if ([[NSFileManager defaultManager] fileExistsAtPath:updateFilesDir]) {
-//            NSLog(@"Using Application Support directory");
-//            self.baseDirectoryToUse = [NSURL fileURLWithPath:appSupportDir];
-//        }
-//        else {
-//            NSLog(@"Using mainBundle bundle");
-//            self.baseDirectoryToUse = [[NSBundle mainBundle] bundleURL];
-//        }
-//        
-//        NSURL* siteURL = [self.baseDirectoryToUse URLByAppendingPathComponent:tabPathComponent isDirectory:NO];
-//        [self.DTCWebView loadRequest:[NSURLRequest requestWithURL:siteURL]];
     }
 }
 
 - (void) loadRequestInCorrectDirectoryUsingPathComponent:(NSString*)pathComponent {
+    //if the specific file not available in AppSuppDir, then use mainBundle
     NSString* appSupportDir = [NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES) lastObject];
     NSString* updateFilesDir = [appSupportDir stringByAppendingPathComponent:pathComponent];
     
@@ -185,9 +152,7 @@
             }
             
             NSString* urlPathComponent = [@"_site" stringByAppendingString:request.URL.path];
-//            NSURL* internalURL = [self.baseDirectoryToUse URLByAppendingPathComponent:urlPathComponent isDirectory:NO];
-            
-            self.urlToPassForward = [NSURL URLWithString:urlPathComponent]; //temp
+            self.urlToPassForward = [NSURL URLWithString:urlPathComponent]; //just a URL fragment, but it'll do (reuse the same property)
             [self performSegueWithIdentifier:@"pushNextWebView" sender:self];
             return NO;
         }
