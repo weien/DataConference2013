@@ -6,7 +6,8 @@ maybe add uiactivitynotification for updates/dropbox calls, too
 program enrollment
 test using both mainBundle and Application Support Directory
 
-----QuestionsForWolf----
+----QuestionsForWolfandVictoria----
+When to show sync/update bar? When checking, when downloading?
 what is best way to handle failed downloads? for now just jumping out of the fetch (return;)
 would it make sense to just add/update a "yay, zip completed" file instead of always checking if specific file is avail?
 should we allow autorotation? (note dumb bug with switching tabs while in landscape)

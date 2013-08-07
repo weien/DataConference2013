@@ -17,7 +17,7 @@
     UITabBarController *rootViewController = (UITabBarController*) window.rootViewController;
     UINavigationController* navViewController = (UINavigationController*) rootViewController.selectedViewController;
     
-    if ([navViewController.visibleViewController respondsToSelector:@selector(fetchUpdate:)]) {
+    if ([navViewController.visibleViewController respondsToSelector:@selector(fetchUpdate)]) {
         DTCViewController* currentDTCViewController = (DTCViewController*) navViewController.visibleViewController;
         [currentDTCViewController fetchUpdate];
     }

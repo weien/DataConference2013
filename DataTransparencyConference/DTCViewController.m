@@ -113,7 +113,7 @@
 - (void) showCustomSyncBar {
     if (!self.syncBar) {
         self.syncBar = [[UILabel alloc] initWithFrame:CGRectMake(0, -10.0f, self.view.frame.size.width, 10.0f)];
-        [self.syncBar setBackgroundColor:[UIColor colorWithRed:200/255.0f green:120/255.0f blue:30/255.0f alpha:1.0f]];
+        [self.syncBar setBackgroundColor:[UIColor colorWithRed:98/255.0f green:158/255.0f blue:208/255.0f alpha:1.0f]];
         
         [self.syncBar setText:@"UPDATING..."];
         [self.syncBar setTextAlignment:NSTextAlignmentCenter];
@@ -143,7 +143,7 @@
 #pragma mark - webView handling
 
 - (BOOL) webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
-    //NSLog(@"Request URL is %@, scheme is %@, last path component is %@, host is %@, path is %@", request.URL, request.URL.scheme, request.URL.lastPathComponent, request.URL.host, request.URL.path);
+    NSLog(@"Request URL is %@, scheme is %@, last path component is %@, host is %@, path is %@", request.URL, request.URL.scheme, request.URL.lastPathComponent, request.URL.host, request.URL.path);
     if ([request.URL.scheme isEqualToString: @"file"]) {
         if ([request.URL.lastPathComponent isEqualToString:@"index.html"]) { //initial load
             return YES;
