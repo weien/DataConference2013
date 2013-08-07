@@ -34,17 +34,20 @@
         //        NSString* indexHTML = [NSString stringWithContentsOfURL:self.urlToDisplayHere encoding:NSUTF8StringEncoding error:&error];
         //        NSLog(@"Actual HTML is %@, error is %@", indexHTML, error);
         
-        NSString* urlComponent = self.urlToDisplayHere.absoluteString;
-        [self loadRequestInCorrectDirectoryUsingPathComponent:urlComponent];
+        NSString* pathComponent = self.urlToDisplayHere.absoluteString;
+        NSURL* processedURL = [self reformedURLWithCorrectDirectoryUsingPathComponent:pathComponent];
+        [self.DTCWebView loadRequest:[NSURLRequest requestWithURL:processedURL]];
     }
     else {
-        NSString* tabPathComponent = [NSString stringWithFormat:@"_site/%@/index.html", [self uniqueTabPathComponent]];
-        [self loadRequestInCorrectDirectoryUsingPathComponent:tabPathComponent];
+        NSString* pathComponent = [NSString stringWithFormat:@"_site/%@/index.html", [self uniqueTabPathComponent]];
+        NSURL* processedURL = [self reformedURLWithCorrectDirectoryUsingPathComponent:pathComponent];
+        [self.DTCWebView loadRequest:[NSURLRequest requestWithURL:processedURL]];
     }
 }
 
-- (void) loadRequestInCorrectDirectoryUsingPathComponent:(NSString*)pathComponent {
+- (NSURL*) reformedURLWithCorrectDirectoryUsingPathComponent:(NSString*)pathComponent {
     //if the specific file not available in AppSuppDir, then use mainBundle
+    
     NSString* appSupportDir = [NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES) lastObject];
     NSString* updateFilesDir = [appSupportDir stringByAppendingPathComponent:pathComponent];
     
@@ -56,9 +59,7 @@
         NSLog(@"Using mainBundle bundle");
         self.baseDirectoryToUse = [[NSBundle mainBundle] bundleURL];
     }
-    
-    NSURL* siteURL = [self.baseDirectoryToUse URLByAppendingPathComponent:pathComponent isDirectory:NO];
-    [self.DTCWebView loadRequest:[NSURLRequest requestWithURL:siteURL]];
+    return [self.baseDirectoryToUse URLByAppendingPathComponent:pathComponent isDirectory:NO];
 }
 
 - (NSString*) uniqueTabPathComponent {
@@ -82,7 +83,7 @@
             //NSLog(@"New Dict is %@, error is %@", latestVersion, error);
             
             NSInteger versionNumber = [latestVersion[@"data transparency"][@"current version"] integerValue];
-            NSURL* previousVersionFile = [self.baseDirectoryToUse URLByAppendingPathComponent:@"_site/version.txt" isDirectory:NO];
+            NSURL* previousVersionFile = [self reformedURLWithCorrectDirectoryUsingPathComponent:@"_site/version.txt"];
             NSInteger previousVersionNumber = [[NSString stringWithContentsOfURL:previousVersionFile encoding:NSUTF8StringEncoding error:&error] integerValue];
             //NSLog(@"new version is %d, previous version is %d, error is %@", versionNumber, previousVersionNumber, intError);
             
@@ -91,6 +92,7 @@
                 [self showCustomSyncBar];
                 
                 void (^completionBlock)(void) = ^() {
+                    //if we want longer minimum visibility of sync bar
 //                    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 1.0 * NSEC_PER_SEC);
 //                    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
 //                        [self hideCustomSyncBar];
