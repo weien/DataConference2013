@@ -73,6 +73,9 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:self.urlToDisplay];
     [self.externalLinkViewer loadRequest:request];
     
+    [self.backButton setEnabled:[self.externalLinkViewer canGoBack]];
+    [self.forwardButton setEnabled:[self.externalLinkViewer canGoForward]];
+    
 }
 
 - (void)viewDidUnload {

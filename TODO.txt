@@ -1,9 +1,8 @@
 =================R1 NEED=================
-maybe add uiactivitynotification for updates/dropbox calls, too
-
-why require clean and rebuild in order to see updated Application Support Directory files? test that live update actually works
+why require clean and rebuild in order to see updated Application Support Directory files (or does this also apply to mainBundle as well)? test that live update actually works
 add test2, for another bread crumb test
 
+maybe add uiactivitynotification for updates/dropbox calls, too
 program enrollment
 test using both mainBundle and Application Support Directory
 
