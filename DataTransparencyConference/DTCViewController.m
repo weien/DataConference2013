@@ -76,7 +76,6 @@
     return pathComponent;
 }
 
-
 - (void) fetchUpdate {
     NSURL* versionDataLink = [NSURL URLWithString:@"https://dl.dropboxusercontent.com/u/8902155/data_transparency_version.json"];
     
@@ -89,16 +88,16 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             NSError* error = nil;
             NSDictionary* latestVersion = [NSJSONSerialization JSONObjectWithData:JSONData options:0 error:&error];
-            NSLog(@"our Dict has %@, error is %@", latestVersion, error);
+            NSLog(@"New Dict is %@, error is %@", latestVersion, error);
             
             NSInteger versionNumber = [latestVersion[@"data transparency"][@"current version"] integerValue];
             NSURL* previousVersionFile = [self.baseDirectoryToUse URLByAppendingPathComponent:@"_site/version.txt" isDirectory:NO];
-            int previousVersionNumber = [[NSString stringWithContentsOfURL:previousVersionFile encoding:NSUTF8StringEncoding error:&error] intValue];
+            NSInteger previousVersionNumber = [[NSString stringWithContentsOfURL:previousVersionFile encoding:NSUTF8StringEncoding error:&error] integerValue];
             //NSLog(@"new version is %d, previous version is %d, error is %@", versionNumber, previousVersionNumber, intError);
             
             if (versionNumber > previousVersionNumber) {
-                NSLog(@"new is greater than previous version, downloading update");
-                [self showCustomSyncBar]; //just show this if we need to
+                NSLog(@"new (%d) is greater than previous version (%d), downloading update", versionNumber, previousVersionNumber);
+                [self showCustomSyncBar];
                 
                 void (^completionBlock)(void) = ^() {
 //                    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 1.0 * NSEC_PER_SEC);
