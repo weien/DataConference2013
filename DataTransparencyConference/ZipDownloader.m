@@ -17,11 +17,12 @@
     dispatch_async(dispatch_queue_create("_site downloader", NULL), ^{
         NSError* error = nil;
         id data = [NSData dataWithContentsOfURL:url options:NSDataReadingMappedIfSafe error:&error];
+        if (!data) {
+            NSLog(@"Failure to download zip file: %@", error);
+            return;
+        }
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            if (error)
-                NSLog(@"Failure to download zip file: %@", error);
-            
             //get Application Support directory
             NSString *appSupportDir = [NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES) lastObject];
             

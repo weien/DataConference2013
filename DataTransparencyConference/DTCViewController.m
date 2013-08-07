@@ -74,8 +74,9 @@
     dispatch_async(dispatch_queue_create("checkForUpdate", NULL), ^{
         NSError* error = nil;
         NSData* JSONData = [NSData dataWithContentsOfURL:versionDataLink options:NSDataReadingMappedIfSafe error:&error];
-        if (error) {
+        if (!JSONData) {
             NSLog(@"Data download error: %@", error);
+            return;
         }
         dispatch_async(dispatch_get_main_queue(), ^{
             NSError* error = nil;
