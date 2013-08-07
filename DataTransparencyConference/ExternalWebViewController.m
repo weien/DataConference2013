@@ -16,6 +16,8 @@
 @synthesize externalLinkViewer = _externalLinkViewer;
 @synthesize urlToDisplay = _urlToDisplay;
 @synthesize spinner = _spinner;
+@synthesize backButton = _backButton;
+@synthesize forwardButton = _forwardButton;
 
 - (void) setUrlToDisplay:(NSURL *)urlToDisplay {
     _urlToDisplay = urlToDisplay;
@@ -29,6 +31,9 @@
 - (void) webViewDidFinishLoad:(UIWebView *)webView {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     [self.spinner stopAnimating];
+    
+    [self.backButton setEnabled:[webView canGoBack]];
+    [self.forwardButton setEnabled:[webView canGoForward]];
 }
 
 - (void) webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
@@ -50,15 +55,11 @@
 }
 
 - (IBAction)goBack:(id)sender {
-    if ([self.externalLinkViewer canGoBack]) {
-        [self.externalLinkViewer goBack];
-    }
+    [self.externalLinkViewer goBack];
 }
 
 - (IBAction)goForward:(id)sender {
-    if ([self.externalLinkViewer canGoForward]) {
-        [self.externalLinkViewer goForward];
-    }
+    [self.externalLinkViewer goForward];
 }
 
 - (void)viewDidLoad

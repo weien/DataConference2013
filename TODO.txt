@@ -1,5 +1,5 @@
 =================R1 NEED=================
-fancy go forward/back buttons
+maybe add uiactivitynotification for updates/dropbox calls, too
 
 why require clean and rebuild in order to see updated Application Support Directory files? test that live update actually works
 add test2, for another bread crumb test
@@ -46,6 +46,7 @@ add bogus little test for internal linking
 self.basedirectorytouse should probably be an NSUserDefault (so consistent across all DTCVCs and subclasses) //unless perhaps... it shouldn't be consistent, and is fresh for every DTCVC/subclass. Maybe need to do AppSuppDir check for internals, too. maybe self.basedirectorytouse shouldn't even be a class property... just a method var could work? //correct
 add handling in case no data from dropbox public folder (at any time) -- to avoid crashes if error downloading
 add UINetworkActivityIndicator
+fancy go forward/back buttons
 =================WATCH=================
 stupid crash bug (when clicking on links in uiwebview that is displaying a pdf, as on our news page):  http://stackoverflow.com/questions/16080374/uiwebview-pdf-hyperlinks-crash
     update: supposedly will be fixed soon (radar filed) https://twitter.com/aSx_edoc/status/362940341965426689

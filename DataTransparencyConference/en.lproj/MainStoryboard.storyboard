@@ -340,7 +340,9 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
                     <connections>
+                        <outlet property="backButton" destination="HiC-RL-onF" id="IFQ-5T-bhx"/>
                         <outlet property="externalLinkViewer" destination="oK4-qq-RZ0" id="aQH-iO-VSb"/>
+                        <outlet property="forwardButton" destination="g8x-3t-6MJ" id="nXB-ae-tU6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bRW-4k-Eo9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -351,9 +353,9 @@
     <resources>
         <image name="UIButtonBarArrowLeft.png" width="16" height="19"/>
         <image name="UIButtonBarArrowRight.png" width="16" height="19"/>
-        <image name="news-tabbaricon.png" width="30" height="27"/>
+        <image name="news-tabbaricon.png" width="28" height="25"/>
         <image name="noun_project_1331.png" width="30" height="30"/>
-        <image name="program-tabbaricon.png" width="29" height="30"/>
+        <image name="program-tabbaricon.png" width="26" height="28"/>
         <image name="twitter-bird-light-bgs.png" width="30" height="24"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
