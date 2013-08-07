@@ -33,15 +33,11 @@
         //        NSString* indexHTML = [NSString stringWithContentsOfURL:self.urlToDisplayHere encoding:NSUTF8StringEncoding error:&error];
         //        NSLog(@"Actual HTML is %@, error is %@", indexHTML, error);
         
-//        NSString* pathComponent = self.urlToDisplayHere.absoluteString;
-//        NSURL* processedURL = [self reformedURLWithCorrectDirectoryUsingPathComponent:pathComponent];
-//        NSLog(@"processedurl is %@", processedURL);
         [self.DTCWebView loadRequest:[NSURLRequest requestWithURL:self.urlToDisplayHere]];
     }
     else {
         NSString* pathComponent = [NSString stringWithFormat:@"_site/%@/index.html", [self uniqueTabPathComponent]];
         NSURL* processedURL = [self reformedURLWithCorrectDirectoryUsingPathComponent:pathComponent];
-//        NSLog(@"ProcessedURL is %@", processedURL);
         [self.DTCWebView loadRequest:[NSURLRequest requestWithURL:processedURL]];
     }
     
@@ -55,7 +51,7 @@
     NSURL* baseDirectory = nil;
     
     if ([[NSFileManager defaultManager] fileExistsAtPath:updateFilesDir]) {
-//    if (1==0) { //test only bundle
+//    if (1==0) { //force mainBundle
         NSLog(@"Using Application Support directory");
         baseDirectory = [NSURL fileURLWithPath:appSupportDir];
     }
@@ -154,12 +150,10 @@
         }
         else {
             NSLog(@"NavigationType is %d (O is 'clicked', 5 is 'other')", navigationType);
-            if (navigationType != UIWebViewNavigationTypeLinkClicked) { //from another VC
+            if (navigationType != UIWebViewNavigationTypeLinkClicked) { //from another VC, don't segue again
                 return YES;
             }
-            //NSString* urlPathComponent = [@"_site" stringByAppendingString:request.URL.path];
-            //self.urlToPassForward = [NSURL URLWithString:urlPathComponent]; //just a URL fragment, but it'll do (reuse the same property)
-            self.urlToPassForward = request.URL; //the URL is fully formed, just send it forward
+            self.urlToPassForward = request.URL; //the URL is fully-formed, just send it forward
             [self performSegueWithIdentifier:@"pushNextWebView" sender:self];
             return NO;
         }
