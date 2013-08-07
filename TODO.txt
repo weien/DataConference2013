@@ -1,6 +1,10 @@
 =================R1 NEED=================
-add bogus little test for internal linking
 add UINetworkActivityIndicator?
+
+add handling in case no data from dropbox public folder (at any time) -- to avoid crashes if error downloading
+self.basedirectorytouse should probably be an NSUserDefault (so consistent across all DTCVCs and subclasses) //unless perhaps... it shouldn't be consistent, and is fresh for every DTCVC/subclass
+why require clean and rebuild in order to see updated Application Support Directory files? test that live update actually works
+
 
 get Apple Dev account so can set up/manage testflights properly
 minor bug: weird autorotation issue if switching tabs while in landscape (allowed in WebViewCntrler) -- no easy fix, maybe don't allow rotation at all
@@ -36,6 +40,7 @@ add outlets=nil to viewdidunload?
 improve load of Tweets tab? so it doesn't display "Tweets about #opendata" link first? //doesn't seem to be displaying anymore //fixed along with V's aesthetic update and whiteflash fix
 add currentVersion to NSUserDefaults //better yet, implement jwr's recommendations
 make sure we don't try to grab from a location while it's still downloading (how do we safeguard against?) //try to make sure file is there before switching bundles
+add bogus little test for internal linking
 =================WATCH=================
 stupid crash bug (when clicking on links in uiwebview that is displaying a pdf, as on our news page):  http://stackoverflow.com/questions/16080374/uiwebview-pdf-hyperlinks-crash
     update: supposedly will be fixed soon (radar filed) https://twitter.com/aSx_edoc/status/362940341965426689
