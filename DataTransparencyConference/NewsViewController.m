@@ -14,13 +14,6 @@
 
 @implementation NewsViewController
 
-//- (NSURL*) initialSiteLocation {
-//    NSURL* siteURL = [self.baseDirectoryToUse URLByAppendingPathComponent:@"_site/news" isDirectory:YES];
-//    NSURL* indexHTMLURL = [siteURL URLByAppendingPathComponent:@"index.html" isDirectory:NO];
-//    
-//    return indexHTMLURL;
-//}
-
 - (NSString*) uniqueTabPathComponent {
     NSString* pathComponent = @"news";
     return pathComponent;

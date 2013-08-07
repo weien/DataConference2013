@@ -12,7 +12,6 @@
 
 @interface DTCViewController () <UIWebViewDelegate>
 @property (strong, nonatomic) UILabel* syncBar;
-//@property (strong, nonatomic) NSString* lastReceivedUpdate;
 
 @end
 
@@ -21,7 +20,6 @@
 @synthesize urlToPassForward = _urlToPassForward;
 @synthesize urlToDisplayHere = _urlToDisplayHere;
 @synthesize syncBar = _syncBar;
-//@synthesize lastReceivedUpdate = _lastReceivedUpdate;
 @synthesize baseDirectoryToUse = _baseDirectoryToUse;
 
 #pragma mark - data handling
@@ -56,26 +54,10 @@
             self.baseDirectoryToUse = [[NSBundle mainBundle] bundleURL];
         }
         
-//        NSLog(@"it is %@", tabPathComponent);
-//        tabPathComponent = [@"_site/" stringByAppendingString:[self uniqueTabPathComponent]];
-//        NSString* newURL = [tabPathComponent stringByAppendingPathComponent:@"index.html"];
-//        NSLog(@"it is %@", newURL);
-        
         NSURL* siteURL = [self.baseDirectoryToUse URLByAppendingPathComponent:tabPathComponent isDirectory:NO];
-//        NSURL* indexHTMLURL = [siteURL URLByAppendingPathComponent:@"index.html" isDirectory:NO];
-        
-        
         [self.DTCWebView loadRequest:[NSURLRequest requestWithURL:siteURL]];
     }
 }
-
-//- (NSURL*) initialSiteLocation {
-//    NSURL* siteURL = [self.baseDirectoryToUse URLByAppendingPathComponent:@"_site/news" isDirectory:YES];
-//    NSURL* indexHTMLURL = [siteURL URLByAppendingPathComponent:@"index.html" isDirectory:NO];
-//    NSLog(@"Something's wrong -- getting superclass index.html");
-//    
-//    return indexHTMLURL;
-//}
 
 - (NSString*) uniqueTabPathComponent {
     NSString* pathComponent = @"news";
