@@ -1,11 +1,12 @@
 =================R1 NEED=================
 add UINetworkActivityIndicator?
-
 add handling in case no data from dropbox public folder (at any time) -- to avoid crashes if error downloading
-self.basedirectorytouse should probably be an NSUserDefault (so consistent across all DTCVCs and subclasses) //unless perhaps... it shouldn't be consistent, and is fresh for every DTCVC/subclass. Maybe need to do AppSuppDir check for internals, too
+
+self.basedirectorytouse should probably be an NSUserDefault (so consistent across all DTCVCs and subclasses) //unless perhaps... it shouldn't be consistent, and is fresh for every DTCVC/subclass. Maybe need to do AppSuppDir check for internals, too. maybe self.basedirectorytouse shouldn't even be a class property... just a method var could work?
 why require clean and rebuild in order to see updated Application Support Directory files? test that live update actually works
 add test2, for another bread crumb test
 
+would it make sense to just add/update a "yay, zip completed" file instead of always checking if specific file is avail?
 
 get Apple Dev account so can set up/manage testflights properly
 minor bug: weird autorotation issue if switching tabs while in landscape (allowed in WebViewCntrler) -- no easy fix, maybe don't allow rotation at all
