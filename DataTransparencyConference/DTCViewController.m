@@ -56,11 +56,16 @@
             self.baseDirectoryToUse = [[NSBundle mainBundle] bundleURL];
         }
         
-        tabPathComponent = [@"_site/" stringByAppendingString:[self uniqueTabPathComponent]];
-        NSURL* siteURL = [self.baseDirectoryToUse URLByAppendingPathComponent:tabPathComponent isDirectory:YES];
-        NSURL* indexHTMLURL = [siteURL URLByAppendingPathComponent:@"index.html" isDirectory:NO];
+//        NSLog(@"it is %@", tabPathComponent);
+//        tabPathComponent = [@"_site/" stringByAppendingString:[self uniqueTabPathComponent]];
+//        NSString* newURL = [tabPathComponent stringByAppendingPathComponent:@"index.html"];
+//        NSLog(@"it is %@", newURL);
         
-        [self.DTCWebView loadRequest:[NSURLRequest requestWithURL:indexHTMLURL]];
+        NSURL* siteURL = [self.baseDirectoryToUse URLByAppendingPathComponent:tabPathComponent isDirectory:NO];
+//        NSURL* indexHTMLURL = [siteURL URLByAppendingPathComponent:@"index.html" isDirectory:NO];
+        
+        
+        [self.DTCWebView loadRequest:[NSURLRequest requestWithURL:siteURL]];
     }
 }
 
