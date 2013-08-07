@@ -22,12 +22,12 @@
 }
 
 - (void) webViewDidStartLoad:(UIWebView *)webView {
-    //[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     [self.spinner startAnimating];
 }
 
 - (void) webViewDidFinishLoad:(UIWebView *)webView {
-    //[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     [self.spinner stopAnimating];
 }
 
