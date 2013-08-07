@@ -65,8 +65,8 @@
 		64F09C7317B04194007304A8 /* SSZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSZipArchive.h; path = research/SSZipArchive/SSZipArchive.h; sourceTree = SOURCE_ROOT; };
 		64F09C7417B04194007304A8 /* SSZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSZipArchive.m; path = research/SSZipArchive/SSZipArchive.m; sourceTree = SOURCE_ROOT; };
 		64F09C7A17B041AF007304A8 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		64F09C8C17B1318C007304A8 /* DT2013-appicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "DT2013-appicon.png"; path = "../DT2013-appicon.png"; sourceTree = "<group>"; };
-		64F09C8E17B13195007304A8 /* DT2013-appicon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "DT2013-appicon@2x.png"; path = "../DT2013-appicon@2x.png"; sourceTree = "<group>"; };
+		64F09C8C17B1318C007304A8 /* DT2013-appicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DT2013-appicon.png"; sourceTree = "<group>"; };
+		64F09C8E17B13195007304A8 /* DT2013-appicon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DT2013-appicon@2x.png"; sourceTree = "<group>"; };
 		64F0BDFB17AB37C60021DA00 /* news-tabbaricon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "news-tabbaricon.png"; sourceTree = "<group>"; };
 		64F0BDFC17AB37C70021DA00 /* news-tabbaricon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "news-tabbaricon@2x.png"; sourceTree = "<group>"; };
 		64F0BDFF17AC0EDC0021DA00 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
