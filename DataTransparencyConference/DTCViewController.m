@@ -31,6 +31,19 @@
     self.DTCWebView.backgroundColor = [UIColor clearColor];
     self.DTCWebView.opaque = NO;
     
+    //if forwarded from another location, display the urlToDisplayHere //is this call even in the right place?
+    if (self.urlToDisplayHere) {
+        NSLog(@"forwarded from another location");
+        //vvTESTING
+        NSError* error = nil;
+        NSString* indexHTML = [NSString stringWithContentsOfURL:self.urlToDisplayHere encoding:NSUTF8StringEncoding error:&error];
+        NSLog(@"Actual HTML is %@, error is %@", indexHTML, error);
+        //^^TESTING
+        
+        [self.DTCWebView loadRequest:[NSURLRequest requestWithURL:self.urlToDisplayHere]];
+    }
+    else {
+    
     //gateway: if we have app support directory, then use it; else, use [NSBundle mainBundle]
     NSString* appSupportDir = [NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES) lastObject];
     NSString* tabPathComponent = [NSString stringWithFormat:@"_site/%@/index.html", [self uniqueTabPathComponent]];
@@ -45,11 +58,7 @@
         self.baseDirectoryToUse = [[NSBundle mainBundle] bundleURL];
     }
     
-    //if forwarded from another location, display the urlToDisplayHere //is this call even in the right place?
-    if (self.urlToDisplayHere) {
-        [self.DTCWebView loadRequest:[NSURLRequest requestWithURL:self.urlToDisplayHere]];
-    }
-    else {
+//    else {
         tabPathComponent = [@"_site/" stringByAppendingString:[self uniqueTabPathComponent]];
         NSURL* siteURL = [self.baseDirectoryToUse URLByAppendingPathComponent:tabPathComponent isDirectory:YES];
         NSURL* indexHTMLURL = [siteURL URLByAppendingPathComponent:@"index.html" isDirectory:NO];
@@ -59,6 +68,7 @@
         //    NSLog(@"Actual HTML is %@, error is %@", indexHTML, error);
         
         [self.DTCWebView loadRequest:[NSURLRequest requestWithURL:indexHTMLURL]];
+//    }
     }
 }
 
@@ -88,7 +98,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             NSError* error = nil;
             NSDictionary* latestVersion = [NSJSONSerialization JSONObjectWithData:JSONData options:0 error:&error];
-            NSLog(@"New Dict is %@, error is %@", latestVersion, error);
+            //NSLog(@"New Dict is %@, error is %@", latestVersion, error);
             
             NSInteger versionNumber = [latestVersion[@"data transparency"][@"current version"] integerValue];
             NSURL* previousVersionFile = [self.baseDirectoryToUse URLByAppendingPathComponent:@"_site/version.txt" isDirectory:NO];
@@ -150,16 +160,26 @@
 
 - (BOOL) webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     
-    //NSLog(@"Request URL is %@, scheme is %@, last path component is %@", request.URL, request.URL.scheme, request.URL.lastPathComponent);
+    NSLog(@"Request URL is %@, scheme is %@, last path component is %@, host is %@, path is %@", request.URL, request.URL.scheme, request.URL.lastPathComponent, request.URL.host, request.URL.path);
     if ([request.URL.scheme isEqualToString: @"file"]) {
         if ([request.URL.lastPathComponent isEqualToString:@"index.html"]) {
             return YES;
         }
         else {
+            NSLog(@"NavigationType is %d", navigationType);
+            if (navigationType != UIWebViewNavigationTypeLinkClicked) {
+                NSLog(@"Internal request not from user click, don't perform segue again");
+                return YES;
+            }
             NSLog(@"Segue to next internal webview");
-            self.urlToPassForward = request.URL;
+            
+            NSString* urlPathComponent = [@"_site" stringByAppendingString:request.URL.path];
+            NSURL* internalURL = [self.baseDirectoryToUse URLByAppendingPathComponent:urlPathComponent isDirectory:NO];
+            
+            
+            self.urlToPassForward = internalURL;
             [self performSegueWithIdentifier:@"pushNextWebView" sender:self];
-            return NO; //most likely; needs testing
+            return NO;
                         // make sure that this works with the bundle switching
                         //might have to modify the URL to choose correct dir
         }
