@@ -32,10 +32,9 @@
     self.DTCWebView.opaque = NO;
     
     //gateway: if we have app support directory, then use it; else, use [NSBundle mainBundle]
-    NSString *appSupportDir = [NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES) lastObject];
-
+    NSString* appSupportDir = [NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES) lastObject];
     NSString* tabPathComponent = [NSString stringWithFormat:@"_site/%@/index.html", [self uniqueTabPathComponent]];
-    NSString *updateFilesDir = [appSupportDir stringByAppendingPathComponent:tabPathComponent];
+    NSString* updateFilesDir = [appSupportDir stringByAppendingPathComponent:tabPathComponent];
     
     if ([[NSFileManager defaultManager] fileExistsAtPath:updateFilesDir]) {
         NSLog(@"Using Application Support directory");
@@ -46,6 +45,7 @@
         self.baseDirectoryToUse = [[NSBundle mainBundle] bundleURL];
     }
     
+    //if forwarded from another location, display the urlToDisplayHere //is this call even in the right place?
     if (self.urlToDisplayHere) {
         [self.DTCWebView loadRequest:[NSURLRequest requestWithURL:self.urlToDisplayHere]];
     }
@@ -101,6 +101,10 @@
                 [self showCustomSyncBar]; //just show this if we need to
                 
                 void (^completionBlock)(void) = ^() {
+//                    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 1.0 * NSEC_PER_SEC);
+//                    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+//                        [self hideCustomSyncBar];
+//                    });
                     [self hideCustomSyncBar];
                 };
                 NSURL* newVersionLocation = [NSURL URLWithString:latestVersion[@"data transparency"][@"current version download url"]];
@@ -108,12 +112,6 @@
             }
         });
     });
-    
-
-//        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 1.0 * NSEC_PER_SEC);
-//        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-//            [self hideCustomSyncBar];
-//        });
 
 }
 
@@ -164,6 +162,7 @@
             [self performSegueWithIdentifier:@"pushNextWebView" sender:self];
             return NO; //most likely; needs testing
                         // make sure that this works with the bundle switching
+                        //might have to modify the URL to choose correct dir
         }
     }
     else if ([request.URL.absoluteString isEqualToString:@"https://twitter.com/i/jot"] ||
