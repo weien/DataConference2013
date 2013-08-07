@@ -2,8 +2,9 @@
 add UINetworkActivityIndicator?
 
 add handling in case no data from dropbox public folder (at any time) -- to avoid crashes if error downloading
-self.basedirectorytouse should probably be an NSUserDefault (so consistent across all DTCVCs and subclasses) //unless perhaps... it shouldn't be consistent, and is fresh for every DTCVC/subclass
+self.basedirectorytouse should probably be an NSUserDefault (so consistent across all DTCVCs and subclasses) //unless perhaps... it shouldn't be consistent, and is fresh for every DTCVC/subclass. Maybe need to do AppSuppDir check for internals, too
 why require clean and rebuild in order to see updated Application Support Directory files? test that live update actually works
+add test2, for another bread crumb test
 
 
 get Apple Dev account so can set up/manage testflights properly
