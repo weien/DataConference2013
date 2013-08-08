@@ -93,12 +93,11 @@
                 [self showCustomSyncBar];
                 
                 void (^completionBlock)(void) = ^() {
-                    //if we want longer minimum visibility of sync bar
-//                    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 1.0 * NSEC_PER_SEC);
-//                    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-//                        [self hideCustomSyncBar];
-//                    });
-                    [self hideCustomSyncBar];
+                    //increase minimum visibility of sync bar
+                    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 1.3 * NSEC_PER_SEC);
+                    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                        [self hideCustomSyncBar];
+                    });
                 };
                 NSURL* newVersionLocation = [NSURL URLWithString:latestVersion[@"data transparency"][@"current version download url"]];
                 [ZipDownloader downloadZipAtURL:newVersionLocation WithCompletion:completionBlock];
@@ -113,7 +112,7 @@
 - (void) showCustomSyncBar {
     if (!self.syncBar) {
         self.syncBar = [[UILabel alloc] initWithFrame:CGRectMake(0, -10.0f, self.view.frame.size.width, 10.0f)];
-        [self.syncBar setBackgroundColor:[UIColor colorWithRed:98/255.0f green:158/255.0f blue:208/255.0f alpha:1.0f]];
+        [self.syncBar setBackgroundColor:[UIColor colorWithRed:68/255.0f green:110/255.0f blue:143/255.0f alpha:1.0f]];
         
         [self.syncBar setText:@"UPDATING..."];
         [self.syncBar setTextAlignment:NSTextAlignmentCenter];
@@ -176,7 +175,7 @@
     self.DTCWebView.backgroundColor = [UIColor blackColor];
     self.DTCWebView.opaque = YES;
     
-    //http://stackoverflow.com/a/2280767/2284713
+    //http://stackoverflow.com/a/2280767/2284713 and http://stackoverflow.com/q/2275876/2284713
     self.navigationController.navigationBar.topItem.title  = [self.DTCWebView stringByEvaluatingJavaScriptFromString:@"document.title"];
 }
 
