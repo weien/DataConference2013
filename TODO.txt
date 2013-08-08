@@ -3,6 +3,7 @@ issue: News/other tab viewsDoLoad, then the download/unzip happens... but don't 
 fix urls in speaker bios
 left two tab bar icons could be yet smaller, and clearer/higher res?
 maybe add uiactivitynotification for updates/dropbox calls, too
+do we want uiactivitynotification on loading Twitter tab?
 do we want to (can we?) add the sync bar not to the DTCVCs but to the actual tab bar?
 also make title bar have static value, in case webview (twitter) doesn't load?
 

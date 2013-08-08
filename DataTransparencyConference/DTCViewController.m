@@ -70,7 +70,7 @@
 
 - (void) fetchUpdate {
     NSURL* versionDataLink = [NSURL URLWithString:@"https://dl.dropboxusercontent.com/u/8902155/data_transparency_version.json"];
-    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     dispatch_async(dispatch_queue_create("checkForUpdate", NULL), ^{
         NSError* error = nil;
         NSData* JSONData = [NSData dataWithContentsOfURL:versionDataLink options:NSDataReadingMappedIfSafe error:&error];
@@ -79,6 +79,7 @@
             return;
         }
         dispatch_async(dispatch_get_main_queue(), ^{
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
             NSError* error = nil;
             NSDictionary* latestVersion = [NSJSONSerialization JSONObjectWithData:JSONData options:0 error:&error];
             //NSLog(@"New Dict is %@, error is %@", latestVersion, error);
@@ -91,12 +92,14 @@
             if (versionNumber > previousVersionNumber) {
                 NSLog(@"new (%d) is greater than previous version (%d), downloading update", versionNumber, previousVersionNumber);
                 [self showCustomSyncBar];
+                [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
                 
                 void (^completionBlock)(void) = ^() {
                     //increase minimum visibility of sync bar
                     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 1.3 * NSEC_PER_SEC);
                     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
                         [self hideCustomSyncBar];
+                        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
                     });
                 };
                 NSURL* newVersionLocation = [NSURL URLWithString:latestVersion[@"data transparency"][@"current version download url"]];

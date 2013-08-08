@@ -37,6 +37,16 @@
     return pathComponent;
 }
 
+- (void) webViewDidStartLoad:(UIWebView *)webView {
+    if (self.isViewLoaded && self.view.window) {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    }
+}
+
+- (void) webViewDidFinishLoad:(UIWebView *)webView {
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+}
+
 
 - (void) viewDidLoad {
     [super viewDidLoad];
