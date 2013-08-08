@@ -50,8 +50,8 @@
     NSString* updateFilesDir = [appSupportDir stringByAppendingPathComponent:pathComponent];
     NSURL* baseDirectory = nil;
     
-//    if ([[NSFileManager defaultManager] fileExistsAtPath:updateFilesDir]) {
-    if (1==0) { //force mainBundle
+    if ([[NSFileManager defaultManager] fileExistsAtPath:updateFilesDir]) {
+//    if (1==0) { //force mainBundle
         NSLog(@"Using Application Support directory");
         baseDirectory = [NSURL fileURLWithPath:appSupportDir];
     }
@@ -176,6 +176,7 @@
     self.DTCWebView.backgroundColor = [UIColor blackColor];
     self.DTCWebView.opaque = YES;
     
+    //http://stackoverflow.com/a/2280767/2284713
     self.navigationController.navigationBar.topItem.title  = [self.DTCWebView stringByEvaluatingJavaScriptFromString:@"document.title"];
 }
 

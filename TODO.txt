@@ -1,10 +1,14 @@
 =================R1 NEED=================
+FIX THE TITLE, ARGH
 make title bar dynamic
+also make title bar have static value, in case webview (twitter) doesn't load?
 
 maybe add uiactivitynotification for updates/dropbox calls, too
-program enrollment
+program enrollment - make sure I know how to clear credentials and add new
 test using both mainBundle and Application Support Directory
 keep an eye on making sure live update actually works
+same even for jekyll run phase build script -- sometimes have to delete app and rebuild? why?
+do testing on device
 
 ----QuestionsForWolfandVictoria----
 When to show sync/update bar? When checking, when downloading?
@@ -56,6 +60,9 @@ stupid crash bug (when clicking on links in uiwebview that is displaying a pdf, 
     or: http://sugartin.info/2012/10/25/avoiddisable-default-actionsheet-for-opencopy-from-a-uiwebview/
 
 twitter view's fit (see tweet box and title in one view) //setting "nofooter" will do for now
+
+when unpacking, maybe unpack into a staging folder?
+naming -- might want to name each zip file uniquely
 
 
 
