@@ -61,6 +61,7 @@
                 }
             }
             completion();
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"SiteContentDidUpdate" object:self];
         });
     });
 }

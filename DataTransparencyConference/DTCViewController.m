@@ -23,10 +23,24 @@
 
 #pragma mark - data handling
 
+- (void) receiveUpdateNotification:(NSNotification *) notification
+{
+    //reload webview if ZipDownloader has unzipped an update for us
+    if ([[notification name] isEqualToString:@"SiteContentDidUpdate"]) {
+        //NSLog (@"Successfully received the update notification!");
+        [self.DTCWebView reload];
+    }
+}
+
 - (void) setUpPage {
     //to prevent the dreaded "white flash" http://stackoverflow.com/a/2722801/2284713
     self.DTCWebView.backgroundColor = [UIColor clearColor];
     self.DTCWebView.opaque = NO;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receiveUpdateNotification:)
+                                                 name:@"SiteContentDidUpdate"
+                                               object:nil];
     
     if (self.urlToDisplayHere) { //was forwarded from another DTCViewController
         //        NSError* error = nil;
@@ -209,6 +223,7 @@
     [super viewDidUnload];
     
     self.DTCWebView = nil;
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 
