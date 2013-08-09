@@ -162,6 +162,6 @@ p {
     margin-bottom: 6px;
     margin-top: 3px;
 }
-#speakers a {
-    color: #fff;
+#speakers.index a {
+    color: white;
 }
