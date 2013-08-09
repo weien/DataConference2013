@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface CustomTabBarController : UITabBarController
-
+- (void) fetchUpdate;
 @end

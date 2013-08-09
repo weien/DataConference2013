@@ -13,6 +13,6 @@
 @property (strong, nonatomic) NSURL* urlToPassForward;
 @property (strong, nonatomic) NSURL* urlToDisplayHere;
 
-- (void) fetchUpdate;
+//- (void) fetchUpdate;
 
 @end

@@ -8,19 +8,20 @@
 
 #import "AppDelegate.h"
 #import <Crashlytics/Crashlytics.h>
-#import "DTCViewController.h"
+#import "CustomTabBarController.h"
+
 
 @implementation AppDelegate
 
 - (void) fetchUpdateOnDTCViewController {
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    UITabBarController *rootViewController = (UITabBarController*) window.rootViewController;
-    UINavigationController* navViewController = (UINavigationController*) rootViewController.selectedViewController;
-    
-    if ([navViewController.visibleViewController respondsToSelector:@selector(fetchUpdate)]) {
-        DTCViewController* currentDTCViewController = (DTCViewController*) navViewController.visibleViewController;
-        [currentDTCViewController fetchUpdate];
-    }
+    CustomTabBarController *rootViewController = (CustomTabBarController*) window.rootViewController;
+//    UINavigationController* navViewController = (UINavigationController*) rootViewController.selectedViewController;
+//    
+//    if ([navViewController.visibleViewController respondsToSelector:@selector(fetchUpdate)]) {
+//        DTCViewController* currentDTCViewController = (DTCViewController*) navViewController.visibleViewController;
+        [rootViewController fetchUpdate];
+//    }
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
