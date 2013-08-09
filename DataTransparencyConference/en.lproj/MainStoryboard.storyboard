@@ -215,7 +215,7 @@
             </objects>
             <point key="canvasLocation" x="2737" y="-1025"/>
         </scene>
-        <!--Tweets View Controller-->
+        <!--Tweets View Controller - Tweets-->
         <scene sceneID="cWB-jI-uFw">
             <objects>
                 <viewController id="BK2-4S-ecx" customClass="TweetsViewController" sceneMemberID="viewController">
@@ -231,7 +231,7 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="4TC-gh-xxQ">
+                    <navigationItem key="navigationItem" title="Tweets" id="4TC-gh-xxQ">
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="qqM-bs-Ir2">
                             <connections>
                                 <action selector="presentTweetSheet:" destination="BK2-4S-ecx" id="Ng4-BZ-OWn"/>

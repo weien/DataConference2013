@@ -179,7 +179,10 @@
     self.DTCWebView.opaque = YES;
     
     //http://stackoverflow.com/a/2280767/2284713 and http://stackoverflow.com/q/2275876/2284713
-    self.navigationController.navigationBar.topItem.title  = [self.DTCWebView stringByEvaluatingJavaScriptFromString:@"document.title"];
+    NSString* documentTitle = [self.DTCWebView stringByEvaluatingJavaScriptFromString:@"document.title"];
+    if (documentTitle) {
+        self.navigationController.navigationBar.topItem.title  = documentTitle;
+    }
 }
 
 #pragma mark - segue and VC lifecycle
