@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6429EBB517B559CC00D39529 /* DTCUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 6429EBB417B559CB00D39529 /* DTCUtil.m */; };
+		6429EBB817BA85C800D39529 /* UpdateFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 6429EBB717BA85C800D39529 /* UpdateFetcher.m */; };
 		64F09C6717B0400C007304A8 /* ZipDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F09C6617B0400C007304A8 /* ZipDownloader.m */; };
 		64F09C7517B04194007304A8 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 64F09C6B17B04194007304A8 /* ioapi.c */; };
 		64F09C7617B04194007304A8 /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 64F09C6D17B04194007304A8 /* mztools.c */; };
@@ -54,6 +55,8 @@
 /* Begin PBXFileReference section */
 		6429EBB317B559CB00D39529 /* DTCUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTCUtil.h; sourceTree = "<group>"; };
 		6429EBB417B559CB00D39529 /* DTCUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTCUtil.m; sourceTree = "<group>"; };
+		6429EBB617BA85C800D39529 /* UpdateFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateFetcher.h; sourceTree = "<group>"; };
+		6429EBB717BA85C800D39529 /* UpdateFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateFetcher.m; sourceTree = "<group>"; };
 		64F09C6517B0400C007304A8 /* ZipDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipDownloader.h; sourceTree = "<group>"; };
 		64F09C6617B0400C007304A8 /* ZipDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZipDownloader.m; sourceTree = "<group>"; };
 		64F09C6A17B04194007304A8 /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
@@ -250,6 +253,8 @@
 				64F27FFE17A366E800C3272A /* MainStoryboard.storyboard */,
 				64F2800117A366E800C3272A /* DTCViewController.h */,
 				64F2800217A366E800C3272A /* DTCViewController.m */,
+				6429EBB617BA85C800D39529 /* UpdateFetcher.h */,
+				6429EBB717BA85C800D39529 /* UpdateFetcher.m */,
 				6429EBB317B559CB00D39529 /* DTCUtil.h */,
 				6429EBB417B559CB00D39529 /* DTCUtil.m */,
 				64F09C6517B0400C007304A8 /* ZipDownloader.h */,
@@ -404,6 +409,7 @@
 				64F09C7817B04194007304A8 /* zip.c in Sources */,
 				64F09C7917B04194007304A8 /* SSZipArchive.m in Sources */,
 				6429EBB517B559CC00D39529 /* DTCUtil.m in Sources */,
+				6429EBB817BA85C800D39529 /* UpdateFetcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
