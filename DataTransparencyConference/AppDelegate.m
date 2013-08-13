@@ -10,7 +10,6 @@
 #import <Crashlytics/Crashlytics.h>
 #import "CustomTabBarController.h"
 
-
 @implementation AppDelegate
 
 - (void) fetchUpdateOnDTCViewController {
@@ -20,14 +19,14 @@
 //    
 //    if ([navViewController.visibleViewController respondsToSelector:@selector(fetchUpdate)]) {
 //        DTCViewController* currentDTCViewController = (DTCViewController*) navViewController.visibleViewController;
-        [rootViewController fetchUpdate];
+    [rootViewController fetchUpdate];
 //    }
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [self fetchUpdateOnDTCViewController];
-    [Crashlytics startWithAPIKey:@"f8325a280442dcfe187c30777d83465e38bea645"];    
+    [Crashlytics startWithAPIKey:@"f8325a280442dcfe187c30777d83465e38bea645"];
     return YES;
 }
 							

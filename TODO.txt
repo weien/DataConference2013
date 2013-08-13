@@ -1,8 +1,8 @@
 =================R1 NEED=================
-issue: News/other tab viewsDoLoad, then the download/unzip happens... but don't get update, because not reloading. Perhaps need to blast a setNeedsDisplay out, or just webview reload //actually, use NSNotification
+maybe have the sync bar start up earlier in fetch process
 left two tab bar icons could be yet smaller, and clearer/higher res?
 do we want to (can we?) add the sync bar not to the DTCVCs but to the actual tab bar?
-also make title bar have static value, in case webview (twitter) doesn't load?
+
 
 program enrollment - make sure I know how to clear credentials and add new
 
@@ -62,6 +62,8 @@ fix color/duration of sync bar
 maybe add uiactivitynotification for updates/dropbox calls, too
 do we want uiactivitynotification on loading Twitter tab?
 fix urls in speaker bios //fixed by V
+issue: News/other tab viewsDoLoad, then the download/unzip happens... but don't get update, because not reloading. Perhaps need to blast a setNeedsDisplay out, or just webview reload //actually, use NSNotification
+also make title bar have static value, in case webview (twitter) doesn't load?
 =================WATCH=================
 stupid crash bug (when clicking on links in uiwebview that is displaying a pdf, as on our news page):  http://stackoverflow.com/questions/16080374/uiwebview-pdf-hyperlinks-crash
     update: supposedly will be fixed soon (radar filed) https://twitter.com/aSx_edoc/status/362940341965426689

@@ -7,8 +7,10 @@
 //
 
 #import "CustomTabBarController.h"
+
 #import "ZipDownloader.h"
 #import "DTCUtil.h"
+#import "DTCViewController.h"
 
 @interface CustomTabBarController ()
 @property (strong, nonatomic) UILabel* syncBar;
@@ -19,6 +21,7 @@
 
 - (void) fetchUpdate {
     NSURL* versionDataLink = [NSURL URLWithString:@"https://dl.dropboxusercontent.com/u/8902155/data_transparency_version.json"];
+//    [self showCustomSyncBar];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     dispatch_async(dispatch_queue_create("checkForUpdate", NULL), ^{
         NSError* error = nil;
@@ -61,9 +64,24 @@
 
 #pragma mark - syncBar methods
 
+- (CGSize) currentViewSize {
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    UITabBarController *rootViewController = (UITabBarController*) window.rootViewController;
+    UINavigationController* navViewController = (UINavigationController*) rootViewController.selectedViewController;
+    CGSize viewSize = navViewController.visibleViewController.view.frame.size;
+    NSLog(@"viewSize is %f, %f", viewSize.width, viewSize.height);
+    
+    //    CGRect viewFrame = navViewController.visibleViewController.view.frame;
+    //    NSLog(@"viewFrame is %f, %f, %f, %f", viewFrame.origin.x, viewFrame.origin.y, viewFrame.size.width, viewFrame.size.height);
+    
+    return viewSize;
+}
+
 - (void) showCustomSyncBar {
+    CGSize viewSize = [self currentViewSize];
+    
     if (!self.syncBar) {
-        self.syncBar = [[UILabel alloc] initWithFrame:CGRectMake(0, -10.0f, self.view.frame.size.width, 10.0f)];
+        self.syncBar = [[UILabel alloc] initWithFrame:CGRectMake(0, -10.0f, viewSize.width, 10.0f)];
         [self.syncBar setBackgroundColor:[UIColor colorWithRed:68/255.0f green:110/255.0f blue:143/255.0f alpha:1.0f]];
         
         [self.syncBar setText:@"UPDATING..."];
@@ -72,25 +90,40 @@
         [self.syncBar setFont:[UIFont systemFontOfSize:8]];
         
         
-        [self.view addSubview:self.syncBar];
+        UIWindow *window = [UIApplication sharedApplication].keyWindow;
+//        CGFloat navigationBarHeight = self.navigationController.navigationBar.frame.size.height;
+            UITabBarController *rootViewController = (UITabBarController*) window.rootViewController;
+            UINavigationController* navViewController = (UINavigationController*) rootViewController.selectedViewController;
+            UIView* syncBarView = navViewController.visibleViewController.view; //here, it's only on one tab/nav place
+        //        [window addSubview:rootViewController.view];
+        //        [window makeKeyAndVisible];
+        
+        
+        [syncBarView addSubview:self.syncBar];
     }
     
     [UIView beginAnimations:@"showSyncBar" context:nil];
     [UIView setAnimationDuration:0.3];
-    [self.syncBar setFrame:CGRectMake(0, 0, self.view.frame.size.width, 10.0f)];
-    [self.selectedViewController.view setFrame:CGRectMake(0, 10.0f, self.view.frame.size.width, self.view.frame.size.height-10)];
+    [self.syncBar setFrame:CGRectMake(0, 0, viewSize.width, 10.0f)];
+    //    [self.selectedViewController.view setFrame:CGRectMake(0, 10.0f, screenSize.width, screenSize.height-10)];
     [UIView commitAnimations];
 }
 
 - (void) hideCustomSyncBar {
+    CGSize viewSize = [self currentViewSize];
+    
     //    if (CGRectIntersectsRect(self.syncBar.frame, self.view.frame)) {
     [UIView beginAnimations:@"hideSyncBar" context:nil];
     [UIView setAnimationDuration:0.3];
-    [self.syncBar setFrame:CGRectMake(0, -10.0f, self.view.frame.size.width, 10.0f)];
-    [self.selectedViewController.view setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    [self.syncBar setFrame:CGRectMake(0, -10.0f, viewSize.width, 10.0f)];
+    //    [self.selectedViewController.view setFrame:CGRectMake(0, 0, screenSize.width, screenSize.height)];
     [UIView commitAnimations];
     //    }
 }
+
+
+
+#pragma mark - autorotation
 
 -(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
