@@ -77,45 +77,48 @@
     return viewSize;
 }
 
+- (CGFloat) adjustmentHeight {
+    CGFloat navigationBarHeight = ((UINavigationController*)[self selectedViewController]).navigationBar.frame.size.height;
+    CGFloat statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
+    return (navigationBarHeight + statusBarHeight);
+}
+
 - (void) showCustomSyncBar {
     CGSize viewSize = [self currentViewSize];
+    CGFloat adjustmentHeight = [self adjustmentHeight];
     
     if (!self.syncBar) {
-        self.syncBar = [[UILabel alloc] initWithFrame:CGRectMake(0, -10.0f, viewSize.width, 10.0f)];
+        self.syncBar = [[UILabel alloc] initWithFrame:CGRectMake(0, adjustmentHeight, viewSize.width, 0.0f)];
         [self.syncBar setBackgroundColor:[UIColor colorWithRed:68/255.0f green:110/255.0f blue:143/255.0f alpha:1.0f]];
         
         [self.syncBar setText:@"UPDATING..."];
         [self.syncBar setTextAlignment:NSTextAlignmentCenter];
         [self.syncBar setTextColor:[UIColor whiteColor]];
         [self.syncBar setFont:[UIFont systemFontOfSize:8]];
+        //        [self.syncBar setContentMode:UIViewContentModeRedraw];
         
+//        UINavigationController* navViewController = (UINavigationController*) self.selectedViewController;
+//        UIView* relevantView = navViewController.visibleViewController.view; //here, it's only on one tab/nav place
+        //        [relevantView addSubview:self.syncBar]; // works
         
-        UIWindow *window = [UIApplication sharedApplication].keyWindow;
-//        CGFloat navigationBarHeight = self.navigationController.navigationBar.frame.size.height;
-            UITabBarController *rootViewController = (UITabBarController*) window.rootViewController;
-            UINavigationController* navViewController = (UINavigationController*) rootViewController.selectedViewController;
-            UIView* syncBarView = navViewController.visibleViewController.view; //here, it's only on one tab/nav place
-        //        [window addSubview:rootViewController.view];
-        //        [window makeKeyAndVisible];
-        
-        
-        [syncBarView addSubview:self.syncBar];
+        [[[UIApplication sharedApplication] keyWindow] addSubview:self.syncBar];
     }
     
     [UIView beginAnimations:@"showSyncBar" context:nil];
     [UIView setAnimationDuration:0.3];
-    [self.syncBar setFrame:CGRectMake(0, 0, viewSize.width, 10.0f)];
+    [self.syncBar setFrame:CGRectMake(0, adjustmentHeight, viewSize.width, 10.0f)];
     //    [self.selectedViewController.view setFrame:CGRectMake(0, 10.0f, screenSize.width, screenSize.height-10)];
     [UIView commitAnimations];
 }
 
 - (void) hideCustomSyncBar {
     CGSize viewSize = [self currentViewSize];
+    CGFloat adjustmentHeight = [self adjustmentHeight];
     
     //    if (CGRectIntersectsRect(self.syncBar.frame, self.view.frame)) {
     [UIView beginAnimations:@"hideSyncBar" context:nil];
     [UIView setAnimationDuration:0.3];
-    [self.syncBar setFrame:CGRectMake(0, -10.0f, viewSize.width, 10.0f)];
+    [self.syncBar setFrame:CGRectMake(-viewSize.width, adjustmentHeight, viewSize.width, 10)]; //not animating correctly
     //    [self.selectedViewController.view setFrame:CGRectMake(0, 0, screenSize.width, screenSize.height)];
     [UIView commitAnimations];
     //    }

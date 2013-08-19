@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface UpdateFetcher : NSObject
+@interface UpdateFetcher : NSObject //deprecated class -- not needed
 - (void) fetchUpdate;
 @end
