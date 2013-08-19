@@ -59,7 +59,6 @@
             }
         });
     });
-    
 }
 
 #pragma mark - syncBar methods
@@ -69,11 +68,7 @@
     UITabBarController *rootViewController = (UITabBarController*) window.rootViewController;
     UINavigationController* navViewController = (UINavigationController*) rootViewController.selectedViewController;
     CGSize viewSize = navViewController.visibleViewController.view.frame.size;
-    NSLog(@"viewSize is %f, %f", viewSize.width, viewSize.height);
-    
-    //    CGRect viewFrame = navViewController.visibleViewController.view.frame;
-    //    NSLog(@"viewFrame is %f, %f, %f, %f", viewFrame.origin.x, viewFrame.origin.y, viewFrame.size.width, viewFrame.size.height);
-    
+    //    NSLog(@"viewSize is %f, %f", viewSize.width, viewSize.height);
     return viewSize;
 }
 
@@ -97,10 +92,6 @@
         [self.syncBar setFont:[UIFont systemFontOfSize:8]];
         //        [self.syncBar setContentMode:UIViewContentModeRedraw];
         
-//        UINavigationController* navViewController = (UINavigationController*) self.selectedViewController;
-//        UIView* relevantView = navViewController.visibleViewController.view; //here, it's only on one tab/nav place
-        //        [relevantView addSubview:self.syncBar]; // works
-        
         [[[UIApplication sharedApplication] keyWindow] addSubview:self.syncBar];
     }
     
@@ -123,8 +114,6 @@
     [UIView commitAnimations];
     //    }
 }
-
-
 
 #pragma mark - autorotation
 
