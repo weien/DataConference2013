@@ -1,16 +1,12 @@
 =================R1 NEED=================
-maybe have the sync bar start up earlier in fetch process
+maybe have the sync bar start up earlier in fetch process //probably not -- checking for needUpdate is probably better invisible
 left two tab bar icons could be yet smaller, and clearer/higher res?
-do we want to (can we?) add the sync bar not to the DTCVCs but to the actual tab bar?
-
 
 program enrollment - make sure I know how to clear credentials and add new
-
 
 ----Ongoing----
 test using both mainBundle and Application Support Directory
 keep an eye on making sure live update actually works
-check consistency (with mainBundle) of jekyll run phase build script -- sometimes have to delete app and rebuild? why?
 do testing on device
 
 ----QuestionsForWolfandVictoria----
@@ -64,6 +60,8 @@ do we want uiactivitynotification on loading Twitter tab?
 fix urls in speaker bios //fixed by V
 issue: News/other tab viewsDoLoad, then the download/unzip happens... but don't get update, because not reloading. Perhaps need to blast a setNeedsDisplay out, or just webview reload //actually, use NSNotification
 also make title bar have static value, in case webview (twitter) doesn't load?
+do we want to (can we?) add the sync bar not to the DTCVCs but to the actual tab bar? //done
+check consistency (with mainBundle) of jekyll run phase build script -- sometimes have to delete app and rebuild? why? //seems to be fixed -- caused by failure to update uiwebview after load
 =================WATCH=================
 stupid crash bug (when clicking on links in uiwebview that is displaying a pdf, as on our news page):  http://stackoverflow.com/questions/16080374/uiwebview-pdf-hyperlinks-crash
     update: supposedly will be fixed soon (radar filed) https://twitter.com/aSx_edoc/status/362940341965426689
