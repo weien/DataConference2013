@@ -90,7 +90,7 @@
         [self.syncBar setTextAlignment:NSTextAlignmentCenter];
         [self.syncBar setTextColor:[UIColor whiteColor]];
         [self.syncBar setFont:[UIFont systemFontOfSize:8]];
-        //        [self.syncBar setContentMode:UIViewContentModeRedraw];
+//        [self.syncBar setContentMode:UIViewContentModeBottom];
         
         [[[UIApplication sharedApplication] keyWindow] addSubview:self.syncBar];
     }
@@ -105,14 +105,30 @@
 - (void) hideCustomSyncBar {
     CGSize viewSize = [self currentViewSize];
     CGFloat adjustmentHeight = [self adjustmentHeight];
-    
+
     //    if (CGRectIntersectsRect(self.syncBar.frame, self.view.frame)) {
     [UIView beginAnimations:@"hideSyncBar" context:nil];
     [UIView setAnimationDuration:0.3];
-    [self.syncBar setFrame:CGRectMake(-viewSize.width, adjustmentHeight, viewSize.width, 10)]; //not animating correctly
-    //    [self.selectedViewController.view setFrame:CGRectMake(0, 0, screenSize.width, screenSize.height)];
+
+    [UIView setAnimationTransition:UIViewAnimationTransitionCurlUp forView:self.syncBar cache:YES];
+    [self.syncBar setFrame:CGRectMake(0, adjustmentHeight, viewSize.width, 0)];
     [UIView commitAnimations];
-    //    }
+    //    [self.selectedViewController.view setFrame:CGRectMake(0, 0, screenSize.width, screenSize.height)];
+
+    
+    /*CABasicAnimation *shrinkAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale.y"];
+    shrinkAnimation.toValue = [NSNumber numberWithFloat:0];
+    
+    CABasicAnimation *slideAnimation = [CABasicAnimation animationWithKeyPath:@"transform.translation.y"];
+    slideAnimation.toValue = [NSNumber numberWithFloat:-10];
+    
+    CAAnimationGroup *animationGroup = [CAAnimationGroup animation];
+    animationGroup.animations = [NSArray arrayWithObjects:shrinkAnimation,slideAnimation,nil];
+    animationGroup.removedOnCompletion = NO;
+    animationGroup.fillMode = kCAFillModeForwards;
+    animationGroup.duration = 0.3;
+
+    [self.syncBar.layer addAnimation:animationGroup forKey:@"animations"];*/
 }
 
 #pragma mark - autorotation
