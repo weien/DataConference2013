@@ -1,4 +1,7 @@
 =================R1 NEED=================
+add logos for partner sponsors
+wolf's improvements to the unzipping process
+
 maybe have the sync bar start up earlier in fetch process //probably not -- checking for needUpdate is probably better invisible
 left two tab bar icons could be yet smaller, and clearer/higher res?
 
@@ -10,7 +13,6 @@ keep an eye on making sure live update actually works
 do testing on device
 
 ----QuestionsForWolfandVictoria----
-When to show sync/update bar? When checking, when downloading?
 what is best way to handle failed downloads? for now just jumping out of the fetch (return;)
 would it make sense to just add/update a "yay, zip completed" file instead of always checking if specific file is avail?
 should we allow autorotation? (note dumb bug with switching tabs while in landscape)
@@ -62,6 +64,7 @@ issue: News/other tab viewsDoLoad, then the download/unzip happens... but don't 
 also make title bar have static value, in case webview (twitter) doesn't load?
 do we want to (can we?) add the sync bar not to the DTCVCs but to the actual tab bar? //done
 check consistency (with mainBundle) of jekyll run phase build script -- sometimes have to delete app and rebuild? why? //seems to be fixed -- caused by failure to update uiwebview after load
+updating news tab for press releases //done as of 8-20
 =================WATCH=================
 stupid crash bug (when clicking on links in uiwebview that is displaying a pdf, as on our news page):  http://stackoverflow.com/questions/16080374/uiwebview-pdf-hyperlinks-crash
     update: supposedly will be fixed soon (radar filed) https://twitter.com/aSx_edoc/status/362940341965426689
