@@ -25,6 +25,7 @@ body {
     background-color: #000000;
     color: #fff;
     width: 320px;
+    -webkit-user-select: none;
 }
 .header {
     padding:12px 0px 7px 0px;
