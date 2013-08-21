@@ -26,6 +26,18 @@
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
     self.mime = [response MIMEType];
     NSLog(@"Mime is %@", self.mime);
+    
+    if ([self isDisplayingPDF]) {
+        NSLog(@"Yes, displaying PDF");
+        //dispatch_async(dispatch_get_main_queue(), ^{
+            //[self.externalLinkViewer stringByEvaluatingJavaScriptFromString:@"document.documentElement.style.webkitTouchCallout='none';"];
+            //[self.externalLinkViewer setDataDetectorTypes:UIDataDetectorTypeNone];
+            for (UIView *pdfView in self.externalLinkViewer.scrollView.subviews)
+            {
+                pdfView.userInteractionEnabled = NO;
+            }
+        //});
+    }
 }
 
 - (BOOL)isDisplayingPDF {
@@ -47,6 +59,8 @@
 }
 
 - (void) webViewDidFinishLoad:(UIWebView *)webView {
+    [NSURLConnection connectionWithRequest:webView.request delegate:self]; //in order to collect MIME
+    
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     [self.spinner stopAnimating];
     
@@ -57,6 +71,7 @@
 - (void) webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
     NSLog(@"This webpage is not available.");
     [self.spinner stopAnimating];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
 - (void) initSpinner {
@@ -102,7 +117,6 @@
 
 - (void)viewDidUnload {
     [super viewDidUnload];
-    
     self.externalLinkViewer = nil;
 }
 
