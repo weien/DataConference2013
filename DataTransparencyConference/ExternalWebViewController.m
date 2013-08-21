@@ -8,8 +8,9 @@
 
 #import "ExternalWebViewController.h"
 
-@interface ExternalWebViewController () <UIWebViewDelegate>
+@interface ExternalWebViewController () <UIWebViewDelegate, NSURLConnectionDataDelegate>
 @property (strong, nonatomic) UIActivityIndicatorView* spinner;
+@property (strong, nonatomic) NSString* mime;
 @end
 
 @implementation ExternalWebViewController
@@ -18,6 +19,23 @@
 @synthesize spinner = _spinner;
 @synthesize backButton = _backButton;
 @synthesize forwardButton = _forwardButton;
+@synthesize mime = _mime;
+
+#pragma mark - prevent long touch on PDF
+//thanks http://stackoverflow.com/a/14742517/2284713
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
+    self.mime = [response MIMEType];
+    NSLog(@"Mime is %@", self.mime);
+}
+
+- (BOOL)isDisplayingPDF {
+    NSString *mimeExtension = [[self.mime substringFromIndex:([self.mime length] - 3)] lowercaseString];
+    NSLog(@"MimeExtension is %@", mimeExtension);
+    
+    return ([[[self.externalLinkViewer.request.URL pathExtension] lowercaseString] isEqualToString:@"pdf"] || [mimeExtension isEqualToString:@"pdf"]);
+}
+
+#pragma mark - webview loading methods
 
 - (void) setUrlToDisplay:(NSURL *)urlToDisplay {
     _urlToDisplay = urlToDisplay;
@@ -50,6 +68,8 @@
     }
 }
 
+#pragma mark - browser open, back, forward buttons
+
 - (void)openPageInBrowser:(id)sender {
     [[UIApplication sharedApplication] openURL:self.externalLinkViewer.request.URL];
 }
@@ -61,6 +81,8 @@
 - (IBAction)goForward:(id)sender {
     [self.externalLinkViewer goForward];
 }
+
+#pragma mark - view lifecycle
 
 - (void)viewDidLoad
 {
@@ -83,6 +105,8 @@
     
     self.externalLinkViewer = nil;
 }
+
+#pragma mark - autorotation
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {

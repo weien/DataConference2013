@@ -1,4 +1,7 @@
 =================R1 NEED=================
+make it so update bar only happens as normal (for app review)
+maybe need to recreate twitter widget, which is still showing #opendata tweets
+
 add logos for partner sponsors
 wolf's improvements to the unzipping process
 
