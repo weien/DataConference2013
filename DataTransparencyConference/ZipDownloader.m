@@ -12,7 +12,7 @@
 @implementation ZipDownloader
 
 + (void) downloadZipAtURL:(NSURL*)url WithCompletion:(void (^)(void))completion {
-//    NSURL* fileURL = [NSURL URLWithString:@"https://dl.dropboxusercontent.com/u/8902155/_site.zip"];
+    //    NSURL* fileURL = [NSURL URLWithString:@"https://dl.dropboxusercontent.com/u/8902155/_site.zip"]; //nope
     
     dispatch_async(dispatch_queue_create("_site downloader", NULL), ^{
         NSError* error = nil;
@@ -26,7 +26,7 @@
             //get Application Support directory
             NSString *appSupportDir = [NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES) lastObject];
             
-            // ensure this dir exists, from http://stackoverflow.com/a/12114488/2284713
+            // ensure app support dir exists, from http://stackoverflow.com/a/12114488/2284713
             NSFileManager *manager = [NSFileManager defaultManager];
             if(![manager fileExistsAtPath:appSupportDir]) {
                 __autoreleasing NSError *error;
@@ -35,14 +35,18 @@
                     NSLog(@"Failed to create appSupportDir: %@", error);
                     exit(0);
                 }
-
+                
                 //we'll just addSkipBackupAttribute to the whole appSupportDir -- shouldn't have to do this more than at this point
                 if ([self addSkipBackupAttributeToItemAtURL:[NSURL fileURLWithPath:appSupportDir isDirectory:NO]])
                     NSLog(@"Successfully added SkipBackupAttribute to %@", appSupportDir);
             }
             
+            NSString* siteVersionZipName = [url lastPathComponent];
+            NSString* newSiteVersionFileDirName = [siteVersionZipName stringByDeletingPathExtension];
+            //NSLog(@"siteVersionName is %@, fileName is %@", siteVersionZipName, siteVersionFileDirName);
+            
             //write our data to the file!
-            NSString* completeFilePath = [appSupportDir stringByAppendingPathComponent:@"_site.zip"];
+            NSString* completeFilePath = [appSupportDir stringByAppendingPathComponent:siteVersionZipName];
             NSError* writeError = nil;
             if (![data writeToFile:completeFilePath options:NSDataWritingAtomic error:&writeError]) {
                 NSLog(@"Failure to write to file: %@", writeError);
@@ -58,6 +62,19 @@
                 NSLog(@"*****Just Unzipped to %@", appSupportDir);
                 if (unzipError) {
                     NSLog(@"Unzipping failed, error: %@", unzipError);
+                }
+                else {
+                    NSString* sitePath = [appSupportDir stringByAppendingPathComponent:@"_site"];
+                    NSString* siteToDeletePath = [appSupportDir stringByAppendingPathComponent:@"_site-to-delete"];
+                    NSString* newSiteVersionPath = [appSupportDir stringByAppendingPathComponent:newSiteVersionFileDirName];
+                    if ([manager fileExistsAtPath:sitePath]) {
+                        [manager moveItemAtPath:sitePath toPath:siteToDeletePath error:nil];
+                        NSLog(@"Moved %@ to %@", sitePath, siteToDeletePath);
+                        [manager moveItemAtPath:newSiteVersionPath toPath:sitePath error:nil];
+                        NSLog(@"Moved %@ to %@", newSiteVersionPath, sitePath);
+                        [manager removeItemAtPath:siteToDeletePath error:nil];
+                        NSLog(@"Directory now contains %@", [manager contentsOfDirectoryAtPath:appSupportDir error:nil]);
+                    }
                 }
             }
             completion();

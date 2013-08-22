@@ -39,7 +39,7 @@
             NSInteger versionNumber = [latestVersion[@"data transparency"][@"current version"] integerValue];
             NSURL* previousVersionFile = [DTCUtil reformedURLWithCorrectDirectoryUsingPathComponent:@"_site/version.txt"];
             NSInteger previousVersionNumber = [[NSString stringWithContentsOfURL:previousVersionFile encoding:NSUTF8StringEncoding error:&error] integerValue];
-            //NSLog(@"new version is %d, previous version is %d, error is %@", versionNumber, previousVersionNumber, intError);
+            NSLog(@"new version is %d, previous version is %d", versionNumber, previousVersionNumber);
             
             if (versionNumber > previousVersionNumber) {
                 NSLog(@"new (%d) is greater than previous version (%d), downloading update", versionNumber, previousVersionNumber);
