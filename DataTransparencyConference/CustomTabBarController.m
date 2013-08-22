@@ -20,8 +20,9 @@
 @synthesize syncBar = _syncBar;
 
 - (void) fetchUpdate {
-    NSURL* versionDataLink = [NSURL URLWithString:@"https://dl.dropboxusercontent.com/u/8902155/data_transparency_version.json"];
-//    [self showCustomSyncBar];
+//    NSURL* versionDataLink = [NSURL URLWithString:@"https://dl.dropboxusercontent.com/u/8902155/data_transparency_version.json"];
+    NSURL* versionDataLink = [NSURL URLWithString:@"https://dl.dropboxusercontent.com/u/8902155/TEST_data_transparency_version.json"]; //TEST SCENARIO ONLY
+
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     dispatch_async(dispatch_queue_create("checkForUpdate", NULL), ^{
         NSError* error = nil;

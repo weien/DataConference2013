@@ -68,11 +68,16 @@
                     NSString* siteToDeletePath = [appSupportDir stringByAppendingPathComponent:@"_site-to-delete"];
                     NSString* newSiteVersionPath = [appSupportDir stringByAppendingPathComponent:newSiteVersionFileDirName];
                     if ([manager fileExistsAtPath:sitePath]) {
+                        NSLog(@"Directory now contains %@", [manager contentsOfDirectoryAtPath:appSupportDir error:nil]);
                         [manager moveItemAtPath:sitePath toPath:siteToDeletePath error:nil];
-                        NSLog(@"Moved %@ to %@", sitePath, siteToDeletePath);
+                        NSLog(@"Directory now contains %@", [manager contentsOfDirectoryAtPath:appSupportDir error:nil]);
                         [manager moveItemAtPath:newSiteVersionPath toPath:sitePath error:nil];
-                        NSLog(@"Moved %@ to %@", newSiteVersionPath, sitePath);
+                        NSLog(@"Directory now contains %@", [manager contentsOfDirectoryAtPath:appSupportDir error:nil]);
                         [manager removeItemAtPath:siteToDeletePath error:nil];
+                        NSLog(@"Directory now contains %@", [manager contentsOfDirectoryAtPath:appSupportDir error:nil]);
+                    }
+                    else {
+                        [manager moveItemAtPath:newSiteVersionPath toPath:sitePath error:nil];
                         NSLog(@"Directory now contains %@", [manager contentsOfDirectoryAtPath:appSupportDir error:nil]);
                     }
                 }
