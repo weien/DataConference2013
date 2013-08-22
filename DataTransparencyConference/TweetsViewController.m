@@ -44,6 +44,7 @@
 }
 
 - (void) webViewDidFinishLoad:(UIWebView *)webView {
+    [super webViewDidFinishLoad:webView];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 

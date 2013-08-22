@@ -122,13 +122,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.DTCWebView.delegate = self;
-    
     [self setUpPage];
 }
 
 - (void)viewDidUnload {
     [super viewDidUnload];
-    
     self.DTCWebView = nil;
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }

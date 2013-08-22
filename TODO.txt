@@ -1,5 +1,6 @@
 =================R1 NEED=================
 add logos for partner sponsors
+avoid black flash?
 test: wolf's improvements to the unzipping process
 add fifth tab
 
