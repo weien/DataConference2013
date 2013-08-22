@@ -1,18 +1,17 @@
 =================R1 NEED=================
-make it so update bar only happens as normal (for app review)
-
 add logos for partner sponsors
 wolf's improvements to the unzipping process
+add fifth tab
 
 maybe have the sync bar start up earlier in fetch process //probably not -- checking for needUpdate is probably better invisible
 left two tab bar icons could be yet smaller, and clearer/higher res?
 
-program enrollment - make sure I know how to clear credentials and add new
-
 ----Ongoing----
 test using both mainBundle and Application Support Directory
 keep an eye on making sure live update actually works
+keep an eye on twitter widget
 do testing on device
+currently, update bar is at production case (i.e. dropbox _site.zip has version = 2, for app review)
 
 ----QuestionsForWolfandVictoria----
 what is best way to handle failed downloads? for now just jumping out of the fetch (return;)
@@ -68,6 +67,7 @@ do we want to (can we?) add the sync bar not to the DTCVCs but to the actual tab
 check consistency (with mainBundle) of jekyll run phase build script -- sometimes have to delete app and rebuild? why? //seems to be fixed -- caused by failure to update uiwebview after load
 updating news tab for press releases //done as of 8-20
 maybe need to recreate twitter widget, which is still showing #opendata tweets
+program enrollment - make sure I know how to clear credentials and add new
 =================WATCH=================
 stupid crash bug (when clicking on links in uiwebview that is displaying a pdf, as on our news page):  http://stackoverflow.com/questions/16080374/uiwebview-pdf-hyperlinks-crash
     update: supposedly will be fixed soon (radar filed) https://twitter.com/aSx_edoc/status/362940341965426689
