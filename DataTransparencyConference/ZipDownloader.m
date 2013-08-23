@@ -68,6 +68,7 @@
                     NSString* siteToDeletePath = [appSupportDir stringByAppendingPathComponent:@"_site-to-delete"];
                     NSString* newSiteVersionPath = [appSupportDir stringByAppendingPathComponent:newSiteVersionFileDirName];
                     if ([manager fileExistsAtPath:sitePath]) {
+                        //replace old _site with newly unpacked _site-n directory
                         NSLog(@"Directory now contains %@", [manager contentsOfDirectoryAtPath:appSupportDir error:nil]);
                         [manager moveItemAtPath:sitePath toPath:siteToDeletePath error:nil];
                         NSLog(@"Directory now contains %@", [manager contentsOfDirectoryAtPath:appSupportDir error:nil]);
@@ -80,6 +81,8 @@
                         [manager moveItemAtPath:newSiteVersionPath toPath:sitePath error:nil];
                         NSLog(@"Directory now contains %@", [manager contentsOfDirectoryAtPath:appSupportDir error:nil]);
                     }
+                    //remove the .zip
+                    [manager removeItemAtPath:completeFilePath error:nil];
                 }
             }
             completion();
