@@ -69,7 +69,7 @@
 }
 
 - (void) webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-    NSLog(@"This webpage is not available.");
+    NSLog(@"This webpage is not available, error is %@.", error);
     [self.spinner stopAnimating];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
