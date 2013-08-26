@@ -11,17 +11,20 @@
 
 @interface DataMapViewController ()
 @property (strong, nonatomic) UILabel* infoView;
+@property (strong, nonatomic) UIButton* dismissButton;
 
 @end
 
 @implementation DataMapViewController
 @synthesize infoView = _infoView;
+@synthesize dismissButton = _dismissButton;
 
 - (void) showInfoView {
+    CGRect infoViewFrame = self.view.bounds;
+    CGRect dismissButtonFrame = CGRectMake(self.view.bounds.size.width / 2 - 20, self.view.bounds.size.height * .50, 40, 30);
     if (!self.infoView) {
 //        CGPoint superViewCenter = self.view.center;
 //        CGRect infoViewFrame = CGRectMake(superViewCenter.x/2, superViewCenter.y/3, superViewCenter.x, superViewCenter.y/2);
-        CGRect infoViewFrame = self.view.bounds;
         self.infoView = [[UILabel alloc] initWithFrame:infoViewFrame];
         self.infoView.backgroundColor = [UIColor colorWithRed:230/255.0f green:230/255.0f blue:230/255.0f alpha:1.0f];
         self.infoView.numberOfLines = 0;
@@ -42,20 +45,20 @@
         
         [self.externalLinkViewer addSubview:self.infoView];
         
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        [button addTarget:self
+        self.dismissButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        [self.dismissButton addTarget:self
                    action:@selector(hideInfoView)
          forControlEvents:UIControlEventTouchUpInside];
-        [button setTitle:@"OK" forState:UIControlStateNormal];
-        button.frame = CGRectMake(self.view.frame.size.width / 2 - 20, self.view.frame.size.width * .75, 40, 30);
-        button.backgroundColor = [UIColor clearColor];
-        button.titleLabel.textColor = [UIColor blackColor];
-        [self.infoView addSubview:button];
+        [self.dismissButton setTitle:@"OK" forState:UIControlStateNormal];
+        self.dismissButton.frame = dismissButtonFrame;
+        self.dismissButton.backgroundColor = [UIColor clearColor];
+        self.dismissButton.titleLabel.textColor = [UIColor blackColor];
+        [self.infoView addSubview:self.dismissButton];
     }
-    
+    self.infoView.frame = infoViewFrame;
     self.infoView.hidden = NO;
+    self.dismissButton.frame = dismissButtonFrame;
     
-        
 //        [self.syncBar setBackgroundColor:[UIColor colorWithRed:68/255.0f green:110/255.0f blue:143/255.0f alpha:1.0f]];
 //        
 //        [self.syncBar setText:@"UPDATING..."];
@@ -81,6 +84,11 @@
 - (void) viewDidLoad {
     [super viewDidLoad];
     [self.externalLinkViewer loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.federaltransparency.gov/Style%20Library/GISMapping/index.html"]]];
+    [self showInfoView];
+}
+
+- (void) viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
     [self showInfoView];
 }
 
