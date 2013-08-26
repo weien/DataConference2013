@@ -73,21 +73,28 @@
         self.dismissButton.titleLabel.textColor = [UIColor blackColor];
         [self.infoLabel addSubview:self.dismissButton];
     }
-    self.infoView.hidden = NO;
+
+    [UIView beginAnimations:@"hideInfoLabel" context:nil];
+    [UIView setAnimationDuration:0.3];
+    //    self.infoView.hidden = NO;
     self.infoView.frame = infoViewFrame;
     self.dismissButton.frame = dismissButtonFrame;
     self.infoLabel.frame = infoLabelFrame;
+    self.infoView.alpha = .8;
+    [UIView commitAnimations];
     
 }
 
 - (void) hideInfoView {
-    self.infoView.hidden = YES;
-//    [UIView beginAnimations:@"hideSyncBar" context:nil];
-//    [UIView setAnimationDuration:0.3];
-//    
+//    self.infoView.hidden = YES;
+    [UIView beginAnimations:@"hideInfoLabel" context:nil];
+    [UIView setAnimationDuration:0.3];
+    
 //    [UIView setAnimationTransition:UIViewAnimationTransitionCurlUp forView:self.syncBar cache:YES];
-//    [self.syncBar setFrame:CGRectMake(0, adjustmentHeight, viewSize.width, 0)];
-//    [UIView commitAnimations];
+//    CGRect infoLabelFrame = CGRectMake(self.view.bounds.size.width / 2 - 140, self.view.bounds.size.height * .1, 280, 140);
+    [self.infoLabel setFrame:CGRectMake(-280, self.view.bounds.size.height * .1, 280, 140)];
+    self.infoView.alpha = 0;
+    [UIView commitAnimations];
 }
 
 - (void) addInfoButton {
@@ -98,11 +105,11 @@
 }
 
 - (void) hideOrDisplayInfoView {
-    if (self.infoView.hidden) {
-        [self showInfoView];
+    if (CGRectIntersectsRect(self.externalLinkViewer.frame, self.infoLabel.frame)) {
+        [self hideInfoView];
     }
     else {
-        [self hideInfoView];
+        [self showInfoView];
     }
 }
 
@@ -115,7 +122,10 @@
 
 - (void) viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
-    [self showInfoView];
+
+    if (CGRectIntersectsRect(self.externalLinkViewer.frame, self.infoLabel.frame)) {
+        [self showInfoView];    
+    }
 }
 
 @end
