@@ -81,6 +81,22 @@
 //    [UIView commitAnimations];
 }
 
+- (void) addInfoButton {
+    UIButton* infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
+	[infoButton addTarget:self action:@selector(hideOrDisplayInfoView) forControlEvents:UIControlEventTouchUpInside];
+	UIBarButtonItem *modalButton = [[UIBarButtonItem alloc] initWithCustomView:infoButton];
+	[self.navigationItem setRightBarButtonItem:modalButton animated:YES];
+}
+
+- (void) hideOrDisplayInfoView {
+    if (self.infoView.hidden) {
+        [self showInfoView];
+    }
+    else {
+        [self hideInfoView];
+    }
+}
+
 - (void) viewDidLoad {
     [super viewDidLoad];
     [self.externalLinkViewer loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.federaltransparency.gov/Style%20Library/GISMapping/index.html"]]];
@@ -90,6 +106,7 @@
 - (void) viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
     [self showInfoView];
+    [self addInfoButton];
 }
 
 @end
