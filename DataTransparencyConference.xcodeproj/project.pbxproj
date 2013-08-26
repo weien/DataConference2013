@@ -231,7 +231,6 @@
 		64F27FDA17A366E700C3272A = {
 			isa = PBXGroup;
 			children = (
-				647DD2FF17C81398001D1921 /* QuartzCore.framework */,
 				64F1661E17A6FFF10098A02B /* TODO.txt */,
 				64F27FEC17A366E800C3272A /* DataTransparencyConference */,
 				64F27FE517A366E800C3272A /* Frameworks */,
@@ -251,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				64F09C7A17B041AF007304A8 /* libz.dylib */,
+				647DD2FF17C81398001D1921 /* QuartzCore.framework */,
 				64F0BDFF17AC0EDC0021DA00 /* Social.framework */,
 				64F1662117A806C30098A02B /* Crashlytics.framework */,
 				64F27FE617A366E800C3272A /* UIKit.framework */,

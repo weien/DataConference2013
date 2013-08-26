@@ -1,7 +1,6 @@
 =================R1 NEED=================
 add logos for partner sponsors
 test: wolf's improvements to the unzipping process
-add message, icon on fifth tab
 
 left two tab bar icons could be yet smaller, and clearer/higher res?
 
@@ -14,13 +13,9 @@ currently, update bar is at production case (i.e. dropbox _site.zip has version 
 
 ----QuestionsForWolfandVictoria----
 what is best way to handle failed downloads? for now just jumping out of the fetch (return;)
-would it make sense to just add/update a "yay, zip completed" file instead of always checking if specific file is avail?
 should we allow autorotation? (note dumb bug with switching tabs while in landscape)
 
 =================R2 NEED=================
-asynchronous syncing (add method/class)
-header/detail relationships for speakers, sessions, etc.
-possibly make storyboard more efficient, without messing up nav bar titles (only after we have more file:// URLs)
 =================NICE================
 Tweet: Prefill with current session
 Attendee networking (attendee list, detail, add to contacts, mail)
@@ -69,6 +64,10 @@ maybe need to recreate twitter widget, which is still showing #opendata tweets
 program enrollment - make sure I know how to clear credentials and add new
 maybe have the sync bar start up earlier in fetch process //probably not -- checking for needUpdate is probably better invisible
 avoid black flash?
+add message, icon on fifth tab
+asynchronous syncing (add method/class)
+header/detail relationships for speakers, sessions, etc.
+possibly make storyboard more efficient, without messing up nav bar titles (only after we have more file:// URLs)
 =================WATCH=================
 stupid crash bug (when clicking on links in uiwebview that is displaying a pdf, as on our news page):  http://stackoverflow.com/questions/16080374/uiwebview-pdf-hyperlinks-crash
     update: supposedly will be fixed soon (radar filed) https://twitter.com/aSx_edoc/status/362940341965426689
