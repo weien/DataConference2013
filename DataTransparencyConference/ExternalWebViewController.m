@@ -103,16 +103,17 @@
 {
     [super viewDidLoad];
     self.externalLinkViewer.delegate = self;
-    [self initSpinner];
-    if (!self.urlToDisplay) {
-        self.urlToDisplay = [NSURL URLWithString:@"http://www.datatransparency2013.com"];
+//    if (!self.urlToDisplay) {
+//        self.urlToDisplay = [NSURL URLWithString:@"http://www.datatransparency2013.com"];
+//    }
+    if (self.urlToDisplay) {
+        [self initSpinner];        
+        NSURLRequest *request = [NSURLRequest requestWithURL:self.urlToDisplay];
+        [self.externalLinkViewer loadRequest:request];
+        
+        [self.backButton setEnabled:[self.externalLinkViewer canGoBack]];
+        [self.forwardButton setEnabled:[self.externalLinkViewer canGoForward]];
     }
-    NSURLRequest *request = [NSURLRequest requestWithURL:self.urlToDisplay];
-    [self.externalLinkViewer loadRequest:request];
-    
-    [self.backButton setEnabled:[self.externalLinkViewer canGoBack]];
-    [self.forwardButton setEnabled:[self.externalLinkViewer canGoForward]];
-    
 }
 
 - (void)viewDidUnload {
