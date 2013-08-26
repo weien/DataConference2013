@@ -11,6 +11,9 @@
 		558026E317C47A4C0039C7DD /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 558026E117C47A4C0039C7DD /* iTunesArtwork@2x.png */; };
 		6429EBB517B559CC00D39529 /* DTCUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 6429EBB417B559CB00D39529 /* DTCUtil.m */; };
 		647DD2FA17C6C834001D1921 /* DataMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 647DD2F917C6C834001D1921 /* DataMapViewController.m */; };
+		647DD2FD17C8062C001D1921 /* map-tabbaricon.png in Resources */ = {isa = PBXBuildFile; fileRef = 647DD2FB17C8062C001D1921 /* map-tabbaricon.png */; };
+		647DD2FE17C8062C001D1921 /* map-tabbaricon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 647DD2FC17C8062C001D1921 /* map-tabbaricon@2x.png */; };
+		647DD30017C81398001D1921 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 647DD2FF17C81398001D1921 /* QuartzCore.framework */; };
 		64F09C6717B0400C007304A8 /* ZipDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F09C6617B0400C007304A8 /* ZipDownloader.m */; };
 		64F09C7517B04194007304A8 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 64F09C6B17B04194007304A8 /* ioapi.c */; };
 		64F09C7617B04194007304A8 /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 64F09C6D17B04194007304A8 /* mztools.c */; };
@@ -61,6 +64,9 @@
 		6429EBB417B559CB00D39529 /* DTCUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTCUtil.m; sourceTree = "<group>"; };
 		647DD2F817C6C833001D1921 /* DataMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataMapViewController.h; sourceTree = "<group>"; };
 		647DD2F917C6C834001D1921 /* DataMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataMapViewController.m; sourceTree = "<group>"; };
+		647DD2FB17C8062C001D1921 /* map-tabbaricon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map-tabbaricon.png"; sourceTree = "<group>"; };
+		647DD2FC17C8062C001D1921 /* map-tabbaricon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map-tabbaricon@2x.png"; sourceTree = "<group>"; };
+		647DD2FF17C81398001D1921 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		64F09C6517B0400C007304A8 /* ZipDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipDownloader.h; sourceTree = "<group>"; };
 		64F09C6617B0400C007304A8 /* ZipDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZipDownloader.m; sourceTree = "<group>"; };
 		64F09C6A17B04194007304A8 /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
@@ -129,6 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				647DD30017C81398001D1921 /* QuartzCore.framework in Frameworks */,
 				64F09C7B17B041AF007304A8 /* libz.dylib in Frameworks */,
 				64F0BE0017AC0EDC0021DA00 /* Social.framework in Frameworks */,
 				64F27FE717A366E800C3272A /* UIKit.framework in Frameworks */,
@@ -199,6 +206,8 @@
 		64F1662F17A9852C0098A02B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				647DD2FB17C8062C001D1921 /* map-tabbaricon.png */,
+				647DD2FC17C8062C001D1921 /* map-tabbaricon@2x.png */,
 				64F09C8E17B13195007304A8 /* DT2013-appicon@2x.png */,
 				64F09C8C17B1318C007304A8 /* DT2013-appicon.png */,
 				558026E017C47A4C0039C7DD /* iTunesArtwork.png */,
@@ -222,6 +231,7 @@
 		64F27FDA17A366E700C3272A = {
 			isa = PBXGroup;
 			children = (
+				647DD2FF17C81398001D1921 /* QuartzCore.framework */,
 				64F1661E17A6FFF10098A02B /* TODO.txt */,
 				64F27FEC17A366E800C3272A /* DataTransparencyConference */,
 				64F27FE517A366E800C3272A /* Frameworks */,
@@ -361,6 +371,8 @@
 				64F09C8F17B13195007304A8 /* DT2013-appicon@2x.png in Resources */,
 				558026E217C47A4C0039C7DD /* iTunesArtwork.png in Resources */,
 				558026E317C47A4C0039C7DD /* iTunesArtwork@2x.png in Resources */,
+				647DD2FD17C8062C001D1921 /* map-tabbaricon.png in Resources */,
+				647DD2FE17C8062C001D1921 /* map-tabbaricon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
