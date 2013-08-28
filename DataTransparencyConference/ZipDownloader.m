@@ -67,7 +67,7 @@
                     NSString* sitePath = [appSupportDir stringByAppendingPathComponent:@"_site"];
                     NSString* siteToDeletePath = [appSupportDir stringByAppendingPathComponent:@"_site-to-delete"];
                     NSString* newSiteVersionPath = [appSupportDir stringByAppendingPathComponent:newSiteVersionFileDirName];
-                    if ([manager fileExistsAtPath:sitePath]) {
+                    if ([manager fileExistsAtPath:sitePath] && [manager fileExistsAtPath:newSiteVersionPath]) {
                         //replace old _site with newly unpacked _site-n directory
                         NSLog(@"Directory now contains %@", [manager contentsOfDirectoryAtPath:appSupportDir error:nil]);
                         [manager moveItemAtPath:sitePath toPath:siteToDeletePath error:nil];
@@ -78,11 +78,14 @@
                         NSLog(@"Directory now contains %@", [manager contentsOfDirectoryAtPath:appSupportDir error:nil]);
                     }
                     else {
+                        //unzipping for the first time OR user is grabbing _site.zip from R1
+                        //just make sure the path is sitePath, and we're done
                         [manager moveItemAtPath:newSiteVersionPath toPath:sitePath error:nil];
                         NSLog(@"Directory now contains %@", [manager contentsOfDirectoryAtPath:appSupportDir error:nil]);
                     }
                     //remove the .zip
                     [manager removeItemAtPath:completeFilePath error:nil];
+                    NSLog(@"Directory now contains %@", [manager contentsOfDirectoryAtPath:appSupportDir error:nil]);
                 }
             }
             completion();
