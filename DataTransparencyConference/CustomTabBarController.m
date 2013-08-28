@@ -20,8 +20,8 @@
 @synthesize syncBar = _syncBar;
 
 - (void) fetchUpdate {
-//    NSURL* versionDataLink = [NSURL URLWithString:@"https://dl.dropboxusercontent.com/u/8902155/data_transparency_version.json"];
-    NSURL* versionDataLink = [NSURL URLWithString:@"https://dl.dropboxusercontent.com/u/8902155/TEST_data_transparency_version.json"]; //TEST SCENARIO ONLY
+    NSURL* versionDataLink = [NSURL URLWithString:@"https://dl.dropboxusercontent.com/u/8902155/data_transparency_version.json"];
+//    NSURL* versionDataLink = [NSURL URLWithString:@"https://dl.dropboxusercontent.com/u/8902155/TEST_data_transparency_version.json"]; //TEST SCENARIO ONLY
 
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     dispatch_async(dispatch_queue_create("checkForUpdate", NULL), ^{
@@ -55,7 +55,9 @@
                         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
                     });
                 };
-                NSURL* newVersionLocation = [NSURL URLWithString:latestVersion[@"data transparency"][@"current version download url"]];
+//                NSURL* newVersionLocation = [NSURL URLWithString:latestVersion[@"data transparency"][@"current version download url"]];
+                //"updated current version" instead of "current version" is key difference between R1 and future releases
+                NSURL* newVersionLocation = [NSURL URLWithString:latestVersion[@"data transparency"][@"updated current version download url"]];
                 [ZipDownloader downloadZipAtURL:newVersionLocation WithCompletion:completionBlock];
             }
         });

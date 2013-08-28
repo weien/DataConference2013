@@ -1,5 +1,6 @@
 =================R1 NEED=================
-add logos for partner sponsors
+add logos for partner sponsors, under orange heading (bottom of News page). maybe link to partners page
+get maps.app links to work
 test: wolf's improvements to the unzipping process
 
 left two tab bar icons could be yet smaller, and clearer/higher res?
