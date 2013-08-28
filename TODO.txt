@@ -16,6 +16,9 @@ currently, update bar is at production case (i.e. dropbox _site.zip has version 
 what is best way to handle failed downloads? for now just jumping out of the fetch (return;)
 should we allow autorotation? (note dumb bug with switching tabs while in landscape)
 
+design of the info view?
+improving looks of the program page? (lists/bullets?)
+
 =================R2 NEED=================
 =================NICE================
 Tweet: Prefill with current session
