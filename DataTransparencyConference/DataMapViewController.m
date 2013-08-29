@@ -21,6 +21,16 @@
 @synthesize dismissButton = _dismissButton;
 @synthesize infoLabel = _infoLabel;
 
+- (BOOL) webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+    NSLog(@"Request URL is %@, scheme is %@, last path component is %@, host is %@", request.URL, request.URL.scheme, request.URL.lastPathComponent, request.URL.host);
+//    if ([request.URL.scheme isEqualToString: @"file"]) {
+//        if ([request.URL.lastPathComponent isEqualToString:@"index.html"]) { //initial load
+//            return YES;
+//        }
+//    }
+    return YES;
+}
+
 - (void) showInfoView {
     CGRect infoViewFrame = self.view.bounds;
     CGRect infoLabelFrame = CGRectMake(self.view.bounds.size.width / 2 - 140, self.view.bounds.size.height * .1, 280, 140);
@@ -52,12 +62,12 @@
         self.infoLabel.backgroundColor = [UIColor colorWithRed:180/255.0f green:180/255.0f blue:180/255.0f alpha:1.0f];
         self.infoLabel.textColor = [UIColor blackColor];        
         self.infoLabel.numberOfLines = 0;
-//        self.infoLabel.alpha = 1;
-        self.infoLabel.font = [UIFont boldSystemFontOfSize:16];
+        self.infoLabel.alpha = .9;
+        self.infoLabel.font = [UIFont systemFontOfSize:16];
         NSMutableAttributedString* formattedText = [[NSMutableAttributedString alloc] initWithString:@"This map of Hurricane Sandy relief awards demonstrates what the DATA Act will make possible for all federal funds. \n \n"];
         self.infoLabel.attributedText = formattedText;
         self.infoLabel.textAlignment = NSTextAlignmentCenter;
-        self.infoLabel.layer.cornerRadius = 5.0f;
+        self.infoLabel.layer.cornerRadius = 3;
         [self.infoLabel.layer setMasksToBounds:YES];
         self.infoLabel.userInteractionEnabled = YES;
         [self.infoView addSubview:self.infoLabel];
@@ -65,14 +75,17 @@
 //        self.infoLabel.contentMode = UIViewContentModeTop;
         
         
-        self.dismissButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        self.dismissButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [self.dismissButton addTarget:self
                    action:@selector(hideInfoView)
          forControlEvents:UIControlEventTouchUpInside];
         [self.dismissButton setTitle:@"OK" forState:UIControlStateNormal];
         self.dismissButton.frame = dismissButtonFrame;
-        self.dismissButton.backgroundColor = [UIColor clearColor];
-        self.dismissButton.titleLabel.textColor = [UIColor blackColor];
+        self.dismissButton.backgroundColor = [UIColor orangeColor];
+        self.dismissButton.titleLabel.textColor = [UIColor whiteColor];
+        self.dismissButton.titleLabel.font = [UIFont systemFontOfSize:16];
+        self.dismissButton.layer.cornerRadius = 3;
+        self.dismissButton.showsTouchWhenHighlighted = YES;
         [self.infoLabel addSubview:self.dismissButton];
     }
 
