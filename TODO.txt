@@ -1,5 +1,6 @@
 =================R2 NEED=================
-get higher quality images for partner logos? can it be done?
+doesn't always update news tab? is nsnotification not working?
+get higher quality images for partner logos? http://stackoverflow.com/a/4949923/2284713
 
 figure out the 999/403 on the map tab
 when fixed on website, update URLs for Senator Warner
