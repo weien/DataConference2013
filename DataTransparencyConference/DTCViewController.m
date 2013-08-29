@@ -27,8 +27,8 @@
 {
     //reload webview if ZipDownloader has unzipped an update for us
     if ([[notification name] isEqualToString:@"SiteContentDidUpdate"]) {
-        //NSLog (@"Successfully received the update notification!");
-        [self.DTCWebView reload];
+        NSLog (@"Successfully received the update notification!");
+        [self loadAndDisplayWebViewContent];
     }
 }
 
@@ -41,7 +41,10 @@
                                              selector:@selector(receiveUpdateNotification:)
                                                  name:@"SiteContentDidUpdate"
                                                object:nil];
-    
+    [self loadAndDisplayWebViewContent];
+}
+
+- (void) loadAndDisplayWebViewContent {
     if (self.urlToDisplayHere) { //was forwarded from another DTCViewController
         //        NSError* error = nil;
         //        NSString* indexHTML = [NSString stringWithContentsOfURL:self.urlToDisplayHere encoding:NSUTF8StringEncoding error:&error];
@@ -54,7 +57,6 @@
         NSURL* processedURL = [DTCUtil reformedURLWithCorrectDirectoryUsingPathComponent:pathComponent];
         [self.DTCWebView loadRequest:[NSURLRequest requestWithURL:processedURL]];
     }
-    
 }
 
 - (NSString*) uniqueTabPathComponent {
