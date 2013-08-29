@@ -1,7 +1,8 @@
 =================R2 NEED=================
-review maps links (why not .app?)
-add a line break for sponsors area
+review maps links (why not .app?) <<<<this is probably because it's opening in external web view -- we need to suppress the normal external web view if the URL starts with maps.apple.com
+
 figure out the 999/403 on the map tab
+fix/suppress URLs for Senator Warner
 
 
 test: wolf's improvements to the unzipping process
@@ -74,6 +75,7 @@ asynchronous syncing (add method/class)
 header/detail relationships for speakers, sessions, etc.
 possibly make storyboard more efficient, without messing up nav bar titles (only after we have more file:// URLs)
 add logos for partner sponsors, under orange heading (bottom of News page). maybe link to partners page
+add a line break for sponsors area
 
 =================WATCH=================
 stupid crash bug (when clicking on links in uiwebview that is displaying a pdf, as on our news page):  http://stackoverflow.com/questions/16080374/uiwebview-pdf-hyperlinks-crash

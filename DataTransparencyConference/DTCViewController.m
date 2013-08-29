@@ -85,6 +85,14 @@
         [request.URL.absoluteString isEqualToString:@"https://platform.twitter.com/jot.html"]) {
         return YES;
     }
+    else if ([request.URL.host isEqualToString:@"maps.apple.com"]) {
+        if ([[UIApplication sharedApplication]canOpenURL:request.URL]){
+            [[UIApplication sharedApplication]openURL:request.URL];
+            NSLog(@"Opening in sharedApp");
+            return NO;
+        }
+        //return YES
+    }
     else if ([request.URL.scheme isEqualToString:@"http"] ||
              [request.URL.scheme isEqualToString:@"https"]) {
         self.urlToPassForward = request.URL;
