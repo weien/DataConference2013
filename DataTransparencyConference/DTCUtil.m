@@ -18,7 +18,7 @@
     NSURL* baseDirectory = nil;
     
     if ([[NSFileManager defaultManager] fileExistsAtPath:updateFilesDir]) {
-        //    if (1==0) { //force mainBundle
+    //if (1==0) { //force mainBundle
         NSLog(@"Using Application Support directory");
         baseDirectory = [NSURL fileURLWithPath:appSupportDir];
     }
