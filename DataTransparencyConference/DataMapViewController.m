@@ -21,13 +21,19 @@
 @synthesize dismissButton = _dismissButton;
 @synthesize infoLabel = _infoLabel;
 
+- (void) connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
+    //https://gist.github.com/ardalahmet/1153867
+    NSLog(@"Entering connection:didReceiveResponse");
+    if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
+        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+        int status = [httpResponse statusCode];
+        NSLog(@"Boop. http status code: %d", status);
+    }
+}
+
 - (BOOL) webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     NSLog(@"Request URL is %@, scheme is %@, last path component is %@, host is %@", request.URL, request.URL.scheme, request.URL.lastPathComponent, request.URL.host);
-//    if ([request.URL.scheme isEqualToString: @"file"]) {
-//        if ([request.URL.lastPathComponent isEqualToString:@"index.html"]) { //initial load
-//            return YES;
-//        }
-//    }
+    NSLog(@"Self.URLToDisplay is %@", self.urlToDisplay);
     return YES;
 }
 
