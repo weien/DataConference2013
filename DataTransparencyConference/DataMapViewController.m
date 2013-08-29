@@ -122,7 +122,7 @@
     UIButton* infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
 	[infoButton addTarget:self action:@selector(hideOrDisplayInfoView) forControlEvents:UIControlEventTouchUpInside];
 	UIBarButtonItem *modalButton = [[UIBarButtonItem alloc] initWithCustomView:infoButton];
-	[self.navigationItem setRightBarButtonItem:modalButton animated:YES];
+	[self.navigationItem setLeftBarButtonItem:modalButton animated:YES];
 }
 
 - (void) hideOrDisplayInfoView {
