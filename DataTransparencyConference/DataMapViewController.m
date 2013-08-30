@@ -23,17 +23,26 @@
 
 - (void) connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
     //https://gist.github.com/ardalahmet/1153867
-    NSLog(@"Entering connection:didReceiveResponse");
     if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
         int status = [httpResponse statusCode];
-        NSLog(@"Boop. http status code: %d", status);
+        if (status == 403) {
+            NSLog(@"Boop. http status code: %d", status);
+            NSURL* cookieURL = [NSURL URLWithString:@"http://www.federaltransparency.gov/Style%20Library/GISMapping/index.html"];
+            NSArray* myCookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookiesForURL:cookieURL];
+            for (NSHTTPCookie* cookie in myCookies) {
+                NSLog(@"Delete cookie! Chomp!");
+                [[NSHTTPCookieStorage sharedHTTPCookieStorage] deleteCookie:cookie];
+            }
+            [self.externalLinkViewer reload];
+            //[self.externalLinkViewer loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.federaltransparency.gov/funded/Sandy/Pages/Sandy-Award.aspx"]]]; //might work better
+        }
     }
 }
 
 - (BOOL) webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     NSLog(@"Request URL is %@, scheme is %@, last path component is %@, host is %@", request.URL, request.URL.scheme, request.URL.lastPathComponent, request.URL.host);
-    NSLog(@"Self.URLToDisplay is %@", self.urlToDisplay);
+    //NSLog(@"Self.URLToDisplay is %@", self.urlToDisplay);
     return YES;
 }
 
