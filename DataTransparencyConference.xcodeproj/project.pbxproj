@@ -14,6 +14,8 @@
 		647DD2FD17C8062C001D1921 /* map-tabbaricon.png in Resources */ = {isa = PBXBuildFile; fileRef = 647DD2FB17C8062C001D1921 /* map-tabbaricon.png */; };
 		647DD2FE17C8062C001D1921 /* map-tabbaricon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 647DD2FC17C8062C001D1921 /* map-tabbaricon@2x.png */; };
 		647DD30017C81398001D1921 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 647DD2FF17C81398001D1921 /* QuartzCore.framework */; };
+		649AC03F17D5360000C3333B /* home-tabbaricon.png in Resources */ = {isa = PBXBuildFile; fileRef = 649AC03D17D5360000C3333B /* home-tabbaricon.png */; };
+		649AC04017D5360000C3333B /* home-tabbaricon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 649AC03E17D5360000C3333B /* home-tabbaricon@2x.png */; };
 		64F09C6717B0400C007304A8 /* ZipDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F09C6617B0400C007304A8 /* ZipDownloader.m */; };
 		64F09C7517B04194007304A8 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 64F09C6B17B04194007304A8 /* ioapi.c */; };
 		64F09C7617B04194007304A8 /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 64F09C6D17B04194007304A8 /* mztools.c */; };
@@ -67,6 +69,8 @@
 		647DD2FB17C8062C001D1921 /* map-tabbaricon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map-tabbaricon.png"; sourceTree = "<group>"; };
 		647DD2FC17C8062C001D1921 /* map-tabbaricon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map-tabbaricon@2x.png"; sourceTree = "<group>"; };
 		647DD2FF17C81398001D1921 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		649AC03D17D5360000C3333B /* home-tabbaricon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home-tabbaricon.png"; sourceTree = "<group>"; };
+		649AC03E17D5360000C3333B /* home-tabbaricon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home-tabbaricon@2x.png"; sourceTree = "<group>"; };
 		64F09C6517B0400C007304A8 /* ZipDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipDownloader.h; sourceTree = "<group>"; };
 		64F09C6617B0400C007304A8 /* ZipDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZipDownloader.m; sourceTree = "<group>"; };
 		64F09C6A17B04194007304A8 /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
@@ -224,6 +228,8 @@
 				64F0BE0617AC4FD80021DA00 /* program-tabbaricon@2x.png */,
 				64F0BDFB17AB37C60021DA00 /* news-tabbaricon.png */,
 				64F0BDFC17AB37C70021DA00 /* news-tabbaricon@2x.png */,
+				649AC03D17D5360000C3333B /* home-tabbaricon.png */,
+				649AC03E17D5360000C3333B /* home-tabbaricon@2x.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -373,6 +379,8 @@
 				558026E317C47A4C0039C7DD /* iTunesArtwork@2x.png in Resources */,
 				647DD2FD17C8062C001D1921 /* map-tabbaricon.png in Resources */,
 				647DD2FE17C8062C001D1921 /* map-tabbaricon@2x.png in Resources */,
+				649AC03F17D5360000C3333B /* home-tabbaricon.png in Resources */,
+				649AC04017D5360000C3333B /* home-tabbaricon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

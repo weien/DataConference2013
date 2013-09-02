@@ -35,7 +35,7 @@
         <scene sceneID="1U0-as-u2D">
             <objects>
                 <navigationController title="#datapolicy2013" id="Usk-Es-lhK" customClass="CustomNavigationViewController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="News" image="news-tabbaricon.png" id="wLb-iJ-WKg"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home-tabbaricon.png" id="wLb-iJ-WKg"/>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="5yC-my-E9I">
@@ -167,11 +167,11 @@
             <objects>
                 <viewController id="2wH-iM-Uhq" customClass="NewsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ow8-V1-a3h">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" id="bUA-jo-zaF">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
@@ -194,11 +194,11 @@
             <objects>
                 <viewController id="8tO-4v-UYG" customClass="DTCViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yue-Nd-LOp">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <webView contentMode="scaleToFill" id="roR-dJ-Jep">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
@@ -309,16 +309,16 @@
             <objects>
                 <viewController id="Pcp-ez-5Gz" customClass="ExternalWebViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DC4-Dt-wDf">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" scalesPageToFit="YES" id="oK4-qq-RZ0">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackTranslucent" id="Krw-yk-rg5">
-                                <rect key="frame" x="0.0" y="460" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="411" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem image="UIButtonBarArrowLeft.png" width="34" style="plain" id="HiC-RL-onF">
@@ -429,8 +429,8 @@
     <resources>
         <image name="UIButtonBarArrowLeft.png" width="16" height="19"/>
         <image name="UIButtonBarArrowRight.png" width="16" height="19"/>
+        <image name="home-tabbaricon.png" width="28" height="27"/>
         <image name="map-tabbaricon.png" width="27" height="27"/>
-        <image name="news-tabbaricon.png" width="28" height="25"/>
         <image name="noun_project_1331.png" width="30" height="30"/>
         <image name="program-tabbaricon.png" width="26" height="28"/>
         <image name="twitter-bird-light-bgs.png" width="30" height="24"/>
@@ -484,9 +484,9 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="ei3-2A-QwE"/>
-        <segue reference="CiK-lh-xTj"/>
         <segue reference="uBQ-rR-sa7"/>
+        <segue reference="sQX-af-1H9"/>
+        <segue reference="ei3-2A-QwE"/>
         <segue reference="8i3-Gb-0O6"/>
     </inferredMetricsTieBreakers>
 </document>
