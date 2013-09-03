@@ -122,7 +122,7 @@
 		64F1663317A985400098A02B /* UIButtonBarArrowRight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UIButtonBarArrowRight@2x.png"; sourceTree = "<group>"; };
 		64F1663F17A9C3790098A02B /* twitter-bird-light-bgs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter-bird-light-bgs.png"; sourceTree = "<group>"; };
 		64F1664017A9C3790098A02B /* twitter-bird-light-bgs@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter-bird-light-bgs@2x.png"; sourceTree = "<group>"; };
-		64F27FE317A366E800C3272A /* DataTransparencyConference.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataTransparencyConference.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		64F27FE317A366E800C3272A /* DataTransparencyConference.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = DataTransparencyConference.app; path = "DT 2013.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		64F27FE617A366E800C3272A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		64F27FE817A366E800C3272A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		64F27FEA17A366E800C3272A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -322,8 +322,8 @@
 				64F27FDF17A366E800C3272A /* Sources */,
 				64F27FE017A366E800C3272A /* Frameworks */,
 				64F27FE117A366E800C3272A /* Resources */,
-				64F1661F17A711E10098A02B /* ShellScript */,
-				64F1662017A8069B0098A02B /* ShellScript */,
+				64F1661F17A711E10098A02B /* Run Jekyll Script */,
+				64F1662017A8069B0098A02B /* Run Crashlytics Script */,
 			);
 			buildRules = (
 			);
@@ -399,26 +399,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		64F1661F17A711E10098A02B /* ShellScript */ = {
+		64F1661F17A711E10098A02B /* Run Jekyll Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Run Jekyll Script";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "export PATH=\"/usr/local/bin:/usr/local/sbin:$PATH\"\neval \"$(rbenv init -)\"\n\ncd $PROJECT_DIR/jekyll\nexport LANG=\"en_US.UTF-8\"\nexport LC_ALL=\"en_US.UTF-8\"\njekyll build\nrm -rf $CODESIGNING_FOLDER_PATH/_site\ncp -R _site $CODESIGNING_FOLDER_PATH/_site";
+			shellScript = "export PATH=\"/usr/local/bin:/usr/local/sbin:$PATH\"\neval \"$(rbenv init -)\"\n\ncd \"$PROJECT_DIR/jekyll\"\nexport LANG=\"en_US.UTF-8\"\nexport LC_ALL=\"en_US.UTF-8\"\njekyll build\nrm -rf \"$CODESIGNING_FOLDER_PATH/_site\"\ncp -R _site \"$CODESIGNING_FOLDER_PATH/_site\"";
 		};
-		64F1662017A8069B0098A02B /* ShellScript */ = {
+		64F1662017A8069B0098A02B /* Run Crashlytics Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Run Crashlytics Script";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
