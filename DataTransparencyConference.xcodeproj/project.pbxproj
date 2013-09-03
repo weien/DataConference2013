@@ -216,6 +216,9 @@
 		64F1662F17A9852C0098A02B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				649AC04717D641CA00C3333B /* splash_full-568h@2x.png */,
+				649AC04817D641CA00C3333B /* splash_full.png */,
+				649AC04917D641CB00C3333B /* splash_full@2x.png */,
 				647DD2FB17C8062C001D1921 /* map-tabbaricon.png */,
 				647DD2FC17C8062C001D1921 /* map-tabbaricon@2x.png */,
 				64F09C8E17B13195007304A8 /* DT2013-appicon@2x.png */,
@@ -275,9 +278,6 @@
 		64F27FEC17A366E800C3272A /* DataTransparencyConference */ = {
 			isa = PBXGroup;
 			children = (
-				649AC04717D641CA00C3333B /* splash_full-568h@2x.png */,
-				649AC04817D641CA00C3333B /* splash_full.png */,
-				649AC04917D641CB00C3333B /* splash_full@2x.png */,
 				64F1662F17A9852C0098A02B /* Images */,
 				64F1662817A95C560098A02B /* High Level */,
 				64F1661117A6DE590098A02B /* Low Level */,
