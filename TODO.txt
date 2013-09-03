@@ -1,14 +1,11 @@
 =================R2 NEED=================
 add URLs pointing from program to individual speakers
-get higher quality images for partner logos? http://stackoverflow.com/a/4949923/2284713
 
-figure out the 999/403 on the map tab
+figure out the 403 on the map tab (or kaibosh)
 when fixed on website, update URLs for Senator Warner
 
 when submitting: improve keywords
 
-test: wolf's improvements to the unzipping process
-left two tab bar icons could be yet smaller, and clearer/higher res?
 
 ----Ongoing----
 test using both mainBundle and Application Support Directory
@@ -16,6 +13,7 @@ keep an eye on making sure live update actually works
 keep an eye on twitter widget
 do testing on device
 currently, update bar is at production case (i.e. dropbox _site.zip has version = 2, for app review)
+test: wolf's improvements to the unzipping process
 
 ----QuestionsForWolfandVictoria----
 what is best way to handle failed downloads? for now just jumping out of the fetch (return;)
@@ -25,6 +23,9 @@ design of the info view?
 improving looks of the program page? (lists/bullets?)
 
 =================NICE================
+get higher quality images for partner logos? http://stackoverflow.com/a/4949923/2284713
+left two tab bar icons could be yet smaller, and clearer/higher res?
+
 Tweet: Prefill with current session
 Attendee networking (attendee list, detail, add to contacts, mail)
 Add more information for user if uiwebview fails 
@@ -80,6 +81,7 @@ add logos for partner sponsors, under orange heading (bottom of News page). mayb
 add a line break for sponsors area
 review maps links (why not .app?) <<<<this is probably because it's opening in external web view -- we need to suppress the normal external web view if the URL starts with maps.apple.com
 doesn't always update news tab? is nsnotification not working? //seems like just webview reload isn't good enough
+splash screen
 
 =================WATCH=================
 stupid crash bug (when clicking on links in uiwebview that is displaying a pdf, as on our news page):  http://stackoverflow.com/questions/16080374/uiwebview-pdf-hyperlinks-crash
