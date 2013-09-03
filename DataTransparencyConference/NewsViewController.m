@@ -10,10 +10,12 @@
 
 @interface NewsViewController ()
 @property (strong, nonatomic) UIImageView* iv;
+@property BOOL splashScreenHasBeenShown;
 @end
 
 @implementation NewsViewController
 @synthesize iv = _iv;
+@synthesize splashScreenHasBeenShown = _splashScreenHasBeenShown;
 
 - (NSString*) uniqueTabPathComponent {
     NSString* pathComponent = @"news";
@@ -48,6 +50,35 @@
 - (void) viewDidLoad {
     [self preventBlackFlash];
     [super viewDidLoad];
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+    [self displaySplashScreen];
+}
+
+- (void) displaySplashScreen {
+    
+    if (!self.splashScreenHasBeenShown) {
+        UIImageView*imageView = nil;
+        if ([UIScreen mainScreen].bounds.size.height == 568.0f) {
+            NSLog(@"1");
+            imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"splash_full-568h.png"]];
+        }
+        else {
+            NSLog(@"2");
+            imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"splash_full.png"]];
+        }
+        
+        UIViewController* vc = [[[UIApplication sharedApplication] keyWindow] rootViewController];
+        [[vc view] addSubview:imageView];
+        [[vc view] bringSubviewToFront:imageView];
+        
+        // as usual
+        //    [self.window makeKeyAndVisible];
+        
+        [UIView animateWithDuration:1.0f delay:0.5f options:UIViewAnimationOptionTransitionNone animations:^(void){imageView.alpha=0.0f;} completion:^(BOOL finished){[imageView removeFromSuperview];}];
+    }
+    self.splashScreenHasBeenShown = YES;
 }
 
 @end

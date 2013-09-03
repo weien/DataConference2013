@@ -16,6 +16,9 @@
 		647DD30017C81398001D1921 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 647DD2FF17C81398001D1921 /* QuartzCore.framework */; };
 		649AC03F17D5360000C3333B /* home-tabbaricon.png in Resources */ = {isa = PBXBuildFile; fileRef = 649AC03D17D5360000C3333B /* home-tabbaricon.png */; };
 		649AC04017D5360000C3333B /* home-tabbaricon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 649AC03E17D5360000C3333B /* home-tabbaricon@2x.png */; };
+		649AC04A17D641CC00C3333B /* splash_full-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 649AC04717D641CA00C3333B /* splash_full-568h@2x.png */; };
+		649AC04B17D641CC00C3333B /* splash_full.png in Resources */ = {isa = PBXBuildFile; fileRef = 649AC04817D641CA00C3333B /* splash_full.png */; };
+		649AC04C17D641CC00C3333B /* splash_full@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 649AC04917D641CB00C3333B /* splash_full@2x.png */; };
 		64F09C6717B0400C007304A8 /* ZipDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F09C6617B0400C007304A8 /* ZipDownloader.m */; };
 		64F09C7517B04194007304A8 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 64F09C6B17B04194007304A8 /* ioapi.c */; };
 		64F09C7617B04194007304A8 /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 64F09C6D17B04194007304A8 /* mztools.c */; };
@@ -71,6 +74,9 @@
 		647DD2FF17C81398001D1921 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		649AC03D17D5360000C3333B /* home-tabbaricon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home-tabbaricon.png"; sourceTree = "<group>"; };
 		649AC03E17D5360000C3333B /* home-tabbaricon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home-tabbaricon@2x.png"; sourceTree = "<group>"; };
+		649AC04717D641CA00C3333B /* splash_full-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash_full-568h@2x.png"; sourceTree = "<group>"; };
+		649AC04817D641CA00C3333B /* splash_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash_full.png; sourceTree = "<group>"; };
+		649AC04917D641CB00C3333B /* splash_full@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash_full@2x.png"; sourceTree = "<group>"; };
 		64F09C6517B0400C007304A8 /* ZipDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipDownloader.h; sourceTree = "<group>"; };
 		64F09C6617B0400C007304A8 /* ZipDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZipDownloader.m; sourceTree = "<group>"; };
 		64F09C6A17B04194007304A8 /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
@@ -269,6 +275,9 @@
 		64F27FEC17A366E800C3272A /* DataTransparencyConference */ = {
 			isa = PBXGroup;
 			children = (
+				649AC04717D641CA00C3333B /* splash_full-568h@2x.png */,
+				649AC04817D641CA00C3333B /* splash_full.png */,
+				649AC04917D641CB00C3333B /* splash_full@2x.png */,
 				64F1662F17A9852C0098A02B /* Images */,
 				64F1662817A95C560098A02B /* High Level */,
 				64F1661117A6DE590098A02B /* Low Level */,
@@ -381,6 +390,9 @@
 				647DD2FE17C8062C001D1921 /* map-tabbaricon@2x.png in Resources */,
 				649AC03F17D5360000C3333B /* home-tabbaricon.png in Resources */,
 				649AC04017D5360000C3333B /* home-tabbaricon@2x.png in Resources */,
+				649AC04A17D641CC00C3333B /* splash_full-568h@2x.png in Resources */,
+				649AC04B17D641CC00C3333B /* splash_full.png in Resources */,
+				649AC04C17D641CC00C3333B /* splash_full@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
