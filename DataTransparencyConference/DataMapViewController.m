@@ -13,6 +13,8 @@
 @property (strong, nonatomic) UIButton* infoView;
 @property (strong, nonatomic) UIButton* dismissButton;
 @property (strong, nonatomic) UILabel* infoLabel;
+@property (strong, nonatomic) UILabel* sorryView;
+@property (strong, nonatomic) UIButton* infoButton;
 
 @end
 
@@ -20,6 +22,8 @@
 @synthesize infoView = _infoView;
 @synthesize dismissButton = _dismissButton;
 @synthesize infoLabel = _infoLabel;
+@synthesize sorryView = _sorryView;
+@synthesize infoButton = _infoButton;
 
 - (void) connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
     
@@ -31,19 +35,45 @@
         
         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
         int status = [httpResponse statusCode];
+        
         if (status == 403) {
-            NSLog(@"Boop. http status code: %d", status);
-            for (NSHTTPCookie* cookie in myCookies) {
-                NSLog(@"Delete cookie! Chomp! %@", cookie);
-                [[NSHTTPCookieStorage sharedHTTPCookieStorage] deleteCookie:cookie];
-            }
-            [self.externalLinkViewer reload];
-            NSLog(@"About to remove all caches");
-            [[NSURLCache sharedURLCache] removeAllCachedResponses];
-            [self.externalLinkViewer reload];
-            //[self.externalLinkViewer loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.federaltransparency.gov/funded/Sandy/Pages/Sandy-Award.aspx"]]]; //might work better
+            NSLog(@"Error. http status code: %d", status);
+            //for (NSHTTPCookie* cookie in myCookies) {
+            //    NSLog(@"Delete cookie! Chomp! %@", cookie);
+            //    [[NSHTTPCookieStorage sharedHTTPCookieStorage] deleteCookie:cookie];
+            //}
+            //[self.externalLinkViewer reload];
+            //NSLog(@"About to remove all caches");
+            //[[NSURLCache sharedURLCache] removeAllCachedResponses];
+            //[self.externalLinkViewer reload];
+            
+            //Display fail message
+            [self displaySorryView];
+        }
+        else {
+            [self showInfoView];
         }
     }
+}
+
+- (void) displaySorryView {
+    self.sorryView.frame = self.view.bounds;
+    
+    if (!self.sorryView) {
+        self.sorryView = [[UILabel alloc] initWithFrame:self.view.bounds];
+        self.sorryView.backgroundColor = [UIColor colorWithRed:180/255.0f green:180/255.0f blue:180/255.0f alpha:1.0f];
+        self.sorryView.numberOfLines = 0;
+        self.sorryView.font = [UIFont boldSystemFontOfSize:16];
+        NSMutableAttributedString* formattedText = [[NSMutableAttributedString alloc] initWithString:@"The federaltransparency.gov \n website is not currently available, \n please check back later. \n \n"];
+        self.sorryView.attributedText = formattedText;
+        self.sorryView.textAlignment = NSTextAlignmentCenter;
+        self.sorryView.alpha = .8;
+        
+        [self.externalLinkViewer addSubview:self.sorryView];
+    }
+    
+    [self hideInfoView];
+    self.infoButton.hidden = YES;    
 }
 
 - (BOOL) webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
@@ -134,9 +164,9 @@
 }
 
 - (void) addInfoButton {
-    UIButton* infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
-	[infoButton addTarget:self action:@selector(hideOrDisplayInfoView) forControlEvents:UIControlEventTouchUpInside];
-	UIBarButtonItem *modalButton = [[UIBarButtonItem alloc] initWithCustomView:infoButton];
+    self.infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
+	[self.infoButton addTarget:self action:@selector(hideOrDisplayInfoView) forControlEvents:UIControlEventTouchUpInside];
+	UIBarButtonItem *modalButton = [[UIBarButtonItem alloc] initWithCustomView:self.infoButton];
 	[self.navigationItem setLeftBarButtonItem:modalButton animated:YES];
 }
 
@@ -152,8 +182,8 @@
 - (void) viewDidLoad {
     [super viewDidLoad];
     [self.externalLinkViewer loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.federaltransparency.gov/Style%20Library/GISMapping/index.html"]]];
-    [self showInfoView];
-    [self addInfoButton];    
+//    [self showInfoView]; //don't display until we verify that all is cool
+    [self addInfoButton];
 }
 
 - (void) viewWillLayoutSubviews {
@@ -161,6 +191,10 @@
 
     if (CGRectIntersectsRect(self.externalLinkViewer.frame, self.infoLabel.frame)) {
         [self showInfoView];    
+    }
+    
+    if (self.sorryView) {
+        [self displaySorryView];
     }
 }
 
