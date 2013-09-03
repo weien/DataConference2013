@@ -22,7 +22,6 @@
 @synthesize infoLabel = _infoLabel;
 
 - (void) connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
-    //alternative: if this happens, show special "sorry" view... to be hidden at various points?
     
     //https://gist.github.com/ardalahmet/1153867
     if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
@@ -39,7 +38,7 @@
                 [[NSHTTPCookieStorage sharedHTTPCookieStorage] deleteCookie:cookie];
             }
             [self.externalLinkViewer reload];
-            NSLog(@"Removing all caches");
+            NSLog(@"About to remove all caches");
             [[NSURLCache sharedURLCache] removeAllCachedResponses];
             [self.externalLinkViewer reload];
             //[self.externalLinkViewer loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.federaltransparency.gov/funded/Sandy/Pages/Sandy-Award.aspx"]]]; //might work better
@@ -57,7 +56,7 @@
     CGRect infoViewFrame = self.view.bounds;
     CGRect infoLabelFrame = CGRectMake(self.view.bounds.size.width / 2 - 140, self.view.bounds.size.height * .1, 280, 140);
 //    CGRect dismissButtonFrame = CGRectMake(self.view.bounds.size.width / 2 - 20, self.view.bounds.size.height * .5, 40, 30);
-    CGRect dismissButtonFrame = CGRectMake(120, 100, 40, 30);
+    CGRect dismissButtonFrame = CGRectMake(5, 95, 270, 40);
     
     if (!self.infoView) {
         self.infoView = [[UIButton alloc] initWithFrame:infoViewFrame];
@@ -86,7 +85,7 @@
         self.infoLabel.numberOfLines = 0;
         self.infoLabel.alpha = .9;
         self.infoLabel.font = [UIFont systemFontOfSize:16];
-        NSMutableAttributedString* formattedText = [[NSMutableAttributedString alloc] initWithString:@"This map of Hurricane Sandy relief awards demonstrates what the DATA Act will make possible for all federal funds. \n \n"];
+        NSMutableAttributedString* formattedText = [[NSMutableAttributedString alloc] initWithString:@"This map of Hurricane Sandy relief awards demonstrates what open federal spending data will make possible for all federal funds. \n \n"];
         self.infoLabel.attributedText = formattedText;
         self.infoLabel.textAlignment = NSTextAlignmentCenter;
         self.infoLabel.layer.cornerRadius = 3;
@@ -105,7 +104,7 @@
         self.dismissButton.frame = dismissButtonFrame;
         self.dismissButton.backgroundColor = [UIColor orangeColor];
         self.dismissButton.titleLabel.textColor = [UIColor whiteColor];
-        self.dismissButton.titleLabel.font = [UIFont systemFontOfSize:16];
+        self.dismissButton.titleLabel.font = [UIFont boldSystemFontOfSize:18];
         self.dismissButton.layer.cornerRadius = 3;
         self.dismissButton.showsTouchWhenHighlighted = YES;
         [self.infoLabel addSubview:self.dismissButton];
