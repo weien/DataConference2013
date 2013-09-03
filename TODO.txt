@@ -1,5 +1,6 @@
 =================R2 NEED=================
 add URLs pointing from program to individual speakers
+get white background for sponsors on news page
 
 figure out the 403 on the map tab (or kaibosh)
 when fixed on website, update URLs for Senator Warner

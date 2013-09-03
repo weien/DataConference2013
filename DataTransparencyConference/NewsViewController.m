@@ -61,10 +61,10 @@
     if (!self.splashScreenHasBeenShown) {
         UIImageView* splashScreen = nil;
         if ([UIScreen mainScreen].scale == 2.f && [UIScreen mainScreen].bounds.size.height == 568.0f) {
-            splashScreen = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"splash_full-568h.png"]];
+            splashScreen = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"Default-568h.png"]];
         }
         else {
-            splashScreen = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"splash_full.png"]];
+            splashScreen = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"Default.png"]];
         }
         
         UIViewController* vc = [[[UIApplication sharedApplication] keyWindow] rootViewController];
