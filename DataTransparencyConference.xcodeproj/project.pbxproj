@@ -315,9 +315,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		64F27FE217A366E800C3272A /* DataTransparencyConference */ = {
+		64F27FE217A366E800C3272A /* DT 2013 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 64F2800617A366E800C3272A /* Build configuration list for PBXNativeTarget "DataTransparencyConference" */;
+			buildConfigurationList = 64F2800617A366E800C3272A /* Build configuration list for PBXNativeTarget "DT 2013" */;
 			buildPhases = (
 				64F27FDF17A366E800C3272A /* Sources */,
 				64F27FE017A366E800C3272A /* Frameworks */,
@@ -329,7 +329,7 @@
 			);
 			dependencies = (
 			);
-			name = DataTransparencyConference;
+			name = "DT 2013";
 			productName = DataTransparencyConference;
 			productReference = 64F27FE317A366E800C3272A /* DataTransparencyConference.app */;
 			productType = "com.apple.product-type.application";
@@ -355,7 +355,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				64F27FE217A366E800C3272A /* DataTransparencyConference */,
+				64F27FE217A366E800C3272A /* DT 2013 */,
 			);
 		};
 /* End PBXProject section */
@@ -575,7 +575,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		64F2800617A366E800C3272A /* Build configuration list for PBXNativeTarget "DataTransparencyConference" */ = {
+		64F2800617A366E800C3272A /* Build configuration list for PBXNativeTarget "DT 2013" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				64F2800717A366E800C3272A /* Debug */,
