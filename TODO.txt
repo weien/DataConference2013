@@ -1,5 +1,4 @@
 =================R2 NEED=================
-add URLs pointing from program to individual speakers
 get white background for sponsors on news page
 
 figure out the 403 on the map tab (or kaibosh)
@@ -83,7 +82,7 @@ add a line break for sponsors area
 review maps links (why not .app?) <<<<this is probably because it's opening in external web view -- we need to suppress the normal external web view if the URL starts with maps.apple.com
 doesn't always update news tab? is nsnotification not working? //seems like just webview reload isn't good enough
 splash screen
-
+add URLs pointing from program to individual speakers
 =================WATCH=================
 stupid crash bug (when clicking on links in uiwebview that is displaying a pdf, as on our news page):  http://stackoverflow.com/questions/16080374/uiwebview-pdf-hyperlinks-crash
     update: supposedly will be fixed soon (radar filed) https://twitter.com/aSx_edoc/status/362940341965426689
