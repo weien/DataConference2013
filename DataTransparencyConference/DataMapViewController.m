@@ -53,6 +53,7 @@
         else {
             [self showInfoView];
         }
+        //[self displaySorryView]; //TEST
     }
 }
 
@@ -109,7 +110,7 @@
         [self.externalLinkViewer addSubview:self.infoView];
         
         
-        self.infoLabel = [[UILabel alloc] initWithFrame:infoLabelFrame];
+        self.infoLabel = [[UILabel alloc] initWithFrame:CGRectMake(-280, self.view.bounds.size.height * .1, 280, 140)]; //previous frame was infoLabelFrame
         self.infoLabel.backgroundColor = [UIColor colorWithRed:180/255.0f green:180/255.0f blue:180/255.0f alpha:1.0f];
         self.infoLabel.textColor = [UIColor blackColor];        
         self.infoLabel.numberOfLines = 0;
@@ -140,7 +141,7 @@
         [self.infoLabel addSubview:self.dismissButton];
     }
 
-    [UIView beginAnimations:@"hideInfoLabel" context:nil];
+    [UIView beginAnimations:@"showInfoLabel" context:nil];
     [UIView setAnimationDuration:0.3];
     //    self.infoView.hidden = NO;
     self.infoView.frame = infoViewFrame;
