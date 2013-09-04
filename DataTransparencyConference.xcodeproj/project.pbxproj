@@ -122,7 +122,7 @@
 		64F1663317A985400098A02B /* UIButtonBarArrowRight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UIButtonBarArrowRight@2x.png"; sourceTree = "<group>"; };
 		64F1663F17A9C3790098A02B /* twitter-bird-light-bgs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter-bird-light-bgs.png"; sourceTree = "<group>"; };
 		64F1664017A9C3790098A02B /* twitter-bird-light-bgs@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter-bird-light-bgs@2x.png"; sourceTree = "<group>"; };
-		64F27FE317A366E800C3272A /* DataTransparencyConference.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = DataTransparencyConference.app; path = "DT 2013.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		64F27FE317A366E800C3272A /* DT 2013.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DT 2013.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		64F27FE617A366E800C3272A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		64F27FE817A366E800C3272A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		64F27FEA17A366E800C3272A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -256,7 +256,7 @@
 		64F27FE417A366E800C3272A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				64F27FE317A366E800C3272A /* DataTransparencyConference.app */,
+				64F27FE317A366E800C3272A /* DT 2013.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -331,7 +331,7 @@
 			);
 			name = "DT 2013";
 			productName = DataTransparencyConference;
-			productReference = 64F27FE317A366E800C3272A /* DataTransparencyConference.app */;
+			productReference = 64F27FE317A366E800C3272A /* DT 2013.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
