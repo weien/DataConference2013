@@ -1,6 +1,4 @@
-=================R2 NEED=================
-get white background for sponsors on news page
-
+=================R2 NEED===============
 when fixed on website, update URLs for Senator Warner
 
 ----Ongoing----
@@ -82,6 +80,7 @@ splash screen
 add URLs pointing from program to individual speakers
 figure out the 403 on the map tab (or kaibosh) //got custom error page to show up if 403
 when submitting: improve keywords
+get white background for sponsors on news page //done by V
 
 =================WATCH=================
 stupid crash bug (when clicking on links in uiwebview that is displaying a pdf, as on our news page):  http://stackoverflow.com/questions/16080374/uiwebview-pdf-hyperlinks-crash
@@ -90,9 +89,6 @@ stupid crash bug (when clicking on links in uiwebview that is displaying a pdf, 
     or: http://sugartin.info/2012/10/25/avoiddisable-default-actionsheet-for-opencopy-from-a-uiwebview/
 
 twitter view's fit (see tweet box and title in one view) //setting "nofooter" will do for now
-
-when unpacking, maybe unpack into a staging folder?
-naming -- might want to name each zip file uniquely
 
 
 
