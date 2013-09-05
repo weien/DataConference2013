@@ -1,11 +1,7 @@
 =================R2 NEED=================
 get white background for sponsors on news page
 
-figure out the 403 on the map tab (or kaibosh)
 when fixed on website, update URLs for Senator Warner
-
-when submitting: improve keywords
-
 
 ----Ongoing----
 test using both mainBundle and Application Support Directory
@@ -14,6 +10,7 @@ keep an eye on twitter widget
 do testing on device
 currently, update bar is at production case (i.e. dropbox _site.zip has version = 2, for app review)
 test: wolf's improvements to the unzipping process
+http://www.federaltransparency.gov/funded/Sandy/Pages/Sandy-Award.aspx
 
 ----QuestionsForWolfandVictoria----
 what is best way to handle failed downloads? for now just jumping out of the fetch (return;)
@@ -83,6 +80,9 @@ review maps links (why not .app?) <<<<this is probably because it's opening in e
 doesn't always update news tab? is nsnotification not working? //seems like just webview reload isn't good enough
 splash screen
 add URLs pointing from program to individual speakers
+figure out the 403 on the map tab (or kaibosh) //got custom error page to show up if 403
+when submitting: improve keywords
+
 =================WATCH=================
 stupid crash bug (when clicking on links in uiwebview that is displaying a pdf, as on our news page):  http://stackoverflow.com/questions/16080374/uiwebview-pdf-hyperlinks-crash
     update: supposedly will be fixed soon (radar filed) https://twitter.com/aSx_edoc/status/362940341965426689
