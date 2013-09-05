@@ -38,14 +38,14 @@
         
         if (status == 403) {
             NSLog(@"Error. http status code: %d", status);
-            //for (NSHTTPCookie* cookie in myCookies) {
-            //    NSLog(@"Delete cookie! Chomp! %@", cookie);
-            //    [[NSHTTPCookieStorage sharedHTTPCookieStorage] deleteCookie:cookie];
-            //}
-            //[self.externalLinkViewer reload];
-            //NSLog(@"About to remove all caches");
-            //[[NSURLCache sharedURLCache] removeAllCachedResponses];
-            //[self.externalLinkViewer reload];
+//            for (NSHTTPCookie* cookie in myCookies) {
+//                NSLog(@"Delete cookie! Chomp! %@", cookie);
+//                [[NSHTTPCookieStorage sharedHTTPCookieStorage] deleteCookie:cookie];
+//            }
+//            //[self.externalLinkViewer reload];
+//            NSLog(@"About to remove all caches");
+//            [[NSURLCache sharedURLCache] removeAllCachedResponses];
+//            [self.externalLinkViewer reload];
             
             //Display fail message
             [self displaySorryView];
