@@ -1,5 +1,5 @@
 =================R2 NEED===============
-when fixed on website, update URLs for Senator Warner
+clean up source code (for GitHub)
 
 ----Ongoing----
 test using both mainBundle and Application Support Directory
@@ -81,6 +81,7 @@ add URLs pointing from program to individual speakers
 figure out the 403 on the map tab (or kaibosh) //got custom error page to show up if 403
 when submitting: improve keywords
 get white background for sponsors on news page //done by V
+when fixed on website, update URLs for Senator Warner
 
 =================WATCH=================
 stupid crash bug (when clicking on links in uiwebview that is displaying a pdf, as on our news page):  http://stackoverflow.com/questions/16080374/uiwebview-pdf-hyperlinks-crash
