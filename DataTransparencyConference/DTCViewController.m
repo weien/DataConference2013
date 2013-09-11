@@ -11,15 +11,12 @@
 #import "DTCUtil.h"
 
 @interface DTCViewController () <UIWebViewDelegate>
-//@property (strong, nonatomic) UILabel* syncBar;
-
 @end
 
 @implementation DTCViewController
 @synthesize DTCWebView = _DTCWebView;
 @synthesize urlToPassForward = _urlToPassForward;
 @synthesize urlToDisplayHere = _urlToDisplayHere;
-//@synthesize syncBar = _syncBar;
 
 #pragma mark - data handling
 
@@ -59,6 +56,7 @@
     }
 }
 
+//differentiates each of the tabs
 - (NSString*) uniqueTabPathComponent {
     NSString* pathComponent = @"news";
     NSLog(@"Something's wrong -- getting superclass uniqueTabPathComponent");
@@ -70,7 +68,7 @@
 - (BOOL) webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     //NSLog(@"Request URL is %@, scheme is %@, last path component is %@, host is %@", request.URL, request.URL.scheme, request.URL.lastPathComponent, request.URL.host);
     if ([request.URL.scheme isEqualToString: @"file"]) {
-        if ([request.URL.lastPathComponent isEqualToString:@"index.html"]) { //initial load
+        if ([request.URL.lastPathComponent isEqualToString:@"index.html"]) { //initial load of given tab
             return YES;
         }
         else {
@@ -85,15 +83,14 @@
     }
     else if ([request.URL.absoluteString isEqualToString:@"https://twitter.com/i/jot"] ||
         [request.URL.absoluteString isEqualToString:@"https://platform.twitter.com/jot.html"]) {
+        //annoying twitter redirect on twitter tabs, just let 'em do their thing
         return YES;
     }
     else if ([request.URL.host isEqualToString:@"maps.apple.com"]) {
-        if ([[UIApplication sharedApplication]canOpenURL:request.URL]){
+        if ([[UIApplication sharedApplication]canOpenURL:request.URL]) {
             [[UIApplication sharedApplication]openURL:request.URL];
-            NSLog(@"Opening in sharedApp");
             return NO;
         }
-        //return YES
     }
     else if ([request.URL.scheme isEqualToString:@"http"] ||
              [request.URL.scheme isEqualToString:@"https"]) {
@@ -105,7 +102,7 @@
 }
 
 - (void) webViewDidFinishLoad:(UIWebView *)webView {
-    //reset background color to something more compositing-friendly
+    //reset background color to something more compositing-friendly (was transparent to prevent white flash)
     self.DTCWebView.backgroundColor = [UIColor blackColor];
     self.DTCWebView.opaque = YES;
     

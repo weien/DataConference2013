@@ -12,8 +12,6 @@
 @implementation ZipDownloader
 
 + (void) downloadZipAtURL:(NSURL*)url WithCompletion:(void (^)(void))completion {
-    //    NSURL* fileURL = [NSURL URLWithString:@"https://dl.dropboxusercontent.com/u/8902155/_site.zip"]; //nope
-    
     dispatch_async(dispatch_queue_create("_site downloader", NULL), ^{
         NSError* error = nil;
         id data = [NSData dataWithContentsOfURL:url options:NSDataReadingMappedIfSafe error:&error];
@@ -83,7 +81,7 @@
                             [manager moveItemAtPath:newSiteVersionPath toPath:sitePath error:nil];
                             NSLog(@"Directory now contains %@", [manager contentsOfDirectoryAtPath:appSupportDir error:nil]);
                         }
-                        //remove the .zip
+                        //remove the old .zip file
                         [manager removeItemAtPath:completeFilePath error:nil];
                         NSLog(@"Directory now contains %@", [manager contentsOfDirectoryAtPath:appSupportDir error:nil]);
                     }
@@ -101,7 +99,7 @@
     NSError *error = nil;
     BOOL success = [URL setResourceValue: [NSNumber numberWithBool: YES]
                                   forKey: NSURLIsExcludedFromBackupKey error: &error];
-    if(!success){
+    if(!success) {
         NSLog(@"Error excluding %@ from backup %@", [URL lastPathComponent], error);
     }
     return success;

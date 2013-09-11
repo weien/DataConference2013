@@ -55,7 +55,7 @@
                         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
                     });
                 };
-//                NSURL* newVersionLocation = [NSURL URLWithString:latestVersion[@"data transparency"][@"current version download url"]];
+                //NSURL* newVersionLocation = [NSURL URLWithString:latestVersion[@"data transparency"][@"current version download url"]];
                 //"updated current version" instead of "current version" is key difference between R1 and future releases
                 NSURL* newVersionLocation = [NSURL URLWithString:latestVersion[@"data transparency"][@"updated current version download url"]];
                 [ZipDownloader downloadZipAtURL:newVersionLocation WithCompletion:completionBlock];
@@ -65,21 +65,6 @@
 }
 
 #pragma mark - syncBar methods
-
-- (CGSize) currentViewSize {
-    UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    UITabBarController *rootViewController = (UITabBarController*) window.rootViewController;
-    UINavigationController* navViewController = (UINavigationController*) rootViewController.selectedViewController;
-    CGSize viewSize = navViewController.visibleViewController.view.frame.size;
-    //    NSLog(@"viewSize is %f, %f", viewSize.width, viewSize.height);
-    return viewSize;
-}
-
-- (CGFloat) adjustmentHeight {
-    CGFloat navigationBarHeight = ((UINavigationController*)[self selectedViewController]).navigationBar.frame.size.height;
-    CGFloat statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
-    return (navigationBarHeight + statusBarHeight);
-}
 
 - (void) showCustomSyncBar {
     CGSize viewSize = [self currentViewSize];
@@ -93,7 +78,6 @@
         [self.syncBar setTextAlignment:NSTextAlignmentCenter];
         [self.syncBar setTextColor:[UIColor whiteColor]];
         [self.syncBar setFont:[UIFont systemFontOfSize:8]];
-//        [self.syncBar setContentMode:UIViewContentModeBottom];
         
         [[[UIApplication sharedApplication] keyWindow] addSubview:self.syncBar];
     }
@@ -113,25 +97,26 @@
     [UIView beginAnimations:@"hideSyncBar" context:nil];
     [UIView setAnimationDuration:0.3];
 
+    //"CurlUp" isn't ideal, but what works easiest for now
     [UIView setAnimationTransition:UIViewAnimationTransitionCurlUp forView:self.syncBar cache:YES];
     [self.syncBar setFrame:CGRectMake(0, adjustmentHeight, viewSize.width, 0)];
     [UIView commitAnimations];
     //    [self.selectedViewController.view setFrame:CGRectMake(0, 0, screenSize.width, screenSize.height)];
+}
 
-    
-    /*CABasicAnimation *shrinkAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale.y"];
-    shrinkAnimation.toValue = [NSNumber numberWithFloat:0];
-    
-    CABasicAnimation *slideAnimation = [CABasicAnimation animationWithKeyPath:@"transform.translation.y"];
-    slideAnimation.toValue = [NSNumber numberWithFloat:-10];
-    
-    CAAnimationGroup *animationGroup = [CAAnimationGroup animation];
-    animationGroup.animations = [NSArray arrayWithObjects:shrinkAnimation,slideAnimation,nil];
-    animationGroup.removedOnCompletion = NO;
-    animationGroup.fillMode = kCAFillModeForwards;
-    animationGroup.duration = 0.3;
+- (CGSize) currentViewSize {
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    UITabBarController *rootViewController = (UITabBarController*) window.rootViewController;
+    UINavigationController* navViewController = (UINavigationController*) rootViewController.selectedViewController;
+    CGSize viewSize = navViewController.visibleViewController.view.frame.size;
+    //    NSLog(@"viewSize is %f, %f", viewSize.width, viewSize.height);
+    return viewSize;
+}
 
-    [self.syncBar.layer addAnimation:animationGroup forKey:@"animations"];*/
+- (CGFloat) adjustmentHeight {
+    CGFloat navigationBarHeight = ((UINavigationController*)[self selectedViewController]).navigationBar.frame.size.height;
+    CGFloat statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
+    return (navigationBarHeight + statusBarHeight);
 }
 
 #pragma mark - autorotation

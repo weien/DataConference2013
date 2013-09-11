@@ -12,20 +12,15 @@
 
 @implementation AppDelegate
 
-- (void) fetchUpdateOnDTCViewController {
+- (void) fetchUpdateOnCustomTabBarController {
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     CustomTabBarController *rootViewController = (CustomTabBarController*) window.rootViewController;
-//    UINavigationController* navViewController = (UINavigationController*) rootViewController.selectedViewController;
-//    
-//    if ([navViewController.visibleViewController respondsToSelector:@selector(fetchUpdate)]) {
-//        DTCViewController* currentDTCViewController = (DTCViewController*) navViewController.visibleViewController;
     [rootViewController fetchUpdate];
-//    }
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [self fetchUpdateOnDTCViewController];
+    [self fetchUpdateOnCustomTabBarController];
     [Crashlytics startWithAPIKey:@"f8325a280442dcfe187c30777d83465e38bea645"];
     return YES;
 }
@@ -50,7 +45,7 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    [self fetchUpdateOnDTCViewController];
+    [self fetchUpdateOnCustomTabBarController];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

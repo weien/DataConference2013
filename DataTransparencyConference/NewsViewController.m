@@ -28,10 +28,8 @@
 }
 
 - (void) preventBlackFlash {
-    //minimize black flash
-    //loadHTMLString doesn't seem to make a difference
-    //    NSString *path = [[NSBundle mainBundle] pathForResource:@"Default" ofType:@"png"];
-    //    [self.DTCWebView loadHTMLString:[NSString stringWithFormat:@"<html><body><img src=\"file://%@\"></body></html>",path] baseURL:nil];
+    //minimize black flash (maybe not needed now that we have splash screen)
+    //calling loadHTMLString doesn't really make a difference, just show a view
     
     CGRect screenBounds = [[UIScreen mainScreen] bounds];
     self.launchImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, screenBounds.size.width, screenBounds.size.height)];
@@ -57,7 +55,6 @@
 }
 
 - (void) displaySplashScreen {
-    
     if (!self.splashScreenHasBeenShown) {
         UIImageView* splashScreen = nil;
         if ([UIScreen mainScreen].scale == 2.f && [UIScreen mainScreen].bounds.size.height == 568.0f) {
@@ -71,12 +68,9 @@
         [[vc view] addSubview:splashScreen];
         [[vc view] bringSubviewToFront:splashScreen];
         
-        // as usual
-        //    [self.window makeKeyAndVisible];
-        
         [UIView animateWithDuration:0.5f delay:1.0f options:UIViewAnimationOptionTransitionNone animations:^(void){splashScreen.alpha=0.0f;} completion:^(BOOL finished){[splashScreen removeFromSuperview];}];
     }
-    self.splashScreenHasBeenShown = YES;
+    self.splashScreenHasBeenShown = YES; //only show upon launch of app
 }
 
 @end

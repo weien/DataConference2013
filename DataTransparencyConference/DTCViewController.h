@@ -13,7 +13,6 @@
 @property (strong, nonatomic) NSURL* urlToPassForward;
 @property (strong, nonatomic) NSURL* urlToDisplayHere;
 
-//- (void) fetchUpdate;
 - (void) webViewDidFinishLoad:(UIWebView *)webView;
 
 @end

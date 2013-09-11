@@ -34,6 +34,7 @@
             //[self.externalLinkViewer setDataDetectorTypes:UIDataDetectorTypeNone];
             for (UIView *pdfView in self.externalLinkViewer.scrollView.subviews)
             {
+                //just preventing long touch not quite working; just disable userInteraction
                 pdfView.userInteractionEnabled = NO;
             }
         //});
@@ -103,9 +104,6 @@
 {
     [super viewDidLoad];
     self.externalLinkViewer.delegate = self;
-//    if (!self.urlToDisplay) {
-//        self.urlToDisplay = [NSURL URLWithString:@"http://www.datatransparency2013.com"];
-//    }
     if (self.urlToDisplay) {
         [self initSpinner];        
         NSURLRequest *request = [NSURLRequest requestWithURL:self.urlToDisplay];

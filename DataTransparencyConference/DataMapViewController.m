@@ -26,26 +26,14 @@
 @synthesize infoButton = _infoButton;
 
 - (void) connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
-    
-    //https://gist.github.com/ardalahmet/1153867
+    //https://gist.github.com/ardalahmet/1153867 to check for 403 errors
     if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
-        NSURL* cookieURL = [NSURL URLWithString:@"http://www.federaltransparency.gov/Style%20Library/GISMapping/index.html"];
-        NSArray* myCookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookiesForURL:cookieURL];
-        NSLog(@"Cookies are %@", myCookies);
-        
         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
         int status = [httpResponse statusCode];
         
         if (status == 403) {
             NSLog(@"Error. http status code: %d", status);
-//            for (NSHTTPCookie* cookie in myCookies) {
-//                NSLog(@"Delete cookie! Chomp! %@", cookie);
-//                [[NSHTTPCookieStorage sharedHTTPCookieStorage] deleteCookie:cookie];
-//            }
-//            //[self.externalLinkViewer reload];
-//            NSLog(@"About to remove all caches");
-//            [[NSURLCache sharedURLCache] removeAllCachedResponses];
-//            [self.externalLinkViewer reload];
+            //deleting cookies and clearing cache doesn't do anything for us
             
             //Display fail message
             [self displaySorryView];
@@ -53,7 +41,6 @@
         else {
             [self showInfoView];
         }
-        //[self displaySorryView]; //TEST
     }
 }
 
@@ -77,36 +64,26 @@
     self.infoButton.hidden = YES;    
 }
 
-- (BOOL) webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
-    NSLog(@"Request URL is %@, scheme is %@, last path component is %@, host is %@", request.URL, request.URL.scheme, request.URL.lastPathComponent, request.URL.host);
-    //NSLog(@"Self.URLToDisplay is %@", self.urlToDisplay);
-    return YES;
-}
+//just testing
+//- (BOOL) webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+//    NSLog(@"Request URL is %@, scheme is %@, last path component is %@, host is %@", request.URL, request.URL.scheme, request.URL.lastPathComponent, request.URL.host);
+//    return YES;
+//}
 
 - (void) showInfoView {
     CGRect infoViewFrame = self.view.bounds;
     CGRect infoLabelFrame = CGRectMake(self.view.bounds.size.width / 2 - 140, self.view.bounds.size.height * .1, 280, 140);
-//    CGRect dismissButtonFrame = CGRectMake(self.view.bounds.size.width / 2 - 20, self.view.bounds.size.height * .5, 40, 30);
     CGRect dismissButtonFrame = CGRectMake(5, 95, 270, 40);
     
     if (!self.infoView) {
         self.infoView = [[UIButton alloc] initWithFrame:infoViewFrame];
         self.infoView.backgroundColor = [UIColor colorWithRed:230/255.0f green:230/255.0f blue:230/255.0f alpha:1.0f];
-//        self.infoView.numberOfLines = 0;
         self.infoView.alpha = .8;
         self.infoView.userInteractionEnabled = YES;
         
         [self.infoView addTarget:self
                                action:@selector(hideInfoView)
                      forControlEvents:UIControlEventTouchUpInside];
-        
-//        self.infoView.font = [UIFont boldSystemFontOfSize:16];
-//        NSMutableAttributedString* formattedText = [[NSMutableAttributedString alloc] initWithString:@"This basic map of Hurricane Sandy relief awards demonstrates what the DATA Act will make possible for all federal funds. \n \n \n \n \n"];
-//        [formattedText addAttribute:<#(NSString *)#> value:<#(id)#> range:<#(NSRange)#>
-//        self.infoView.attributedText = formattedText;
-//        self.infoView.textAlignment = NSTextAlignmentCenter;
-//        self.infoView.layer.cornerRadius = 5.0f;
-//        [self.infoView.layer setMasksToBounds:YES];
         [self.externalLinkViewer addSubview:self.infoView];
         
         
@@ -124,7 +101,6 @@
         self.infoLabel.userInteractionEnabled = YES;
         [self.infoView addSubview:self.infoLabel];
 //        self.infoLabel.layer.borderWidth = 1;
-//        self.infoLabel.contentMode = UIViewContentModeTop;
         
         
         self.dismissButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -153,12 +129,8 @@
 }
 
 - (void) hideInfoView {
-//    self.infoView.hidden = YES;
     [UIView beginAnimations:@"hideInfoLabel" context:nil];
     [UIView setAnimationDuration:0.3];
-    
-//    [UIView setAnimationTransition:UIViewAnimationTransitionCurlUp forView:self.syncBar cache:YES];
-//    CGRect infoLabelFrame = CGRectMake(self.view.bounds.size.width / 2 - 140, self.view.bounds.size.height * .1, 280, 140);
     [self.infoLabel setFrame:CGRectMake(-280, self.view.bounds.size.height * .1, 280, 140)];
     self.infoView.alpha = 0;
     [UIView commitAnimations];
@@ -172,6 +144,7 @@
 }
 
 - (void) hideOrDisplayInfoView {
+    //hide it if on screen
     if (CGRectIntersectsRect(self.externalLinkViewer.frame, self.infoLabel.frame)) {
         [self hideInfoView];
     }
@@ -183,11 +156,12 @@
 - (void) viewDidLoad {
     [super viewDidLoad];
     [self.externalLinkViewer loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.federaltransparency.gov/Style%20Library/GISMapping/index.html"]]];
-//    [self showInfoView]; //don't display until we verify that all is cool
+    //    [self showInfoView]; //don't display until we verify !403 error
     [self addInfoButton];
 }
 
 - (void) viewWillLayoutSubviews {
+    //rotation handling
     [super viewWillLayoutSubviews];
 
     if (CGRectIntersectsRect(self.externalLinkViewer.frame, self.infoLabel.frame)) {
