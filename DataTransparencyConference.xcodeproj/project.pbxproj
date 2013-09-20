@@ -19,6 +19,7 @@
 		649AC04A17D641CC00C3333B /* splash_full-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 649AC04717D641CA00C3333B /* splash_full-568h@2x.png */; };
 		649AC04B17D641CC00C3333B /* splash_full.png in Resources */ = {isa = PBXBuildFile; fileRef = 649AC04817D641CA00C3333B /* splash_full.png */; };
 		649AC04C17D641CC00C3333B /* splash_full@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 649AC04917D641CB00C3333B /* splash_full@2x.png */; };
+		64A0132817ECB38C00E07E56 /* icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = 64A0132717ECB38C00E07E56 /* icon-120.png */; };
 		64F09C6717B0400C007304A8 /* ZipDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F09C6617B0400C007304A8 /* ZipDownloader.m */; };
 		64F09C7517B04194007304A8 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 64F09C6B17B04194007304A8 /* ioapi.c */; };
 		64F09C7617B04194007304A8 /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 64F09C6D17B04194007304A8 /* mztools.c */; };
@@ -77,6 +78,7 @@
 		649AC04717D641CA00C3333B /* splash_full-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash_full-568h@2x.png"; sourceTree = "<group>"; };
 		649AC04817D641CA00C3333B /* splash_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash_full.png; sourceTree = "<group>"; };
 		649AC04917D641CB00C3333B /* splash_full@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash_full@2x.png"; sourceTree = "<group>"; };
+		64A0132717ECB38C00E07E56 /* icon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-120.png"; sourceTree = "<group>"; };
 		64F09C6517B0400C007304A8 /* ZipDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipDownloader.h; sourceTree = "<group>"; };
 		64F09C6617B0400C007304A8 /* ZipDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZipDownloader.m; sourceTree = "<group>"; };
 		64F09C6A17B04194007304A8 /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				647DD2FC17C8062C001D1921 /* map-tabbaricon@2x.png */,
 				64F09C8E17B13195007304A8 /* DT2013-appicon@2x.png */,
 				64F09C8C17B1318C007304A8 /* DT2013-appicon.png */,
+				64A0132717ECB38C00E07E56 /* icon-120.png */,
 				558026E017C47A4C0039C7DD /* iTunesArtwork.png */,
 				558026E117C47A4C0039C7DD /* iTunesArtwork@2x.png */,
 				64F1663017A985400098A02B /* UIButtonBarArrowLeft.png */,
@@ -393,6 +396,7 @@
 				649AC04A17D641CC00C3333B /* splash_full-568h@2x.png in Resources */,
 				649AC04B17D641CC00C3333B /* splash_full.png in Resources */,
 				649AC04C17D641CC00C3333B /* splash_full@2x.png in Resources */,
+				64A0132817ECB38C00E07E56 /* icon-120.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
